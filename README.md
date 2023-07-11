@@ -1,2 +1,2 @@
 # Project-Doll-House
-Source code for Project Dollhouse
+This is the source code for Project Doll House.
