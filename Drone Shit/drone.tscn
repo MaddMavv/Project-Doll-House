@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4f536snfsgfb"]
+
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="1_rhsgo"]
+[ext_resource type="Script" path="res://droneA.gd" id="1_s8eoq"]
+
+[sub_resource type="Curve2D" id="Curve2D_uq0je"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -8.10211, 0, 0, 0, 0, 0, -8.10211, 0, 0, 0, 0, 0, -8.10211, -13.1789, -0.163819, 13.1789, 0.163819, 27.7612, -18.0204, -7.45473, 1.14673, 7.45473, -1.14673, 55.5224, -2.59192, -10.5165, -3.60401, 10.5165, 3.60401, 87.7612, -21.3265, 0, 0, 0, 0, 111.045, -3.69397, 9.18529, 0.819093, -9.18529, -0.819093, 87.7612, -22.0407, 0, 0, 0, 0, 54.6269, -3.30615, 11.1821, -1.31055, -11.1821, 1.31055, 27.7612, -18.7346, -5.45793, 2.45728, 5.45793, -2.45728, 2.68658, -11.0204, 0, 0, 0, 0, 0, -8.10211)
+}
+point_count = 12
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgd2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rhsgo")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvtyd"]
+size = Vector2(53.9552, 26.4489)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t35b6"]
+radius = 112.938
+
+[node name="drone" type="Node2D"]
+position = Vector2(9, 12)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(1.11667, 0.907411)
+curve = SubResource("Curve2D_uq0je")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -8.10211)
+rotates = false
+
+[node name="DroneA" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+motion_mode = 1
+script = ExtResource("1_s8eoq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/DroneA"]
+position = Vector2(0, 0.387939)
+scale = Vector2(0.436334, 0.212492)
+sprite_frames = SubResource("SpriteFrames_mgd2q")
+animation = &"Flying"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/DroneA"]
+position = Vector2(-0.111938, 0.387817)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_vvtyd")
+
+[node name="PlayerDetection" type="Area2D" parent="Path2D/PathFollow2D/DroneA"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/DroneA/PlayerDetection"]
+shape = SubResource("CircleShape2D_t35b6")
+
+[connection signal="body_entered" from="Path2D/PathFollow2D/DroneA/PlayerDetection" to="Path2D/PathFollow2D/DroneA" method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Path2D/PathFollow2D/DroneA/PlayerDetection" to="Path2D/PathFollow2D/DroneA" method="_on_player_detection_body_exited"]
