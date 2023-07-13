@@ -1,7 +1,5 @@
-res://world.tscn
-res://DroneB.gd
-res://frog.gd
 res://main.tscn
+res://world.tscn
 res://player/character_body_2d.tscn
 res://parallax_background.tscn
 res://frog.tscn
@@ -9,3 +7,5 @@ res://drone.tscn
 res://droneB.tscn
 res://bullet.tscn
 res://test_move.tscn
+res://cop.tscn
+res://cop.gd
