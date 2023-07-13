@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc5cr0vi3u6iq"]
+
+[ext_resource type="Script" path="res://DroneC.gd" id="1_tshwq"]
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_ro3dy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij84m"]
+size = Vector2(130, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqm7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ro3dy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_rb647"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 235, -1)
+}
+point_count = 2
+
+[node name="DroneC" type="CharacterBody2D"]
+script = ExtResource("1_tshwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ij84m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 9.53674e-07)
+scale = Vector2(1.0625, 0.453125)
+sprite_frames = SubResource("SpriteFrames_hqm7n")
+
+[node name="DroveMovement" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="DroveMovement"]
+curve = SubResource("Curve2D_rb647")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="DroveMovement/Path2D"]
+position = Vector2(1, 1)
+rotation = -0.0085468
