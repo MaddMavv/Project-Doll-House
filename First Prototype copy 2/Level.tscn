@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bsw6rfkaiqncu"]
+[gd_scene load_steps=46 format=3 uid="uid://bsw6rfkaiqncu"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_3epyx"]
 [ext_resource type="Texture2D" uid="uid://db0urvkygtedx" path="res://assests/non textured level.png" id="1_ydcmi"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://health.gd" id="10_qka28"]
 [ext_resource type="PackedScene" uid="uid://cj6b2lg5ei1s2" path="res://train.tscn" id="11_84rjj"]
 [ext_resource type="PackedScene" uid="uid://cxcj25w823gqj" path="res://warning.tscn" id="12_l47m2"]
+[ext_resource type="PackedScene" uid="uid://ctd6j8s2tx5y8" path="res://bear.tscn" id="13_xd5pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2egh"]
 size = Vector2(263.5, 8044.75)
@@ -749,6 +750,9 @@ autostart = true
 [node name="TrainMoment" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Bear" parent="." instance=ExtResource("13_xd5pv")]
+position = Vector2(3917, -349)
 
 [connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
 [connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]

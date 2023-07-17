@@ -35,7 +35,7 @@ func _physics_process(delta):
 			print("cool ig")
 			stunAttack();
 		pain = false;
-		
+		howLong = 0
 		
 
 func _on_train_moment_timeout():
