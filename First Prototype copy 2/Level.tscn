@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bsw6rfkaiqncu"]
+[gd_scene load_steps=45 format=3 uid="uid://bsw6rfkaiqncu"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_3epyx"]
 [ext_resource type="Texture2D" uid="uid://db0urvkygtedx" path="res://assests/non textured level.png" id="1_ydcmi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="9_bahfv"]
 [ext_resource type="Script" path="res://health.gd" id="10_qka28"]
 [ext_resource type="PackedScene" uid="uid://cj6b2lg5ei1s2" path="res://train.tscn" id="11_84rjj"]
+[ext_resource type="PackedScene" uid="uid://cxcj25w823gqj" path="res://warning.tscn" id="12_l47m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2egh"]
 size = Vector2(263.5, 8044.75)
@@ -165,7 +166,6 @@ scale = Vector2(0.802219, 0.802219)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/self"]
 position = Vector2(-117.472, -2738.09)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_c2egh")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/self"]
@@ -181,79 +181,66 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(117, 771.277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hkowt")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(597.732, 554.474)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0ptvq")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 787.84)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_td5n8")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1537.24, 851.031)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_81mux")
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2068.04, 631.812)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tjtn3")
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2617.76, 427.06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6dhhc")
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3164.69, 776.152)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1oofy")
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3782.92, 763.362)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r3fd0")
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4402.66, 529.436)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gve6h")
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4930.5, 779.539)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_08v14")
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5455.56, 850.815)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ulfob")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5886.01, 630.143)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bfkml")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(6409.02, 425.754)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4n4es")
 one_way_collision = true
 
@@ -277,25 +264,21 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(111.71, 764.044)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8vpkb")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(595.834, 535.73)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sjbbk")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 777.757)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oyq4e")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1539.48, 854.37)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dgcif")
 one_way_collision = true
 
@@ -311,7 +294,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(3164.15, 770.588)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_55dyn")
 one_way_collision = true
 
@@ -332,25 +314,21 @@ one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5455.37, 847.693)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x46jd")
 one_way_collision = true
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6899.01, 772.92)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7swm")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6405.69, 425.731)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6rg8g")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5888.33, 646.063)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_igdwl")
 one_way_collision = true
 
@@ -380,79 +358,66 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(117, 771.277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hkowt")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(597.732, 554.474)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0ptvq")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 776.644)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mtsp6")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1537.24, 851.031)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_81mux")
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2068.04, 631.812)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tjtn3")
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2617.76, 427.06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6dhhc")
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3164.69, 776.152)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1oofy")
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3782.92, 763.362)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r3fd0")
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4402.66, 529.436)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gve6h")
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4930.5, 779.539)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_08v14")
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5455.56, 850.815)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ulfob")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5886.01, 630.143)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bfkml")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(6409.02, 425.754)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4n4es")
 one_way_collision = true
 
@@ -478,25 +443,21 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(111.71, 764.044)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8vpkb")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(595.834, 535.73)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sjbbk")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 777.757)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oyq4e")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1539.48, 854.37)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dgcif")
 one_way_collision = true
 
@@ -512,7 +473,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(3164.15, 770.588)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_55dyn")
 one_way_collision = true
 
@@ -533,25 +493,21 @@ one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5455.37, 847.693)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x46jd")
 one_way_collision = true
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6899.01, 772.92)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7swm")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6405.69, 425.731)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6rg8g")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5888.33, 646.063)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_igdwl")
 one_way_collision = true
 
@@ -581,79 +537,66 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(117, 771.277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hkowt")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(597.732, 554.474)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0ptvq")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 776.644)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mtsp6")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(1537.24, 851.031)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_81mux")
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2068.04, 631.812)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tjtn3")
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(2617.76, 427.06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6dhhc")
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3164.69, 776.152)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1oofy")
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(3782.92, 763.362)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r3fd0")
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4402.66, 529.436)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gve6h")
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(4930.5, 779.539)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_08v14")
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5455.56, 850.815)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ulfob")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(5886.01, 630.143)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bfkml")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
 position = Vector2(6409.02, 425.754)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4n4es")
 one_way_collision = true
 
@@ -679,25 +622,21 @@ collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(111.71, 764.044)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8vpkb")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(595.834, 535.73)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sjbbk")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1088.25, 777.757)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oyq4e")
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(1539.48, 854.37)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dgcif")
 one_way_collision = true
 
@@ -713,7 +652,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(3164.15, 770.588)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_55dyn")
 one_way_collision = true
 
@@ -734,25 +672,21 @@ one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5455.37, 847.693)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x46jd")
 one_way_collision = true
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6899.01, 772.92)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7swm")
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(6405.69, 425.731)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6rg8g")
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
 position = Vector2(5888.33, 646.063)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_igdwl")
 one_way_collision = true
 
@@ -803,3 +737,18 @@ position = Vector2(6807, 325)
 
 [node name="Train3" parent="." instance=ExtResource("11_84rjj")]
 position = Vector2(6807, 894)
+
+[node name="Node2D" parent="." instance=ExtResource("12_l47m2")]
+position = Vector2(3066, -315)
+
+[node name="Warning" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="TrainMoment" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
+[connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]

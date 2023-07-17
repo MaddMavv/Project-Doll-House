@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxcj25w823gqj"]
+
+[ext_resource type="Script" path="res://warning.gd" id="1_7hwv4"]
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="1_n68ba"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_7hwv4")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-50, 0)
+skew = 0.872665
+texture = ExtResource("1_n68ba")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(50, 0)
+skew = -0.872665
+texture = ExtResource("1_n68ba")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
