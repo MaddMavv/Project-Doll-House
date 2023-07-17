@@ -371,7 +371,7 @@ size = Vector2(118.5, 102.5)
 radius = 1577.88
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjfok"]
-size = Vector2(128, 20)
+size = Vector2(88, 5)
 
 [node name="BarB" type="CharacterBody2D"]
 collision_mask = 3
@@ -383,8 +383,8 @@ shape = SubResource("CapsuleShape2D_b5fqr")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = -1500
-limit_right = 6325
-limit_bottom = 1165
+limit_right = 6275
+limit_bottom = 1125
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, -12)
@@ -423,7 +423,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0, 141)
+position = Vector2(0, 142)
 shape = SubResource("RectangleShape2D_xjfok")
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
