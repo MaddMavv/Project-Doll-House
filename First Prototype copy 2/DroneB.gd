@@ -64,6 +64,5 @@ func shoot():
 	bullet.direction = global_position.direction_to(player.position)
 	owner.add_child(bullet)
 
-
 func _on_timer_timeout():
-	shoot() # Replace with function body.
+	shoot() 

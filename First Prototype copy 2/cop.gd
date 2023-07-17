@@ -1,26 +1,33 @@
 extends CharacterBody2D
 
-var SPEED = 100
+@onready var bullet_scene = preload("res://bullet.tscn")
+@onready var timer = get_node("Timer")
+@onready var spawn_point: Marker2D = $SpawnPoint
+@onready var player = get_tree().get_first_node_in_group("BarB")
+
+var SPEED = 250
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var player
 var chase = false
-var shoot = false
 var run = false
+var stop = false
+
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
 
+
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	attack_player()
-	run_from_player()
+	chase_after_player()
+	stop_and_attack()
+	run_from_player(delta)
 	move_and_slide()
 	
 	
-func attack_player():	
+func chase_after_player():	
 	if chase == true:
-		get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../../BarB")
+		#get_node("AnimatedSprite2D").play("Jump")
+		player = get_node("../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
@@ -31,37 +38,47 @@ func attack_player():
 		get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
 		
-func run_from_player():
-	if run == true:
-		get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../../BarB")
-		var direction = (player.position + self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = false
-		else:
-			get_node("AnimatedSprite2D").flip_h = true
-		velocity.x = direction.x * SPEED
-	else:
+func stop_and_attack():
+	if stop == true:
 		get_node("AnimatedSprite2D").play("Idle")
+		velocity.x = 0
+		
+func run_from_player(delta):
+	if run == true:
+		#get_node("AnimatedSprite2D").play("Jump")
+		player = get_node("../BarB")
+		if player.position.x < position.x:
+			velocity.x += 250 * delta
+		if player.position.x > position.x:
+			velocity.x -= 250 * delta
+		position.x += velocity.x
+		#if direction.x > 0:
+		#	get_node("AnimatedSprite2D").flip_h = false
+		#else:
+		#	get_node("AnimatedSprite2D").flip_h = true
+		#velocity.x = direction.x * SPEED
+		
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
-		chase = true
-		shoot = true
+		if stop == false:
+			chase = true
+		$Timer.start()
 
 func _on_player_detection_body_exited(body):
 	if body.name == "BarB":
 		chase = false
-		shoot = false
+		$Timer.stop()
 
 func _on_stop_body_entered(body):
 	if body.name == "BarB":
-		chase = false
+		if run == false:
+			stop = true
 		
 func _on_stop_body_exited(body):
 	if body.name == "BarB":
-		chase = true 
-
+		stop = false
+		
 func _on_run_away_body_entered(body):
 	if body.name == "BarB":
 		run = true
@@ -69,3 +86,12 @@ func _on_run_away_body_entered(body):
 func _on_run_away_body_exited(body):
 	if body.name == "BarB":
 		run = false
+		
+func shoot():
+	var bullet = bullet_scene.instantiate()
+	bullet.position = spawn_point.global_position
+	bullet.direction = global_position.direction_to(player.position)
+	owner.add_child(bullet)
+
+func _on_timer_timeout():
+	shoot()
