@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8yqkfsqhpxp2"
+path="res://.godot/imported/double jump.ogg-3fd76501ceb722ca29580b21afe25127.oggvorbisstr"
+
+[deps]
+
+source_file="res://assests/double jump.ogg"
+dest_files=["res://.godot/imported/double jump.ogg-3fd76501ceb722ca29580b21afe25127.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

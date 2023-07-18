@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6p0vgp32aq5e"]
+
+[ext_resource type="Script" path="res://stun_projectile.gd" id="1_0t0ns"]
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_2nnjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptg7s"]
+size = Vector2(126, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuqht"]
+size = Vector2(128, 292)
+
+[node name="Stun projectile" type="CharacterBody2D"]
+script = ExtResource("1_0t0ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ptg7s")
+disabled = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(-1, -2.266)
+texture = ExtResource("2_2nnjn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xuqht")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
