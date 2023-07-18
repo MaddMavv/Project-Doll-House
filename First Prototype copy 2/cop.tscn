@@ -17,14 +17,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7q3a5"]
-radius = 1307.12
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4g5"]
+size = Vector2(3470.25, 1113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
-size = Vector2(984.853, 1162)
+size = Vector2(1016.71, 256.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
-size = Vector2(1622.63, 700.313)
+size = Vector2(1476.64, 804.039)
 
 [node name="cop" type="CharacterBody2D"]
 collision_mask = 3
@@ -44,23 +44,25 @@ animation = &"Idle"
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(-1, 1)
-shape = SubResource("CircleShape2D_7q3a5")
+position = Vector2(21, 15)
+shape = SubResource("RectangleShape2D_yc4g5")
+metadata/_edit_lock_ = true
 
 [node name="RunAway" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunAway"]
-position = Vector2(-2, -1)
+position = Vector2(-21, 6)
 shape = SubResource("RectangleShape2D_2reyi")
 
 [node name="Stop" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
-position = Vector2(2, 6)
+position = Vector2(-10, -3)
 shape = SubResource("RectangleShape2D_cmqe0")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 3.0
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-88, -135)

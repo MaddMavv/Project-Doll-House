@@ -4,7 +4,7 @@ class_name Bullet
 
 # @export makes it so anyone can change the speed in the editor.
 # Also makes the variable available to other scripts.
-@export var speed := 500.0
+@export var speed := 1000.0
 
 # Initializes a direction variable so when this bullet is instantiated, 
 # there's a direction var that can be set.

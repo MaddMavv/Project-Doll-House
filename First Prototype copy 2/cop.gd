@@ -10,7 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var run = false
 var stop = false
-
+var runLeft = 300
+var runRight = 300
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
@@ -48,9 +49,9 @@ func run_from_player(delta):
 		#get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../BarB")
 		if player.position.x < position.x:
-			velocity.x += 250 * delta
+			velocity.x += runRight * delta
 		if player.position.x > position.x:
-			velocity.x -= 250 * delta
+			velocity.x -= runLeft * delta
 		position.x += velocity.x
 		#if direction.x > 0:
 		#	get_node("AnimatedSprite2D").flip_h = false

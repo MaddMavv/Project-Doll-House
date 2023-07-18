@@ -8,6 +8,7 @@ extends CharacterBody2D
 # Check the Player node in the inspector, switch to Node, and you'll see the group
 # "Player" I created to make that happen.
 @onready var player = get_tree().get_first_node_in_group("BarB")
+var barb
 
 var top = 5
 var bottom = 5
@@ -28,8 +29,9 @@ func _process(delta):
 
 func chase_after_player(delta):
 	if chase == true:
-		position.y = lerp(position.y, player.position.y - 400, .9 * delta)
-		position.x = lerp(position.x, player.position.x + 375, .6 * delta)
+		barb = get_node("../BarB")
+		position.y = lerp(position.y, barb.position.y - 400, .9 * delta)
+		position.x = lerp(position.x, barb.position.x + 375, .6 * delta)
 		home = false
 		
 	else:
@@ -61,7 +63,7 @@ func _on_player_detection_body_exited(body):
 func shoot():
 	var bullet = bullet_scene.instantiate()
 	bullet.position = spawn_point.global_position
-	bullet.direction = global_position.direction_to(player.position)
+	bullet.direction = global_position.direction_to(barb.position)
 	owner.add_child(bullet)
 
 func _on_timer_timeout():
