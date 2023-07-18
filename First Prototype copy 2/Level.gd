@@ -4,6 +4,7 @@ extends Node2D
 var knock = preload("res://knockback_projectile.tscn")
 var stun = preload("res://stun_projectile.tscn")
 var train = preload("res://train.tscn")
+var warn = preload("res://warning.tscn")
 var player
 var pain = false
 var howLong = 0;
@@ -34,16 +35,34 @@ func _physics_process(delta):
 			print("cool ig")
 			stunAttack();
 		pain = false;
-		howLong = 0;
-	trainWait += 1;
-	if trainWait == 100:
-		whichTrain = randi_range(1,3)
-		var trainTemp = train.instantiate()
-		add_child(trainTemp)
-		if whichTrain == 1:
-			trainTemp.position = Vector2(6807, -244)
-		if whichTrain == 2:
-			trainTemp.position = Vector2(6807, 325)
-		if whichTrain == 3:
-			trainTemp.position = Vector2(6807, 894)
-		trainWait = 0
+		howLong = 0
+		
+
+func _on_train_moment_timeout():
+	var trainTemp = train.instantiate()
+	add_child(trainTemp)
+	if whichTrain == 1:
+		trainTemp.position = Vector2(6807, -244)
+	if whichTrain == 2:
+		trainTemp.position = Vector2(6807, 325)
+	if whichTrain == 3:
+		trainTemp.position = Vector2(6807, 894)
+	
+	$Warning.start()
+
+func _on_warning_timeout():
+	whichTrain = randi_range(1,3)
+	var warnTemp = warn.instantiate()
+	add_child(warnTemp)
+	player = get_node("../world/BarB")
+	
+	if whichTrain == 1:
+		warnTemp.position = Vector2(player.position.x, -254)
+	elif whichTrain == 2:
+		warnTemp.position = Vector2(player.position.x, 315)
+	elif whichTrain == 3:
+		warnTemp.position = Vector2(player.position.x, 884)
+		
+	$TrainMoment.start()
+		
+		

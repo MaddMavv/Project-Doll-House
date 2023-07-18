@@ -6,10 +6,16 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var projectile
 var chase = false
-var speed = 400
+var speed = 50000
 var knockback
 var stun = false
 @onready var timer = get_node("Timer")
+
+var veloReal = 0;
+var veloOw = 0;
+
+var veloRealY = 0;
+var veloOwY = 0;
 
 #animation stuff
 func _ready():
@@ -17,9 +23,18 @@ func _ready():
 	#get_node("AnimatedSprite2D").play("Idle")
 
 func _physics_process(delta):
-	#frog gavity
-	velocity.y += gravity * delta
+	if is_on_floor():
+		veloRealY = 0
+	if !is_on_floor():
+		veloRealY += gravity * delta
 	#makes it move towards the player
+	velocity.x = veloReal+veloOw
+	velocity.y = veloRealY+veloOwY
+	
+	veloOw = move_toward(veloOw, 0, 50)
+	veloOwY = move_toward(veloOwY, 0, 50)
+	print("veloReal = " + str(veloReal))
+	print("veloOw = " + str(veloOw))
 	
 	if chase == true && stun == false:
 		
@@ -27,24 +42,9 @@ func _physics_process(delta):
 		#	get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../BarB")
 		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-		#	get_node("AnimatedSprite2D").flip_h = true
-			if velocity.x < direction.x * speed:
-				velocity.x += direction.x * speed
-		else:
-		#	get_node("AnimatedSprite2D").flip_h = false
-			if velocity.x > direction.x * speed:
-				velocity.x += direction.x * speed
+		if direction.x:
+			veloReal = direction.x * speed * delta
 		
-	else:
-		if velocity.x > 0:
-			velocity.x -= 50
-			if velocity.x < 0:
-				velocity.x = 0;
-		if velocity.x < 0:
-			velocity.x += 50
-			if velocity.x > 0:
-				velocity.x = 0;
 		#if get_node("AnimatedSprite2D").animation != "Death" && get_node("AnimatedSprite2D").animation != "Stunned":
 		#	get_node("AnimatedSprite2D").play("Idle")
 	move_and_slide()
@@ -73,18 +73,19 @@ func death():
 
 func isHitLeft():
 		print("left");
-		velocity.x += 5000;
-		velocity.y += -300;
+		veloOw = 2000;
+		veloOwY = -300;
 	
 func isHitRight():
 		print("right");
-		velocity.x -= 5000;
-		velocity.y += -300;
+		veloOw = -2000;
+		veloOwY = -300;
 	
 func stunned():
 	print("stunned")
 	stun = true;
-	velocity = Vector2(0,0);
+	veloReal = 0;
+	veloRealY = 0;
 	#get_node("AnimatedSprite2D").play("Stunned")
 	$Timer.start()
 	
