@@ -1,9 +1,9 @@
+res://redDrone.tscn
+res://redDrone.gd
+res://Level.tscn
 res://main menu.tscn
 res://cop.tscn
-res://Level.tscn
 res://bear.tscn
 res://droneB.tscn
-res://bar_b.gd
-res://bullet.gd
-res://DroneB.gd
-res://cop.gd
+res://test_move.gd
+res://test_move.tscn
