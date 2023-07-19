@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=22 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6315m"]
 size = Vector2(5674, 23.5769)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd30s"]
+size = Vector2(151.987, 5267.19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usqd1"]
 size = Vector2(559.5, 33)
@@ -70,6 +73,21 @@ texture = ExtResource("1_mk7v3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+position = Vector2(-2857.74, -2017.38)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rd30s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+position = Vector2(73500.2, -2030.42)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rd30s")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+position = Vector2(73500.2, -2030.42)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rd30s")
 
 [node name="Boxs" type="StaticBody2D" parent="Tile 1/Ground level"]
 collision_layer = 2
@@ -2592,7 +2610,7 @@ shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(27648, -222)
+position = Vector2(363, -1499)
 
 [node name="Placeholders" type="Node2D" parent="."]
 
