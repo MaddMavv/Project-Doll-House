@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctd6j8s2tx5y8"]
+
+[ext_resource type="Script" path="res://bear.gd" id="1_4je60"]
+[ext_resource type="Texture2D" uid="uid://b8i1ppuiou4ho" path="res://assests/Bear_Demo_Img.png" id="1_ft26f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05284"]
+size = Vector2(182, 390)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dyotg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ft26f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qma5n"]
+radius = 721.017
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kdst"]
+size = Vector2(228, 286)
+
+[node name="Bear" type="CharacterBody2D" groups=["Enemies"]]
+collision_mask = 3
+script = ExtResource("1_4je60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_05284")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.197, 0.197)
+sprite_frames = SubResource("SpriteFrames_dyotg")
+
+[node name="Player Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
+shape = SubResource("CircleShape2D_qma5n")
+
+[node name="Player Punch" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Punch"]
+position = Vector2(0, 65)
+shape = SubResource("RectangleShape2D_3kdst")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="Player Punch" to="." method="_on_player_punch_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

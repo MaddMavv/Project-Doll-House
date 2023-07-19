@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://iepj63r3yt31"]
+
+[ext_resource type="Script" path="res://cop.gd" id="1_u4vm7"]
+[ext_resource type="Texture2D" uid="uid://blp825ml8pmxh" path="res://assests/cop.png" id="2_nwekm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5q"]
+size = Vector2(102, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apku0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nwekm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4g5"]
+size = Vector2(3470.25, 1113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
+size = Vector2(1016.71, 256.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
+size = Vector2(1476.64, 804.039)
+
+[node name="cop" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_u4vm7")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 17.5)
+shape = SubResource("RectangleShape2D_tbd5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.142418, 0.142418)
+sprite_frames = SubResource("SpriteFrames_apku0")
+animation = &"Idle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(21, 15)
+shape = SubResource("RectangleShape2D_yc4g5")
+metadata/_edit_lock_ = true
+
+[node name="RunAway" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunAway"]
+position = Vector2(-21, 6)
+shape = SubResource("RectangleShape2D_2reyi")
+
+[node name="Stop" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
+position = Vector2(-10, -3)
+shape = SubResource("RectangleShape2D_cmqe0")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-88, -135)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="RunAway" to="." method="_on_run_away_body_entered"]
+[connection signal="body_exited" from="RunAway" to="." method="_on_run_away_body_exited"]
+[connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
+[connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
