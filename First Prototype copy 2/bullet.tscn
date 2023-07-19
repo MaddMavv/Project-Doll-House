@@ -1,13 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2hxdphrqmtuf"]
 
-[ext_resource type="Texture2D" uid="uid://lm341fs7vt81" path="res://Sunny-land-assets-files/PNG/sprites/gem/gem-1.png" id="1_g4pxd"]
 [ext_resource type="Script" path="res://bullet.gd" id="1_u5nlr"]
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_kxo6a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xsw70"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_g4pxd")
+"texture": ExtResource("2_kxo6a")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"Shoot",
@@ -15,15 +18,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eyak3"]
-radius = 4.0
+radius = 22.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_u5nlr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -4.76837e-07)
+scale = Vector2(0.376953, 0.376953)
 sprite_frames = SubResource("SpriteFrames_xsw70")
 animation = &"Shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_eyak3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
