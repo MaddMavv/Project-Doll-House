@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=34 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
@@ -73,6 +73,9 @@ size = Vector2(136.045, 334.262)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjway"]
 size = Vector2(136.045, 295.497)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqemv"]
+radius = 12623.8
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_106fe"]
 blend_mode = 2
@@ -3566,6 +3569,11 @@ position = Vector2(2580, -1118)
 scale = Vector2(0.671861, 1.5625)
 texture = ExtResource("3_mrvp6")
 
+[node name="Area2D" type="Area2D" parent="Placeholders/Cop8/Icon9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/Cop8/Icon9/Area2D"]
+shape = SubResource("CircleShape2D_gqemv")
+
 [node name="Icon10" type="Sprite2D" parent="Placeholders/Cop8"]
 position = Vector2(2548, -1213)
 scale = Vector2(0.109366, 0.781251)
@@ -4387,5 +4395,17 @@ position = Vector2(39751, -540)
 position = Vector2(90.25, -85)
 shape = SubResource("RectangleShape2D_yq6na")
 
+[node name="Warning" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TrainMoment" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Placeholders/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Placeholders/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
+[connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]
