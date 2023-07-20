@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=33 format=3 uid="uid://ce3ywxvwpfwmf"]
 
+[ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
 [ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="3_mrvp6"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
+[ext_resource type="PackedScene" uid="uid://ctd6j8s2tx5y8" path="res://bear.tscn" id="5_uhf4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6315m"]
 size = Vector2(5674, 23.5769)
@@ -47,2601 +49,2897 @@ size = Vector2(92.9995, 6.46875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f542"]
 size = Vector2(462.5, 6.46875)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_106fe"]
-blend_mode = 2
-light_mode = 1
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccx27"]
+size = Vector2(266.748, 20.3211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl11q"]
 size = Vector2(17.9557, 6.55402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4abwr"]
+size = Vector2(1.28637, 32.595)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b1q6"]
+size = Vector2(1.72108, 32.595)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kmt21"]
 blend_mode = 1
 light_mode = 1
 
-[node name="Level 2" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xew"]
+size = Vector2(760.188, 551.799)
 
-[node name="Tile 1" type="Node2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7q4g"]
+size = Vector2(136.045, 334.262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjway"]
+size = Vector2(136.045, 295.497)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_106fe"]
+blend_mode = 2
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1la0f"]
+size = Vector2(125.348, 252.268)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dixy4"]
+size = Vector2(125.348, 130.768)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq6na"]
+size = Vector2(264.5, 414)
+
+[node name="Level 2" type="Node2D"]
+script = ExtResource("1_h6txy")
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Tile 1" type="Node2D" parent="Tiles"]
 position = Vector2(0, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 1"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 1"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 1/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
 position = Vector2(-2857.74, -2017.38)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rd30s")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
 position = Vector2(73500.2, -2030.42)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rd30s")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 1/Ground level/Ground"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
 position = Vector2(73500.2, -2030.42)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rd30s")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 1/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 1/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 1"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 1"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 1/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 1/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 1/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 1"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 1"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 1/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 1/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 1/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 2" type="Node2D" parent="."]
+[node name="Tile 2" type="Node2D" parent="Tiles"]
 position = Vector2(4442, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 2"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 2"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 2/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 2/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 2/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 2/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 2/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 2/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 2"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 2"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 2/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 2/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 2/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 2/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 2/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 2/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 2"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 2"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 2/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 2/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 2/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 2/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 2/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 2/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 3" type="Node2D" parent="."]
+[node name="Tile 3" type="Node2D" parent="Tiles"]
 position = Vector2(8884, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 3"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 3"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 3/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 3/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 3/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 3/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 3/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 3/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 3/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 3"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 3"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 3/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 3/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 3/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 3/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 3/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 3/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 4" type="Node2D" parent="."]
+[node name="Tile 4" type="Node2D" parent="Tiles"]
 position = Vector2(13326, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 4"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 4"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 4/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 4/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 4/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 4/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 4/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 4/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 4"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 4"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 4/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 4/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 4/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 4/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 4/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 4/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 4"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 4"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 4/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 4/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 4/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 4/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 4/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 4/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 5" type="Node2D" parent="."]
+[node name="Tile 5" type="Node2D" parent="Tiles"]
 position = Vector2(17768, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 5"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 5"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 5/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 5/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 5/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 5/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 5/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 5/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 5/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 5"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 5"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 5/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 5/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 5/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 5/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 5/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 5/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 5/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 6" type="Node2D" parent="."]
+[node name="Tile 6" type="Node2D" parent="Tiles"]
 position = Vector2(22210, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 6"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 6"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 6/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 6/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 6/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 6/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 6/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 6/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 6"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 6"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 6/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 6/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 6/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 6/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 6/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 6/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 6"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 6"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 6/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 6/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 6/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 6/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 6/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 6/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 7" type="Node2D" parent="."]
+[node name="Tile 7" type="Node2D" parent="Tiles"]
 position = Vector2(39978, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 7"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 7"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 7/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 7/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 7/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 7/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 7/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 7/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 7"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 7"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 7/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 7/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 7/Middle Shelf"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Ground"]
+position = Vector2(-2814.82, 608.942)
+rotation = 0.300197
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_ccx27")
+one_way_collision = true
+
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 7/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 7/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 7/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 7"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 7"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 7/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 7/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 7/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 7/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 7/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 7/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 8" type="Node2D" parent="."]
+[node name="Tile 8" type="Node2D" parent="Tiles"]
 position = Vector2(44420, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 8"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 8"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 8/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 8/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 8/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 8/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 8/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 8/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 8"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 8"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 8/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 8/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 8/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 8/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 8/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 8/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 8"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 8"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 8/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 8/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 8/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 8/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 8/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 8/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 9" type="Node2D" parent="."]
+[node name="Tile 9" type="Node2D" parent="Tiles"]
 position = Vector2(48862, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 9"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 9"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 9/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 9/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 9/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 9/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 9/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 9/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 9"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 9"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 9/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 9/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 9/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 9/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 9/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 9/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 9"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 9"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 9/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 9/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 9/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 9/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 9/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 9/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 10" type="Node2D" parent="."]
+[node name="Tile 10" type="Node2D" parent="Tiles"]
 position = Vector2(53304, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 10"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 10"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 10/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 10/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 10/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 10/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 10/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 10/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 10/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Tile 11" type="Node2D" parent="."]
+[node name="Tile 11" type="Node2D" parent="Tiles"]
 position = Vector2(57746, 191)
 scale = Vector2(0.815855, 0.815855)
 
-[node name="Ground level" type="Sprite2D" parent="Tile 11"]
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 11"]
 position = Vector2(2832, 399)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 11/Ground level"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 11/Ground level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Ground level/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Ground"]
 position = Vector2(-1, 628)
 shape = SubResource("RectangleShape2D_6315m")
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 11/Ground level"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 11/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 11/Ground level/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 11/Ground level/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Middle Shelf" type="Sprite2D" parent="Tile 11"]
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 11"]
 position = Vector2(2832, -685)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 11/Middle Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 11/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 11/Middle Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 11/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 11/Middle Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 11/Middle Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
-[node name="Top Shelf" type="Sprite2D" parent="Tile 11"]
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 11"]
 position = Vector2(2832, -1769)
 texture = ExtResource("1_mk7v3")
 
-[node name="Ground" type="StaticBody2D" parent="Tile 11/Top Shelf"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 11/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Top Shelf/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Ground"]
 position = Vector2(-1, 650.212)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6315m")
 one_way_collision = true
 
-[node name="Boxs" type="StaticBody2D" parent="Tile 11/Top Shelf"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 11/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-2334.75, 56.5)
 shape = SubResource("RectangleShape2D_usqd1")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-1940.88, 245.25)
 shape = SubResource("RectangleShape2D_xryyl")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-1577.94, 299)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-1153.97, 123.125)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_vgtn2")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-713, -44)
 shape = SubResource("RectangleShape2D_kunll")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(-274.984, 231)
 shape = SubResource("RectangleShape2D_o2aca")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(231.008, 226)
 shape = SubResource("RectangleShape2D_qs0gv")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(719, 43)
 shape = SubResource("RectangleShape2D_pjqqa")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(1143, 243.062)
 shape = SubResource("RectangleShape2D_qsp88")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(1561, 299.531)
 shape = SubResource("RectangleShape2D_8fy4q")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(1909, 128)
 shape = SubResource("RectangleShape2D_qsite")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(2094, -32)
 rotation = -0.149445
 shape = SubResource("RectangleShape2D_5w0bu")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tile 11/Top Shelf/Boxs"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 11/Top Shelf/Boxs"]
 position = Vector2(2374, -47)
 shape = SubResource("RectangleShape2D_3f542")
 one_way_collision = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(363, -1499)
+position = Vector2(590.001, -1626)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(28364, -546)
+scale = Vector2(2.83285, 2.83285)
+collision_layer = 2
+script = ExtResource("4_54ugp")
+
+[node name="Drone" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.30762, 309.759)
+rotation = 3.14159
+scale = Vector2(56.5286, -26.1218)
+shape = SubResource("RectangleShape2D_cl11q")
+
+[node name="Wall1" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-569.744, -30.3579)
+rotation = 3.14159
+scale = Vector2(56.5286, -26.1218)
+shape = SubResource("RectangleShape2D_4abwr")
+disabled = true
+
+[node name="Wall2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(554.562, -26.4751)
+rotation = 3.14159
+scale = Vector2(56.5286, -26.1218)
+shape = SubResource("RectangleShape2D_0b1q6")
+disabled = true
+
+[node name="Icon5" type="Sprite2D" parent="CharacterBody2D"]
+material = SubResource("CanvasItemMaterial_kmt21")
+position = Vector2(-1.03784, 308.58)
+scale = Vector2(7.93666, 1.33594)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon6" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-449.988, 211.08)
+scale = Vector2(0.484375, 1.33594)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon7" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(438.992, 212.933)
+scale = Vector2(0.484375, 1.33594)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon8" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(438.993, 152.183)
+scale = Vector2(1.71875, 0.386719)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon9" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-449.987, 144.08)
+scale = Vector2(1.71875, 0.386719)
+texture = ExtResource("3_mrvp6")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="Player Detection" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(61.333, -99.1932)
+shape = SubResource("RectangleShape2D_s1xew")
 
 [node name="Placeholders" type="Node2D" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="Placeholders"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Placeholders"]
 position = Vector2(2246, -966)
 scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_w7q4g")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D"]
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon2" type="Sprite2D" parent="Placeholders"]
-position = Vector2(2241, -1251)
-scale = Vector2(1.92187, 1.6875)
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon14" type="Sprite2D" parent="Placeholders"]
-position = Vector2(46990, -1032)
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(2243, -45)
 scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D2"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D2"]
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon15" type="Sprite2D" parent="Placeholders"]
-position = Vector2(46985, -1317)
-scale = Vector2(1.92187, 1.6875)
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D2"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon12" type="Sprite2D" parent="Placeholders"]
-position = Vector2(26479, 789)
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D2"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(7005, 831)
 scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D3"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D3"]
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon13" type="Sprite2D" parent="Placeholders"]
-position = Vector2(26474, 504)
-scale = Vector2(1.92187, 1.6875)
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D3"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D3"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(13576, 830)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D4"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D4"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D4"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D4"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(13586, -39)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D5"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D5"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D5"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D5"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(13899, -938)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D6"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D6"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D6"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D6"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(26510, 830)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D7"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D7"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D7"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D7"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(26503, -45)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D8"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D8"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D8"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D8"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(47123, -943)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D9"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D9"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D9"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D9"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(54274, 820)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D10"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D10"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D10"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D10"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(57700, 834)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D11"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D11"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D11"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D11"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Placeholders"]
+position = Vector2(58143, -935)
+scale = Vector2(2.73438, 2.73438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/StaticBody2D12"]
+position = Vector2(0, -82.2856)
+shape = SubResource("RectangleShape2D_cjway")
+
+[node name="Icon" type="Sprite2D" parent="Placeholders/StaticBody2D12"]
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="Placeholders/StaticBody2D12"]
+position = Vector2(-1.82867, -104.228)
+scale = Vector2(0.702854, 0.617142)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon3" type="Sprite2D" parent="Placeholders/StaticBody2D12"]
+position = Vector2(-2.92566, -185.783)
+scale = Vector2(0.702854, 0.617142)
 texture = ExtResource("3_mrvp6")
 
 [node name="Cop" type="Node2D" parent="Placeholders"]
@@ -2776,61 +3074,6 @@ texture = ExtResource("3_mrvp6")
 [node name="Icon10" type="Sprite2D" parent="Placeholders/Cop34"]
 position = Vector2(2519, -1161)
 scale = Vector2(1.16602, 0.347169)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop6" type="Node2D" parent="Placeholders"]
-position = Vector2(5029, 891)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon9" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2580, -1118)
-scale = Vector2(0.363281, 0.772462)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon10" type="Sprite2D" parent="Placeholders/Cop6"]
-position = Vector2(2519, -1161)
-scale = Vector2(1.16602, 0.347169)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders"]
-position = Vector2(2216, -81.0001)
-scale = Vector2(2.73438, 2.73438)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders"]
-position = Vector2(2211, -366)
-scale = Vector2(1.92187, 1.6875)
 texture = ExtResource("3_mrvp6")
 
 [node name="Cop2" type="Node2D" parent="Placeholders"]
@@ -3238,21 +3481,6 @@ position = Vector2(2519, -1161)
 scale = Vector2(1.16602, 0.347169)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon5" type="Sprite2D" parent="Placeholders"]
-position = Vector2(13637, -86.0001)
-scale = Vector2(2.73438, 2.73438)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon9" type="Sprite2D" parent="Placeholders"]
-position = Vector2(13890, -1222)
-scale = Vector2(2.73438, 6.75781)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders"]
-position = Vector2(13632, -371)
-scale = Vector2(1.92187, 1.6875)
-texture = ExtResource("3_mrvp6")
-
 [node name="Cop7" type="Node2D" parent="Placeholders"]
 position = Vector2(11391, 880)
 
@@ -3296,41 +3524,6 @@ texture = ExtResource("3_mrvp6")
 [node name="Icon10" type="Sprite2D" parent="Placeholders/Cop7"]
 position = Vector2(2519, -1161)
 scale = Vector2(1.16602, 0.347169)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop11" type="Node2D" parent="Placeholders"]
-position = Vector2(7703, 1700)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop11"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
 texture = ExtResource("3_mrvp6")
 
 [node name="Cop8" type="Node2D" parent="Placeholders"]
@@ -3378,16 +3571,6 @@ position = Vector2(2548, -1213)
 scale = Vector2(0.109366, 0.781251)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon7" type="Sprite2D" parent="Placeholders"]
-position = Vector2(13607, 799)
-scale = Vector2(2.73438, 2.73438)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders"]
-position = Vector2(13602, 514)
-scale = Vector2(1.92187, 1.6875)
-texture = ExtResource("3_mrvp6")
-
 [node name="Cop9" type="Node2D" parent="Placeholders"]
 position = Vector2(11361, 1765)
 
@@ -3433,16 +3616,6 @@ position = Vector2(2519, -1161)
 scale = Vector2(1.16602, 0.347169)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon10" type="Sprite2D" parent="Placeholders"]
-position = Vector2(6984, 775)
-scale = Vector2(2.73438, 2.73438)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon11" type="Sprite2D" parent="Placeholders"]
-position = Vector2(6979, 490)
-scale = Vector2(1.92187, 1.6875)
-texture = ExtResource("3_mrvp6")
-
 [node name="Cop10" type="Node2D" parent="Placeholders"]
 position = Vector2(4738, 1741)
 
@@ -3486,391 +3659,6 @@ texture = ExtResource("3_mrvp6")
 [node name="Icon10" type="Sprite2D" parent="Placeholders/Cop10"]
 position = Vector2(2519, -1161)
 scale = Vector2(1.16602, 0.347169)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop3" type="Node2D" parent="Placeholders"]
-position = Vector2(829, 1245)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop3"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop12" type="Node2D" parent="Placeholders"]
-position = Vector2(12316, -53)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop12"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop13" type="Node2D" parent="Placeholders"]
-position = Vector2(13793, -43)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop13"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop14" type="Node2D" parent="Placeholders"]
-position = Vector2(12888, 875)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop14"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop4" type="Node2D" parent="Placeholders"]
-position = Vector2(3089, 1743)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop4"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop5" type="Node2D" parent="Placeholders"]
-position = Vector2(3410, 873)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop5"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop15" type="Node2D" parent="Placeholders"]
-position = Vector2(16582, 1689)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop15"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop18" type="Node2D" parent="Placeholders"]
-position = Vector2(38413, -155)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop18"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop19" type="Node2D" parent="Placeholders"]
-position = Vector2(39422, 806)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop19"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop20" type="Node2D" parent="Placeholders"]
-position = Vector2(55758, -121)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop20"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop21" type="Node2D" parent="Placeholders"]
-position = Vector2(47811, 1554)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop21"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
 texture = ExtResource("3_mrvp6")
 
 [node name="Cop22" type="Node2D" parent="Placeholders"]
@@ -3978,146 +3766,6 @@ position = Vector2(2752, -1246.12)
 scale = Vector2(1.41406, 1.37305)
 texture = ExtResource("3_mrvp6")
 
-[node name="Cop35" type="Node2D" parent="Placeholders"]
-position = Vector2(54156, 830)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop35"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop36" type="Node2D" parent="Placeholders"]
-position = Vector2(9512, 372)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop36"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop25" type="Node2D" parent="Placeholders"]
-position = Vector2(44909, 1719)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop25"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Cop16" type="Node2D" parent="Placeholders"]
-position = Vector2(18330, 1689)
-
-[node name="Icon3" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Cop16"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
 [node name="Red Drone" type="Node2D" parent="Placeholders"]
 
 [node name="Icon5" type="Sprite2D" parent="Placeholders/Red Drone"]
@@ -4147,44 +3795,7 @@ scale = Vector2(1.71875, 0.386719)
 texture = ExtResource("3_mrvp6")
 
 [node name="Green Drone" type="Node2D" parent="Placeholders"]
-position = Vector2(17798, -1307)
 scale = Vector2(2.83285, 2.83285)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Placeholders/Green Drone"]
-scale = Vector2(1, 1)
-script = ExtResource("4_54ugp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-position = Vector2(3713.68, 529.679)
-rotation = 3.14159
-scale = Vector2(56.5286, -26.1218)
-shape = SubResource("RectangleShape2D_cl11q")
-
-[node name="Icon5" type="Sprite2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-material = SubResource("CanvasItemMaterial_kmt21")
-position = Vector2(3713.95, 528.5)
-scale = Vector2(7.93666, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-position = Vector2(3265, 431)
-scale = Vector2(0.484375, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-position = Vector2(4153.98, 432.853)
-scale = Vector2(0.484375, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-position = Vector2(4153.98, 372.103)
-scale = Vector2(1.71875, 0.386719)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon9" type="Sprite2D" parent="Placeholders/Green Drone/CharacterBody2D"]
-position = Vector2(3265, 364)
-scale = Vector2(1.71875, 0.386719)
-texture = ExtResource("3_mrvp6")
 
 [node name="Red Drone2" type="Node2D" parent="Placeholders"]
 position = Vector2(8666, -848)
@@ -4213,11 +3824,6 @@ texture = ExtResource("3_mrvp6")
 [node name="Icon9" type="Sprite2D" parent="Placeholders/Red Drone2"]
 position = Vector2(3265, 364)
 scale = Vector2(1.71875, 0.386719)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon16" type="Sprite2D" parent="Placeholders/Red Drone2"]
-position = Vector2(49458, -455.5)
-scale = Vector2(2.73438, 6.75781)
 texture = ExtResource("3_mrvp6")
 
 [node name="Cop34" type="Node2D" parent="Placeholders/Red Drone2"]
@@ -4687,22 +4293,99 @@ position = Vector2(3265, 364)
 scale = Vector2(1.71875, 0.386719)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(57671, 594.25)
-scale = Vector2(2.26562, 6.03516)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(54237, 561)
-scale = Vector2(2.26562, 6.03516)
-texture = ExtResource("3_mrvp6")
-
 [node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(53931, 706.125)
+position = Vector2(53929, 755)
 scale = Vector2(2.26562, 3.81445)
 texture = ExtResource("3_mrvp6")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Icon3"]
+position = Vector2(-143.445, 27.0026)
+scale = Vector2(1, 0.509216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon3/StaticBody2D2"]
+position = Vector2(144.328, -52.5129)
+shape = SubResource("RectangleShape2D_1la0f")
+
 [node name="Icon4" type="Sprite2D" parent="."]
-position = Vector2(53607, 829.313)
+position = Vector2(53593, 868)
 scale = Vector2(2.26562, 1.94238)
 texture = ExtResource("3_mrvp6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_dixy4")
+
+[node name="Baddies" type="Node2D" parent="."]
+
+[node name="Melee Cops" type="Node2D" parent="Baddies"]
+
+[node name="Bear" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(5673, 635)
+
+[node name="Bear2" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(3589, 61.0001)
+
+[node name="Bear3" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(5915, -259)
+
+[node name="Bear4" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(7759, -267)
+
+[node name="Bear5" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(10449, 620)
+
+[node name="Bear6" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(12254, -787)
+
+[node name="Bear7" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(15088, -1116)
+
+[node name="Bear8" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(15682, -233)
+
+[node name="Bear9" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(16578, -1148)
+
+[node name="Bear10" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(19350, 642)
+
+[node name="Bear11" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(21085, 640)
+
+[node name="Bear12" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(41142, -1115)
+
+[node name="Bear13" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(42216, -270)
+
+[node name="Bear14" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(47608, 641)
+
+[node name="Bear15" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(50536, 643)
+
+[node name="Bear16" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(56927, -337)
+
+[node name="Bear17" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
+position = Vector2(58670, -1179)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(33190, -736)
+scale = Vector2(96.1484, 1)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1438, -178)
+texture = ExtResource("3_mrvp6")
+
+[node name="DroneStop" type="Area2D" parent="."]
+position = Vector2(39751, -540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroneStop"]
+position = Vector2(90.25, -85)
+shape = SubResource("RectangleShape2D_yq6na")
+
+[connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
