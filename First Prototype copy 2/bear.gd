@@ -33,17 +33,15 @@ func _physics_process(delta):
 	
 	veloOw = move_toward(veloOw, 0, 50)
 	veloOwY = move_toward(veloOwY, 0, 50)
-	print("veloReal = " + str(veloReal))
-	print("veloOw = " + str(veloOw))
 	
 	if chase == true && stun == false:
 		
 		#if get_node("AnimatedSprite2D").animation != "Death":
 		#	get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../BarB")
+		player = get_node("../../../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x:
-			veloReal = direction.x * speed * delta
+			veloReal = direction.x * speed * delta;
 		
 		#if get_node("AnimatedSprite2D").animation != "Death" && get_node("AnimatedSprite2D").animation != "Stunned":
 		#	get_node("AnimatedSprite2D").play("Idle")

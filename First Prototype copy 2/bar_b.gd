@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -700.0
+const SPEED = 900.0
+const JUMP_VELOCITY = -800.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -46,11 +46,11 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == -1:
 			self.rotation_degrees = 180
-			self.scale.y = -1
+			self.scale.y = -1.4
 			flip = true
 	elif direction == 1:
 			self.rotation_degrees = 0;
-			self.scale.y = 1
+			self.scale.y = 1.4
 			flip = false
 	
 	velocity.x = veloReal+veloOw
@@ -87,7 +87,6 @@ func melee():
 		meleeing = true
 		await anim.animation_finished
 		meleeing = false;
-		print("heck")
 		
 func shout():
 	if meleeing == false:
@@ -95,7 +94,6 @@ func shout():
 		meleeing = true
 		await anim.animation_finished
 		meleeing = false;
-		print("heck")
 		
 func TRAIN():
 	Game.playerHP -= 1;

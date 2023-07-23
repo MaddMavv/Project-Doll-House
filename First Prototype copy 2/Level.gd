@@ -14,12 +14,12 @@ var trainWait = 0
 func attack():
 		var knockTemp = knock.instantiate()
 		add_child(knockTemp)
-		player = get_node("../world/BarB")
+		player = get_node("../Level 2/BarB")
 		knockTemp.global_position = player.position
 func stunAttack():
 		var stunTemp = stun.instantiate()
 		add_child(stunTemp)
-		player = get_node("../world/BarB")
+		player = get_node("../Level 2/BarB")
 		stunTemp.global_position = player.position
 		
 func _physics_process(delta):
@@ -54,7 +54,7 @@ func _on_warning_timeout():
 	whichTrain = randi_range(1,3)
 	var warnTemp = warn.instantiate()
 	add_child(warnTemp)
-	player = get_node("../world/BarB")
+	player = get_node("../Level 2/BarB")
 	
 	if whichTrain == 1:
 		warnTemp.position = Vector2(player.position.x, -254)
