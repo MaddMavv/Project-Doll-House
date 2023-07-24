@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("BarB")
 var barb
 
-var left = 200
+var left = 210
 var right = 200
 var start
 var chase = false
