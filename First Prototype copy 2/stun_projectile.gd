@@ -10,9 +10,9 @@ var help = 0
 func _physics_process(delta):
 	if help == 0:
 		player = get_node("../BarB")
-		if player.scale.y == 1:
+		if player.scale.y > 0:
 			direction = Vector2.RIGHT.rotated(rotation)
-		if player.scale.y == -1:
+		if player.scale.y < 0:
 			direction = Vector2.LEFT.rotated(rotation)
 	help +=1
 	global_position += speed*direction*delta

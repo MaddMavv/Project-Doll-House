@@ -17,13 +17,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qma5n"]
-radius = 721.017
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj4fe"]
+size = Vector2(1614, 429.286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kdst"]
 size = Vector2(228, 286)
 
 [node name="Bear" type="CharacterBody2D" groups=["Enemies"]]
+scale = Vector2(1.75, 1.75)
 collision_mask = 3
 script = ExtResource("1_4je60")
 
@@ -38,7 +39,8 @@ sprite_frames = SubResource("SpriteFrames_dyotg")
 [node name="Player Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
-shape = SubResource("CircleShape2D_qma5n")
+position = Vector2(0, -35.6428)
+shape = SubResource("RectangleShape2D_hj4fe")
 
 [node name="Player Punch" type="Area2D" parent="."]
 
