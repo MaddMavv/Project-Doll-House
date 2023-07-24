@@ -1,5 +1,6 @@
 extends Node2D
 
+var waiting = 0;
 
 var knock = preload("res://knockback_projectile.tscn")
 var stun = preload("res://stun_projectile.tscn")
@@ -12,15 +13,21 @@ var whichTrain
 var trainWait = 0
 var here = false;
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$bossCam.make_current()
+	player = get_node("../Boss/BarB")
+	Game.boss = true;
+
 func attack():
 		var knockTemp = knock.instantiate()
 		add_child(knockTemp)
-		player = get_node("../Level 2/BarB")
+		player = get_node("../Boss/BarB")
 		knockTemp.global_position = player.position
 func stunAttack():
 		var stunTemp = stun.instantiate()
 		add_child(stunTemp)
-		player = get_node("../Level 2/BarB")
+		player = get_node("../Boss/BarB")
 		stunTemp.global_position = player.position
 		
 func _physics_process(delta):
@@ -37,26 +44,22 @@ func _physics_process(delta):
 			stunAttack();
 		pain = false;
 		howLong = 0
-		
-
-func _on_train_moment_timeout():
-	var trainTemp = train.instantiate()
-	add_child(trainTemp)
-	if whichTrain == 1:
-		trainTemp.position = Vector2(26000, -1000)
-	if whichTrain == 2:
-		trainTemp.position = Vector2(26000, -200)
-	if whichTrain == 3:
-		trainTemp.position = Vector2(26000, 650)
 	
-	if here == true:
-		$Warning.start()
+	if Input.is_action_just_pressed("shout") && waiting <= 0:
+		shout()
+		waiting = 1
+	if waiting > 0:
+		waiting -= delta;
+		
+	print(waiting)
 
-func _on_warning_timeout():
+
+func shout():
 	var warnTemp = warn.instantiate()
 	add_child(warnTemp)
-	player = get_node("../Level 2/BarB")
+	player = get_node("../Boss/BarB")
 	
+	print("test")
 	if player.position.y < -650:
 		warnTemp.position = Vector2(player.position.x, -1000)
 		whichTrain = 1
@@ -68,17 +71,15 @@ func _on_warning_timeout():
 		whichTrain = 3
 		
 	$TrainMoment.start()
-		
-		
 
+func _on_train_moment_timeout():
+	var trainTemp = train.instantiate()
+	add_child(trainTemp)
+	trainTemp.scale.x = -1;
+	if whichTrain == 1:
+		trainTemp.position = Vector2(400, -1000)
+	if whichTrain == 2:
+		trainTemp.position = Vector2(400, -200)
+	if whichTrain == 3:
+		trainTemp.position = Vector2(400, 650)
 
-func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.name == "BarB":
-		here = true
-		$Warning.start()
-
-
-func _on_area_2d_body_exited(body):
-	if body.name == "BarB":
-		here = false;
-		player = get_node("../Level 2/BarB")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=35 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
@@ -74,8 +74,11 @@ size = Vector2(136.045, 334.262)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjway"]
 size = Vector2(136.045, 295.497)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gqemv"]
-radius = 12623.8
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
+size = Vector2(27211, 3430.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk56p"]
+size = Vector2(721.247, 2808.54)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_106fe"]
 blend_mode = 2
@@ -2633,61 +2636,61 @@ one_way_collision = true
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
 position = Vector2(590.001, -1626)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28364, -546)
 scale = Vector2(2.83285, 2.83285)
 collision_layer = 2
 script = ExtResource("4_54ugp")
 
-[node name="Drone" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Drone" type="CollisionShape2D" parent="GREEN DRONE"]
 position = Vector2(-1.30762, 309.759)
 rotation = 3.14159
 scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_cl11q")
 
-[node name="Wall1" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Wall1" type="CollisionShape2D" parent="GREEN DRONE"]
 position = Vector2(-569.744, -30.3579)
 rotation = 3.14159
 scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_4abwr")
 disabled = true
 
-[node name="Wall2" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Wall2" type="CollisionShape2D" parent="GREEN DRONE"]
 position = Vector2(554.562, -26.4751)
 rotation = 3.14159
 scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_0b1q6")
 disabled = true
 
-[node name="Icon5" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon5" type="Sprite2D" parent="GREEN DRONE"]
 material = SubResource("CanvasItemMaterial_kmt21")
 position = Vector2(-1.03784, 308.58)
 scale = Vector2(7.93666, 1.33594)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon6" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon6" type="Sprite2D" parent="GREEN DRONE"]
 position = Vector2(-449.988, 211.08)
 scale = Vector2(0.484375, 1.33594)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon7" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon7" type="Sprite2D" parent="GREEN DRONE"]
 position = Vector2(438.992, 212.933)
 scale = Vector2(0.484375, 1.33594)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon8" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon8" type="Sprite2D" parent="GREEN DRONE"]
 position = Vector2(438.993, 152.183)
 scale = Vector2(1.71875, 0.386719)
 texture = ExtResource("3_mrvp6")
 
-[node name="Icon9" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon9" type="Sprite2D" parent="GREEN DRONE"]
 position = Vector2(-449.987, 144.08)
 scale = Vector2(1.71875, 0.386719)
 texture = ExtResource("3_mrvp6")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="GREEN DRONE"]
 
-[node name="Player Detection" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="Player Detection" type="CollisionShape2D" parent="GREEN DRONE/Area2D"]
 position = Vector2(61.333, -99.1932)
 shape = SubResource("RectangleShape2D_s1xew")
 
@@ -3572,7 +3575,16 @@ texture = ExtResource("3_mrvp6")
 [node name="Area2D" type="Area2D" parent="Placeholders/Cop8/Icon9"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholders/Cop8/Icon9/Area2D"]
-shape = SubResource("CircleShape2D_gqemv")
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8ga1s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Placeholders/Cop8"]
+position = Vector2(-11147, 608)
+collision_mask = 4
+
+[node name="byeTrain" type="CollisionShape2D" parent="Placeholders/Cop8/StaticBody2D"]
+position = Vector2(2107, -373.728)
+shape = SubResource("RectangleShape2D_dk56p")
 
 [node name="Icon10" type="Sprite2D" parent="Placeholders/Cop8"]
 position = Vector2(2548, -1213)
@@ -4403,8 +4415,11 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(7472, -960)
+
+[connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Placeholders/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_shape_entered" from="Placeholders/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
