@@ -178,6 +178,7 @@ position = Vector2(3446.78, 1236.05)
 shape = SubResource("RectangleShape2D_kjkb2")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs"]
+position = Vector2(0.627411, -4.32983)
 collision_layer = 2
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
@@ -699,7 +700,7 @@ position = Vector2(-95.4682, -11.032)
 shape = SubResource("RectangleShape2D_qeugp")
 
 [node name="BarB" parent="." groups=["Player"] instance=ExtResource("2_plijl")]
-position = Vector2(3040, -256)
+position = Vector2(2264, 902)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
