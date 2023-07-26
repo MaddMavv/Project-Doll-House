@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=67 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
@@ -14,6 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://db07m7ctkl7x1" path="res://redDrone.tscn" id="10_lhnsx"]
 [ext_resource type="PackedScene" uid="uid://d4ggx1n2o3dix" path="res://L block.tscn" id="13_2uue8"]
 [ext_resource type="PackedScene" uid="uid://7ue7kdbpu0t3" path="res://blueDrone.tscn" id="14_r1v73"]
+[ext_resource type="PackedScene" uid="uid://iepj63r3yt31" path="res://cop.tscn" id="15_xdgsa"]
+[ext_resource type="Script" path="res://HP.gd" id="16_y8jng"]
+[ext_resource type="Texture2D" uid="uid://dcgkp6rrej3ny" path="res://assests/full.png" id="17_bi7oo"]
+[ext_resource type="Texture2D" uid="uid://b7jqjio4ewe7h" path="res://assests/ow1.png" id="18_wvwyg"]
+[ext_resource type="Texture2D" uid="uid://cwendh3na5lco" path="res://assests/ow2.png" id="19_nlgot"]
+[ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
+[ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -158,6 +165,41 @@ size = Vector2(462.5, 6.46875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccx27"]
 size = Vector2(266.748, 20.3211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhqwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_bi7oo")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_wvwyg")
+}],
+"loop": true,
+"name": &"ow1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_nlgot")
+}],
+"loop": true,
+"name": &"ow2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fe0k8")
+}],
+"loop": true,
+"name": &"ow3",
+"speed": 5.0
+}]
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
@@ -1285,15 +1327,6 @@ shape = SubResource("RectangleShape2D_kmmmv")
 
 [node name="Melee Cops" type="Node2D" parent="Baddies"]
 
-[node name="Bear" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
-position = Vector2(5633, 611)
-
-[node name="Bear2" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
-position = Vector2(3641, 561)
-
-[node name="Bear4" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
-position = Vector2(7759, -267)
-
 [node name="Bear5" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
 position = Vector2(11153, 23)
 
@@ -1319,6 +1352,20 @@ position = Vector2(58670, -1179)
 
 [node name="redDrone" parent="Baddies/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(6758, -1010)
+
+[node name="cops" type="Node2D" parent="Baddies"]
+
+[node name="cop" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(7641, -369)
+scale = Vector2(2.5, 2.5)
+
+[node name="cop3" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(5348, 587)
+scale = Vector2(2.5, 2.5)
+
+[node name="cop2" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(3429, 592)
+scale = Vector2(2.5, 2.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(22970, -1035)
@@ -2494,6 +2541,22 @@ texture = ExtResource("9_13sgr")
 
 [node name="blueDrone" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(5273, -1107)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="UI"]
+visible = false
+offset_right = 199.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 81
+text = "hehe"
+script = ExtResource("16_y8jng")
+
+[node name="health" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1331, -646)
+sprite_frames = SubResource("SpriteFrames_mhqwo")
+animation = &"full"
+script = ExtResource("21_wn0mh")
 
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]
