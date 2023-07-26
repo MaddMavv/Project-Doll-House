@@ -10,19 +10,27 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("BarB")
 var barb
 
-var left = 210
-var right = 200
+#new code for drone movement
+var targetX
+var radius = 500
+var h_move = Vector2(0.00, 0.00)
+var add = Vector2(0.01, 0.00)
+
+#old movement code but leaving it in for now
+#var left = 210
+#var right = 200
+
 var start
 var chase = false
 var stunned = false
 var home = true
 #for when stunned
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var fall = Vector2(0, 200)
+var fall = Vector2(0, 400)
 
 
 func _ready():
-	velocity = Vector2(150, 0)
+	#velocity = Vector2(150, 0)
 	start = get_global_position()
 	
 	
@@ -36,9 +44,15 @@ func move(delta):
 	
 	if stunned == false and home == true:
 		#moves up and down
-		position += velocity * delta
-		if position.x > start.x + right or position.x < start.x - left:
-			velocity.x *= -1
+		targetX = sin(h_move.x) * radius * delta
+		position.x += targetX
+		h_move.x += add.x
+		#print(position.y)
+		
+		#old movement
+		#position += velocity * delta
+		#if position.x > start.x + right or position.x < start.x - left:
+		#	velocity.x *= -1
 			
 	if stunned == true:
 		home = false
@@ -72,7 +86,7 @@ func _on_timer_timeout():
 func stun():
 	#press TAB to stun drone
 	####will be replaced with actual stun####
-	if chase == true and Input.is_action_just_pressed("ui_focus_next"):
+	if Input.is_action_just_pressed("ui_focus_next"):
 		stunned = true
 		$StunTimer.start()
 		$Timer.stop()
