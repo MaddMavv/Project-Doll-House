@@ -19,11 +19,13 @@ var home = true
 var direction = -1
 #for when stunned
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var on = false;
 
 
 func _ready():
 	velocity = Vector2(0, 200)
 	start = get_global_position()
+	barb = get_node("../../../BarB")
 	
 	
 func _process(delta):
@@ -31,8 +33,11 @@ func _process(delta):
 	shoot_at_player()
 	velocity.x = 0
 	if stun == false:
-		#moves up and down
+		
 		position.y += direction*1
+		if on == true && direction == -1:
+			barb.position.y += direction*1
+		#moves up and down
 		velocity.y = 0
 	if stun == true:
 		velocity.y += gravity*delta
@@ -118,3 +123,13 @@ func _on_switch_direction_area_shape_entered(area_rid, area, area_shape_index, l
 	if area.name == "down":
 		direction = 1;
 		
+
+
+func _on_player_move_body_entered(body):
+	if body.name == "BarB":
+		on=true
+		
+
+func _on_player_move_body_exited(body):
+	if body.name == "BarB":
+		on=false

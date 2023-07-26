@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://db07m7ctkl7x1"]
+[gd_scene load_steps=9 format=3 uid="uid://db07m7ctkl7x1"]
 
 [ext_resource type="Script" path="res://redDrone.gd" id="1_lsrtv"]
 [ext_resource type="Texture2D" uid="uid://dutx35llc5ktu" path="res://assests/Red Drone F1.png" id="2_gwc44"]
@@ -26,6 +26,9 @@ size = Vector2(499.75, 163.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgk86"]
 size = Vector2(100.5, 31.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agbgi"]
+size = Vector2(100, 8)
 
 [node name="redDrone" type="CharacterBody2D" groups=["Enemies"]]
 scale = Vector2(4, 4)
@@ -70,8 +73,17 @@ position = Vector2(0, 4.25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="switchDirection"]
 shape = SubResource("RectangleShape2D_fgk86")
 
+[node name="playerMove" type="Area2D" parent="."]
+position = Vector2(0, 4.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerMove"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_agbgi")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
 [connection signal="area_shape_entered" from="switchDirection" to="." method="_on_switch_direction_area_shape_entered"]
+[connection signal="body_entered" from="playerMove" to="." method="_on_player_move_body_entered"]
+[connection signal="body_exited" from="playerMove" to="." method="_on_player_move_body_exited"]
