@@ -23,6 +23,7 @@ Game="*res://game.gd"
 
 window/size/viewport_width=2880
 window/size/viewport_height=1620
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

@@ -5,9 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_6pn6y"]
 [ext_resource type="Texture2D" uid="uid://b25o0xxmbywhe" path="res://assests/Background Menu.png" id="4_mc4on"]
 
-[node name="Node2D" type="Node2D"]
-scale = Vector2(1.54535, 1.54663)
+[node name="Node" type="Node"]
 script = ExtResource("1_i2nf6")
+
+[node name="BackgroundMenu" type="Sprite2D" parent="."]
+position = Vector2(634.532, 292.248)
+scale = Vector2(0.459669, 0.459669)
+texture = ExtResource("4_mc4on")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -21,26 +25,23 @@ theme_override_font_sizes/font_size = 101
 text = "Leave"
 
 [node name="Play" type="Button" parent="ParallaxBackground"]
-offset_left = 1839.0
-offset_top = 1351.0
-offset_right = 2651.0
-offset_bottom = 1588.0
+offset_left = 1111.0
+offset_top = 791.0
+offset_right = 1923.0
+offset_bottom = 1028.0
 text = "Play"
 
 [node name="BarBDemoImg" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(607.333, 429)
 scale = Vector2(0.523457, 0.523457)
 texture = ExtResource("1_byej3")
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1510, 357)
 scale = Vector2(3.39062, 3.39062)
 texture = ExtResource("2_6pn6y")
-
-[node name="BackgroundMenu" type="Sprite2D" parent="."]
-position = Vector2(933.122, 497.857)
-scale = Vector2(0.678256, 0.678256)
-texture = ExtResource("4_mc4on")
 
 [connection signal="pressed" from="ParallaxBackground/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ParallaxBackground/Play" to="." method="_on_play_pressed"]
