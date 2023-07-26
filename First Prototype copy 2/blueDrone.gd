@@ -22,7 +22,7 @@ var add = Vector2(0.01, 0.00)
 
 var start
 var chase = false
-var stunned = false
+var stun = false
 var home = true
 #for when stunned
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -37,12 +37,11 @@ func _ready():
 func _process(delta):
 	move(delta)
 	shoot_at_player()
-	stun()
 	
 	
 func move(delta):
 	
-	if stunned == false and home == true:
+	if stun == false and home == true:
 		#moves up and down
 		targetX = sin(h_move.x) * radius * delta
 		position.x += targetX
@@ -54,15 +53,15 @@ func move(delta):
 		#if position.x > start.x + right or position.x < start.x - left:
 		#	velocity.x *= -1
 			
-	if stunned == true:
+	if stun == true:
 		home = false
 		#falls to the ground
 		move_and_collide(fall * delta)
 
-	elif stunned == false and home == false:
+	elif stun == false and home == false:
 		position.y -= 225 * delta
 	
-	if stunned == false and position.y < start.y:
+	if stun == false and position.y < start.y:
 		home = true
 	
 	
@@ -83,18 +82,17 @@ func _on_timer_timeout():
 		shoot() 
 	
 	
-func stun():
+func stunned():
 	#press TAB to stun drone
 	####will be replaced with actual stun####
-	if Input.is_action_just_pressed("ui_focus_next"):
-		stunned = true
-		$StunTimer.start()
-		$Timer.stop()
-	
+	stun = true
+	$StunTimer.start()
+	$Timer.stop()
+	$AnimatedSprite2D.play("Stunned")
 		
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
-		if stunned == false:
+		if stun == false:
 			chase = true
 			$Timer.start()
 	
@@ -107,6 +105,7 @@ func _on_player_detection_body_exited(body):
 
 
 func _on_stun_timer_timeout():
-	stunned = false
+	stun = false
 	if chase == true:
 		$Timer.start()
+	$AnimatedSprite2D.play("Flying")

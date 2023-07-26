@@ -89,7 +89,7 @@ func stunned():
 		stun = true
 		$StunTimer.start()
 		$Timer.stop()
-	
+		$AnimatedSprite2D.play("Stunned")
 		
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -106,6 +106,7 @@ func _on_player_detection_body_exited(body):
 
 func _on_stun_timer_timeout():
 	stun = false
+	$AnimatedSprite2D.play("Flying")
 	if chase == true:
 		$Timer.start()
 		
