@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://iepj63r3yt31"]
 
 [ext_resource type="Script" path="res://cop.gd" id="1_u4vm7"]
-[ext_resource type="Texture2D" uid="uid://blp825ml8pmxh" path="res://assests/cop.png" id="2_nwekm"]
+[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_8jdol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5q"]
 size = Vector2(102, 247)
@@ -10,7 +10,7 @@ size = Vector2(102, 247)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nwekm")
+"texture": ExtResource("2_8jdol")
 }],
 "loop": true,
 "name": &"Idle",
@@ -18,13 +18,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4g5"]
-size = Vector2(3470.25, 1113)
+size = Vector2(2170, 294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
-size = Vector2(1016.71, 256.75)
+size = Vector2(530, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
-size = Vector2(1476.64, 804.039)
+size = Vector2(848, 292)
 
 [node name="cop" type="CharacterBody2D"]
 collision_mask = 3

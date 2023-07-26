@@ -5,17 +5,17 @@ extends CharacterBody2D
 @onready var spawn_point: Marker2D = $SpawnPoint
 @onready var player = get_tree().get_first_node_in_group("BarB")
 
-var SPEED = 250
+var SPEED = 900
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var run = false
 var stop = false
-var runLeft = 300
-var runRight = 300
+var runLeft = 600
+var runRight = 600
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
-
+	player = get_node("../../../BarB")
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -28,7 +28,7 @@ func _physics_process(delta):
 func chase_after_player():	
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../BarB")
+		#player = get_node("../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
@@ -47,7 +47,7 @@ func stop_and_attack():
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../BarB")
+		#player = get_node("../BarB")
 		if player.position.x < position.x:
 			velocity.x += runRight * delta
 		if player.position.x > position.x:
