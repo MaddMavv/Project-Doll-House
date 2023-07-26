@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs6ewwuc81mrb"]
+
+[ext_resource type="Script" path="res://Pause Menu/Pause_Menu.gd" id="1_a1n05"]
+[ext_resource type="Texture2D" uid="uid://ddor506su82ot" path="res://Pause Menu/Tab.png" id="2_c5wne"]
+
+[node name="Pause_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a1n05")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.145098)
+
+[node name="Paused" type="Label" parent="Background"]
+layout_mode = 2
+offset_left = 516.0
+offset_top = 226.0
+offset_right = 636.0
+offset_bottom = 252.0
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 545.0
+offset_top = 95.0
+offset_right = 2125.0
+offset_bottom = 1495.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.239999, 0.239999)
+texture = ExtResource("2_c5wne")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 516.0
+offset_top = 343.0
+offset_right = 636.0
+offset_bottom = 374.0
+text = "Quit"
+
+[node name="Resume Game" type="Button" parent="."]
+layout_mode = 2
+offset_left = 517.0
+offset_top = 292.0
+offset_right = 637.0
+offset_bottom = 323.0
+text = "Resume Game
+"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Resume Game" to="." method="_on_resume_game_pressed"]
