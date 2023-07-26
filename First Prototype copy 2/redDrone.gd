@@ -14,32 +14,42 @@ var top = 250
 var bottom = 150
 var start
 var chase = false
-var stun = true
+var stun = false
 var home = true
+var direction = -1
 #for when stunned
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var on = false;
 
 
 func _ready():
 	velocity = Vector2(0, 200)
 	start = get_global_position()
-	$StunTimer.start()
+	barb = get_node("../../../BarB")
 	
 	
 func _process(delta):
 	move(delta)
 	shoot_at_player()
+	velocity.x = 0
+	if stun == false:
+		
+		position.y += direction*1
+		if on == true && direction == -1:
+			barb.position.y += direction*1
+		#moves up and down
+		velocity.y = 0
+	if stun == true:
+		velocity.y += gravity*delta
 	
-	
-	
+	move_and_slide()
 	
 func move(delta):
 	
-	if stun == false and home == true:
-		#moves up and down
-		position += velocity * delta
-		if position.y > start.y + bottom or position.y < start.y - top:
-			velocity.y *= -1
+	
+		#position += velocity * delta
+		#if position.y > start.y + bottom or position.y < start.y - top:
+		#	velocity.y *= -1
 			
 	if stun == true:
 		home = false
@@ -49,10 +59,10 @@ func move(delta):
 		else:
 			move_and_collide(velocity * 2 * delta)
 	elif stun == false and home == false:
-		position.y -= 225 * delta
+		pass#position.y -= 225 * delta
 	
-	if stun == false and position.y < start.y + bottom:
-		home = true
+	#if stun == false and position.y < start.y + bottom:
+	#	home = true
 	
 	
 func shoot_at_player():
@@ -104,3 +114,22 @@ func isHitLeft():
 	pass;
 func isHitRight():
 	pass;
+
+
+func _on_switch_direction_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.name == "up":
+		direction = -1;
+		
+	if area.name == "down":
+		direction = 1;
+		
+
+
+func _on_player_move_body_entered(body):
+	if body.name == "BarB":
+		on=true
+		
+
+func _on_player_move_body_exited(body):
+	if body.name == "BarB":
+		on=false
