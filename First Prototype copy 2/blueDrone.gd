@@ -108,3 +108,6 @@ func _on_stun_timer_timeout():
 	if chase == true:
 		$Timer.start()
 	$AnimatedSprite2D.play("Flying")
+	
+func death():
+	pass;

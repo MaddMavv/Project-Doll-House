@@ -18,15 +18,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4g5"]
-size = Vector2(2170, 294)
+size = Vector2(2170, 287)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
 size = Vector2(530, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
-size = Vector2(848, 292)
+size = Vector2(848, 269)
 
-[node name="cop" type="CharacterBody2D"]
+[node name="cop" type="CharacterBody2D" groups=["Enemies"]]
 collision_mask = 3
 script = ExtResource("1_u4vm7")
 metadata/_edit_lock_ = true
@@ -44,7 +44,7 @@ animation = &"Idle"
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(21, 15)
+position = Vector2(21, 11.5)
 shape = SubResource("RectangleShape2D_yc4g5")
 metadata/_edit_lock_ = true
 
@@ -57,7 +57,7 @@ shape = SubResource("RectangleShape2D_2reyi")
 [node name="Stop" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
-position = Vector2(-10, -3)
+position = Vector2(-10, 8.5)
 shape = SubResource("RectangleShape2D_cmqe0")
 
 [node name="Timer" type="Timer" parent="."]
@@ -67,6 +67,10 @@ wait_time = 3.0
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-88, -135)
 
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="RunAway" to="." method="_on_run_away_body_entered"]
@@ -74,3 +78,4 @@ position = Vector2(-88, -135)
 [connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
 [connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

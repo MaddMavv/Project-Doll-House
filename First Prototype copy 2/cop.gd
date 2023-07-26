@@ -13,16 +13,30 @@ var stop = false
 var runLeft = 600
 var runRight = 600
 
+var veloReal = 0;
+var veloOw = 0;
+
+var veloRealY = 0;
+var veloOwY = 0;
+
+var stun = false;
+
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
 	player = get_node("../../../BarB")
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	chase_after_player()
-	stop_and_attack()
-	run_from_player(delta)
+	veloRealY += gravity * delta
+	if stun == false:
+		chase_after_player()
+		stop_and_attack()
+		run_from_player(delta)
 	move_and_slide()
+	velocity.x = veloReal+veloOw;
+	velocity.y = veloRealY+veloOwY;
+	
+	veloOw = move_toward(veloOw, 0, 50)
+	veloOwY = move_toward(veloOwY, 0, 50)
 	
 	
 func chase_after_player():	
@@ -34,24 +48,24 @@ func chase_after_player():
 			get_node("AnimatedSprite2D").flip_h = true
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
-		velocity.x = direction.x * SPEED
+		veloReal = direction.x * SPEED
 	else:
 		get_node("AnimatedSprite2D").play("Idle")
-		velocity.x = 0
+		veloReal = 0
 		
 func stop_and_attack():
 	if stop == true:
 		get_node("AnimatedSprite2D").play("Idle")
-		velocity.x = 0
+		veloReal = 0
 		
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
 		#player = get_node("../BarB")
 		if player.position.x < position.x:
-			velocity.x += runRight * delta
+			veloReal += runRight * delta
 		if player.position.x > position.x:
-			velocity.x -= runLeft * delta
+			veloReal -= runLeft * delta
 		position.x += velocity.x
 		#if direction.x > 0:
 		#	get_node("AnimatedSprite2D").flip_h = false
@@ -96,3 +110,25 @@ func shoot():
 
 func _on_timer_timeout():
 	shoot()
+	
+func isHitLeft():
+		veloOw = 2000;
+		veloOwY = -300;
+	
+func isHitRight():
+		veloOw = -2000;
+		veloOwY = -300;
+	
+func stunned():
+	stun = true;
+	veloReal = 0;
+	veloRealY = 0;
+	#get_node("AnimatedSprite2D").play("Stunned")
+	$StunTimer.start()
+
+
+func _on_stun_timer_timeout():
+	stun = false;
+
+func death():
+	self.queue_free()
