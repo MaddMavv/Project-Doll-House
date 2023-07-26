@@ -42,7 +42,7 @@ script = ExtResource("1_mi1ks")
 position = Vector2(-3.8147e-06, -0.999996)
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_r28yn")
-animation = &"Stunned"
+animation = &"Flying"
 autoplay = "Flying"
 metadata/_edit_lock_ = true
 
