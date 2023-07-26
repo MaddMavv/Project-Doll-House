@@ -10,8 +10,17 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("BarB")
 var barb
 
-var top = 250
-var bottom = 150
+#new drone movement
+var targetY
+@export var range = Vector2(0, 500)
+@export var v_move = Vector2(0.00, 0.00)
+@export var add = Vector2(0.00, 0.01)
+var fall = Vector2(0, 400)
+
+#old script - track changes for now 
+#var top = 250
+#var bottom = 150
+
 var start
 var chase = false
 var stun = false
@@ -23,7 +32,7 @@ var on = false;
 
 
 func _ready():
-	velocity = Vector2(0, 200)
+	#velocity = Vector2(0, 200)
 	start = get_global_position()
 	barb = get_node("../../../BarB")
 	
@@ -31,39 +40,25 @@ func _ready():
 func _process(delta):
 	move(delta)
 	shoot_at_player()
-	velocity.x = 0
-	if stun == false:
-		
-		position.y += direction*1
-		if on == true && direction == -1:
-			barb.position.y += direction*1
-		#moves up and down
-		velocity.y = 0
-	if stun == true:
-		velocity.y += gravity*delta
-	
-	move_and_slide()
 	
 func move(delta):
-	
-	
-		#position += velocity * delta
-		#if position.y > start.y + bottom or position.y < start.y - top:
-		#	velocity.y *= -1
+	if stun == false and home == true:
+		#moves up and down
+		targetY = sin(v_move.y) * range.y * delta
+		position.y += targetY
+		v_move.y += add.y
+		#print(position.y)
 			
 	if stun == true:
 		home = false
 		#falls to the ground
-		if velocity.y == -200:
-			move_and_collide(velocity * -2 * delta)
-		else:
-			move_and_collide(velocity * 2 * delta)
+		move_and_collide(fall * delta)
+
 	elif stun == false and home == false:
-		pass#position.y -= 225 * delta
+		position.y -= 225 * delta
 	
-	#if stun == false and position.y < start.y + bottom:
-	#	home = true
-	
+	if stun == false and position.y < start.y:
+		home = true
 	
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
@@ -115,15 +110,6 @@ func isHitLeft():
 	pass;
 func isHitRight():
 	pass;
-
-
-func _on_switch_direction_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.name == "up":
-		direction = -1;
-		
-	if area.name == "down":
-		direction = 1;
-		
 
 
 func _on_player_move_body_entered(body):

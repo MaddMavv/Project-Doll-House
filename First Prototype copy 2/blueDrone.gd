@@ -12,10 +12,9 @@ var barb
 
 #new code for drone movement
 var targetX
-var radius = 500
-var h_move = Vector2(0.00, 0.00)
-var add = Vector2(0.01, 0.00)
-
+@export var range = Vector2(500, 0)
+@export var h_move = Vector2(0.00, 0.00)
+@export var add = Vector2(0.01, 0.00)
 #old movement code but leaving it in for now
 #var left = 210
 #var right = 200
@@ -43,7 +42,7 @@ func move(delta):
 	
 	if stun == false and home == true:
 		#moves up and down
-		targetX = sin(h_move.x) * radius * delta
+		targetX = sin(h_move.x) * range.x * delta
 		position.x += targetX
 		h_move.x += add.x
 		#print(position.y)
