@@ -96,6 +96,7 @@ func _on_player_detection_body_entered(body):
 		if stunned == false:
 			chase = true
 			$Timer.start()
+	
 			
 
 func _on_player_detection_body_exited(body):
