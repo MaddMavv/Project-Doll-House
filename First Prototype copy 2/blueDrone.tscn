@@ -1,17 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://7ue7kdbpu0t3"]
+[gd_scene load_steps=8 format=3 uid="uid://7ue7kdbpu0t3"]
 
 [ext_resource type="Script" path="res://blueDrone.gd" id="1_mi1ks"]
 [ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_4pkle"]
+[ext_resource type="Texture2D" uid="uid://cnh8q2s7r1llg" path="res://assests/Blue Drone F1.png" id="3_flkhx"]
+[ext_resource type="Texture2D" uid="uid://bos8pva0msbbn" path="res://assests/Blue Drone F2.png" id="4_us00m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r28yn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_4pkle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_flkhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_us00m")
 }],
 "loop": true,
 "name": &"Flying",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcvom"]
@@ -28,15 +36,17 @@ script = ExtResource("1_mi1ks")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.8147e-06, -0.999996)
-scale = Vector2(0.6875, 0.234375)
+scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_r28yn")
 animation = &"Flying"
+autoplay = "Flying"
+frame = 2
+frame_progress = 0.269373
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(-0.5, 5)
 shape = SubResource("RectangleShape2D_rcvom")
-metadata/_edit_lock_ = true
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 metadata/_edit_lock_ = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=59 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
@@ -158,8 +158,6 @@ size = Vector2(462.5, 6.46875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccx27"]
 size = Vector2(266.748, 20.3211)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dse8p"]
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
@@ -2496,13 +2494,6 @@ texture = ExtResource("9_13sgr")
 
 [node name="blueDrone" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(5273, -1107)
-
-[node name="rads" type="Area2D" parent="."]
-
-[node name="rads" type="CollisionShape2D" parent="rads"]
-position = Vector2(5264, -1102)
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_dse8p")
 
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]
