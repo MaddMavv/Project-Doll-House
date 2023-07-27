@@ -8,7 +8,7 @@ var help = 0
 
 
 func _physics_process(delta):
-	scale += Vector2(1,1);
+	scale += Vector2(0.6,0.6);
 
 
 func _on_timer_timeout():
