@@ -31,7 +31,8 @@ func _physics_process(delta):
 		print(howLong)
 	if Input.is_action_just_released("attack"):
 		if howLong < 30:
-			attack();
+			pass
+			#attack();
 		if howLong >= 30:
 			print("cool ig")
 			stunAttack();
