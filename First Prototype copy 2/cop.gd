@@ -12,63 +12,48 @@ var run = false
 var stop = false
 var runLeft = 600
 var runRight = 600
-
-var veloReal = 0;
-var veloOw = 0;
-
-var veloRealY = 0;
-var veloOwY = 0;
-
-var stun = false;
+var stun = false
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
-	player = get_node("../../../BarB")
+
 
 func _physics_process(delta):
-	veloRealY += gravity * delta
+	velocity.y += gravity * delta
 	if stun == false:
 		chase_after_player()
 		stop_and_attack()
 		run_from_player(delta)
-	velocity.x = veloReal+veloOw
-	velocity.y = veloRealY+veloOwY
-	print(velocity)
-	
-	veloOw = move_toward(veloOw, 0, 100)
-	veloOwY = move_toward(veloOwY, 0, 50)
-	
-	
 	move_and_slide()
 	
 	
 func chase_after_player():	
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		#player = get_node("../BarB")
+		player = get_node("../../../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
-		veloReal = direction.x * SPEED
+		velocity.x = direction.x * SPEED
 	else:
 		get_node("AnimatedSprite2D").play("Idle")
-		veloReal = 0
+		velocity.x = 0
 		
 func stop_and_attack():
 	if stop == true:
 		get_node("AnimatedSprite2D").play("Idle")
-		veloReal = 0
+		velocity.x = 0
 		
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		#player = get_node("../BarB")
+		player = get_node("../../../BarB")
 		if player.position.x < position.x:
-			veloReal += runRight * delta
+			velocity.x += runRight * delta
 		if player.position.x > position.x:
-			veloReal -= runLeft * delta
+			velocity.x -= runLeft * delta
 		position.x += velocity.x
 		#if direction.x > 0:
 		#	get_node("AnimatedSprite2D").flip_h = false
@@ -113,21 +98,12 @@ func shoot():
 
 func _on_timer_timeout():
 	shoot()
-	
-func isHitLeft():
-		veloOw = 200;
-		veloOwY = -300;
-		#run = false
-	
-func isHitRight():
-		veloOw = -200;
-		veloOwY = -300;
-		#run = false
+
 	
 func stunned():
 	stun = true;
-	veloReal = 0;
-	veloRealY = 0;
+	velocity.x = 0;
+	velocity.y = 0;
 	#get_node("AnimatedSprite2D").play("Stunned")
 	$StunTimer.start()
 
