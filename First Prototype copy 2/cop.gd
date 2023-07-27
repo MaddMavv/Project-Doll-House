@@ -94,8 +94,10 @@ func _on_run_away_body_exited(body):
 		
 func shoot():
 	var bullet = bullet_scene.instantiate()
+	bullet.rotation = 0.0
 	bullet.position = spawn_point.global_position
-	bullet.direction = global_position.direction_to(player.position)
+	var rVect := Vector2(-1,0)
+	bullet.direction = global_position.direction_to(rVect)
 	owner.add_child(bullet)
 
 func _on_timer_timeout():
