@@ -31,12 +31,15 @@ func _physics_process(delta):
 		chase_after_player()
 		stop_and_attack()
 		run_from_player(delta)
-	move_and_slide()
-	velocity.x = veloReal+veloOw;
-	velocity.y = veloRealY+veloOwY;
+	velocity.x = veloReal+veloOw
+	velocity.y = veloRealY+veloOwY
+	print(velocity)
 	
-	veloOw = move_toward(veloOw, 0, 50)
+	veloOw = move_toward(veloOw, 0, 100)
 	veloOwY = move_toward(veloOwY, 0, 50)
+	
+	
+	move_and_slide()
 	
 	
 func chase_after_player():	
@@ -112,12 +115,14 @@ func _on_timer_timeout():
 	shoot()
 	
 func isHitLeft():
-		veloOw = 2000;
+		veloOw = 200;
 		veloOwY = -300;
+		#run = false
 	
 func isHitRight():
-		veloOw = -2000;
+		veloOw = -200;
 		veloOwY = -300;
+		#run = false
 	
 func stunned():
 	stun = true;
