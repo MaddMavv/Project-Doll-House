@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfufnlkedf67f"]
+
+[ext_resource type="Texture2D" uid="uid://q5yyegtvvwh7" path="res://art shit/s1 .png" id="1_u8rla"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igmkd"]
+atlas = ExtResource("1_u8rla")
+region = Rect2(638, 79, 9, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6uvl"]
+size = Vector2(8.95681, 9.64283)
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(622, 259)
+scale = Vector2(75.25, 1.55556)
+texture = SubResource("AtlasTexture_igmkd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.0398667, 7.62939e-06)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_k6uvl")
+debug_color = Color(0.662745, 0.392157, 0.843137, 0.419608)

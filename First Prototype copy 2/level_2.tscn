@@ -1,9 +1,9 @@
-[gd_scene load_steps=67 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=66 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="3_mrvp6"]
+[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="PackedScene" uid="uid://ctd6j8s2tx5y8" path="res://bear.tscn" id="5_uhf4m"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
@@ -49,13 +49,6 @@ size = Vector2(1.28637, 32.595)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b1q6"]
 size = Vector2(1.72108, 32.595)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kmt21"]
-blend_mode = 1
-light_mode = 1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xew"]
-size = Vector2(760.188, 551.799)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_71xnc"]
 animations = [{
 "frames": [{
@@ -69,6 +62,9 @@ animations = [{
 "name": &"default",
 "speed": 20.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xew"]
+size = Vector2(760.188, 551.799)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7q4g"]
 size = Vector2(105.325, 460.433)
@@ -255,7 +251,7 @@ position = Vector2(952.588, 610.984)
 shape = SubResource("RectangleShape2D_renqu")
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(11529, 469)
+position = Vector2(8036, -1098)
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28907, -1380)
@@ -283,43 +279,18 @@ scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_0b1q6")
 disabled = true
 
-[node name="Icon5" type="Sprite2D" parent="GREEN DRONE"]
-material = SubResource("CanvasItemMaterial_kmt21")
-position = Vector2(-1.03784, 308.58)
-scale = Vector2(7.93666, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="GREEN DRONE"]
-position = Vector2(-449.988, 211.08)
-scale = Vector2(0.484375, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="GREEN DRONE"]
-position = Vector2(438.992, 212.933)
-scale = Vector2(0.484375, 1.33594)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="GREEN DRONE"]
-position = Vector2(438.993, 152.183)
-scale = Vector2(1.71875, 0.386719)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon9" type="Sprite2D" parent="GREEN DRONE"]
-position = Vector2(-449.987, 144.08)
-scale = Vector2(1.71875, 0.386719)
-texture = ExtResource("3_mrvp6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GREEN DRONE"]
+position = Vector2(-1.05859, 306.405)
+scale = Vector2(0.684554, 0.574662)
+sprite_frames = SubResource("SpriteFrames_71xnc")
+autoplay = "default"
+frame_progress = 0.0232401
 
 [node name="Area2D" type="Area2D" parent="GREEN DRONE"]
 
 [node name="Player Detection" type="CollisionShape2D" parent="GREEN DRONE/Area2D"]
 position = Vector2(61.333, -99.1932)
 shape = SubResource("RectangleShape2D_s1xew")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GREEN DRONE"]
-position = Vector2(0, 292.638)
-scale = Vector2(0.46, 0.46)
-sprite_frames = SubResource("SpriteFrames_71xnc")
-autoplay = "default"
 
 [node name="Placeholders" type="Node2D" parent="."]
 
@@ -1372,8 +1343,16 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(12111, -323)
 scale = Vector2(2.5, 2.5)
 
+[node name="cop6" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(29958, -1255)
+scale = Vector2(2.5, 2.5)
+
+[node name="cop7" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(28089, -1198)
+scale = Vector2(2.5, 2.5)
+
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(22970, -1035)
+position = Vector2(29189, -2206)
 scale = Vector2(96.1484, 1)
 texture = ExtResource("3_mrvp6")
 
@@ -2553,7 +2532,7 @@ range = Vector2(650, 0)
 
 [node name="blueDrone3" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(12085, 93)
-range = Vector2(550, 0)
+range = Vector2(650, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

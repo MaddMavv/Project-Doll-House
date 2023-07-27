@@ -1,0 +1,110 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1690493069
+bar_b.gd::GDScript::-1::1690403632::0::1::::<>CharacterBody2D<>::
+bar_b.tscn::PackedScene::7819929728651557110::1690492517::0::1::::<><>::uid://fhr87rg7652t::::res://assests/BarB.png<>res://bar_b.gd<>uid://cn0s754rgf82y::::res://assests/BarB Walk 1.png<>uid://ef3tggspj76a::::res://assests/Barb Walk 2.png<>uid://cfhdcvv5w5d1j::::res://assests/Megaphone.png<>uid://b05vt1suxenl1::::res://assests/jump sound.mp3
+bear.gd::GDScript::-1::1690401666::0::1::::<>CharacterBody2D<>::
+bear.tscn::PackedScene::6114522591022021777::1690401666::0::1::::<><>::res://bear.gd<>uid://h10v34vfnysc::::res://assests/Cop._Demo.png
+blueDrone.gd::GDScript::-1::1690403672::0::1::::<>CharacterBody2D<>::
+blueDrone.tscn::PackedScene::2287631094808465142::1690492517::0::1::::<><>::res://blueDrone.gd<>uid://cnh8q2s7r1llg::::res://assests/Blue Drone F1.png<>uid://bos8pva0msbbn::::res://assests/Blue Drone F2.png
+Boss.gd::GDScript::-1::1690401666::0::1::::<>Node2D<>::
+boss.tscn::PackedScene::646182369334820968::1690401666::0::1::::<><>::res://Boss.gd<>uid://bip0si1wnsla::::res://assests/textured level 2 without jump locations.png<>uid://djobdn0kpo3iw::::res://bar_b.tscn<>uid://hv6m2mpjrh6t::::res://icon.svg
+bullet.gd::GDScript::-1::1689800913::0::1::::Bullet<>Area2D<>::
+bullet.tscn::PackedScene::4297372753871898169::1690492517::0::1::::<><>::res://bullet.gd<>uid://cvpdu8e05j4sn::::res://icon.svg
+CharacterBody2D.gd::GDScript::-1::1689884638::0::1::::<>CharacterBody2D<>::
+cop.gd::GDScript::-1::1690489538::0::1::::<>CharacterBody2D<>::
+cop.tscn::PackedScene::570696759446303166::1690492517::0::1::::<><>::res://cop.gd<>uid://h10v34vfnysc::::res://assests/Cop._Demo.png<>uid://cjd3uwhajuf7e::::res://assests/Cop Stunned F1.png<>uid://x71affs0ec6n::::res://assests/Cop Stunned F2.png
+DroneB.gd::GDScript::-1::1690401666::0::1::::<>CharacterBody2D<>::
+droneB.tscn::PackedScene::5719456283595942916::1690401666::0::1::::<><>::res://DroneB.gd<>uid://daie5uei7e4lm::::res://assests/Drone F1.png<>uid://bpw4pw0aha41r::::res://assests/Drone F2.png<>uid://bxr6a87k14s4h::::res://assests/Drone F3.png
+export_presets.cfg::TextFile::-1::1690487040::0::1::::<><>::
+floor.tscn::PackedScene::1347295007553194858::1690492166::0::1::::<><>::uid://cfufnlkedf67f::::res://practice/sprite_2d.tscn<>uid://cvpdu8e05j4sn::::res://icon.svg
+game.gd::GDScript::-1::1690401666::0::1::::<>Node<>::
+Green Drone.gd::GDScript::-1::1689800944::0::1::::<>Node2D<>::
+health.gd::GDScript::-1::1689800913::0::1::::<>AnimatedSprite2D<>::
+HP.gd::GDScript::-1::1689800913::0::1::::<>Label<>::
+icon.svg::CompressedTexture2D::6277992357578312109::1690492166::1690492168::1::::<><>::
+knockback_projectile.gd::GDScript::-1::1690403887::0::1::::<>CharacterBody2D<>::
+knockback_projectile.tscn::PackedScene::3660271328885660768::1690393168::0::1::::<><>::res://knockback_projectile.gd<>uid://hv6m2mpjrh6t::::res://icon.svg
+L block.tscn::PackedScene::9207531545259142931::1690492517::0::1::::<><>::uid://ror3virm5ave::::res://assests/s1 .png
+Level.gd::GDScript::-1::1690484541::0::1::::<>Node2D<>::
+Level.tscn::PackedScene::3697149043115272204::1690492517::0::1::::<><>::res://Level.gd<>uid://db0urvkygtedx::::res://assests/non textured level.png<>uid://djobdn0kpo3iw::::res://bar_b.tscn<>uid://cxwupqs4m5apy::::res://assests/gray.png<>res://HP.gd<>uid://dcgkp6rrej3ny::::res://assests/full.png<>uid://b7jqjio4ewe7h::::res://assests/ow1.png<>uid://cwendh3na5lco::::res://assests/ow2.png<>uid://c0etm0pbcbkcv::::res://assests/ow3.png<>res://health.gd<>uid://cj6b2lg5ei1s2::::res://train.tscn<>uid://cxcj25w823gqj::::res://warning.tscn<>uid://ctd6j8s2tx5y8::::res://bear.tscn
+level_2.gdshader::Shader::-1::1689800944::0::1::::<><>::
+level_2.tscn::PackedScene::5112897055842101005::1690492517::0::1::::<><>::res://Level.gd<>uid://bip0si1wnsla::::res://assests/textured level 2 without jump locations.png<>uid://djobdn0kpo3iw::::res://bar_b.tscn<>uid://cvpdu8e05j4sn::::res://icon.svg<>res://CharacterBody2D.gd<>uid://ctd6j8s2tx5y8::::res://bear.tscn<>uid://c50ivgweqqfor::::res://assests/Green Drone F1.png<>uid://cnqsuyouetc2o::::res://droneB.tscn<>uid://0q6b1re8qmb7::::res://assests/Green Drone F2.png<>uid://ror3virm5ave::::res://assests/s1 .png<>uid://h10v34vfnysc::::res://assests/Cop._Demo.png<>uid://db07m7ctkl7x1::::res://redDrone.tscn<>uid://d4ggx1n2o3dix::::res://L block.tscn<>uid://7ue7kdbpu0t3::::res://blueDrone.tscn<>uid://iepj63r3yt31::::res://cop.tscn<>res://HP.gd<>uid://dcgkp6rrej3ny::::res://assests/full.png<>uid://b7jqjio4ewe7h::::res://assests/ow1.png<>uid://cwendh3na5lco::::res://assests/ow2.png<>uid://c0etm0pbcbkcv::::res://assests/ow3.png<>res://health.gd
+main menu.gd::GDScript::-1::1690482940::0::1::::<>Node<>::
+main menu.tscn::PackedScene::3698224157502372092::1690492517::0::1::::<><>::uid://f4ufiwl1higg::::res://assests/BarB_Demo_Img.png<>res://main menu.gd<>uid://cvpdu8e05j4sn::::res://icon.svg<>uid://b25o0xxmbywhe::::res://assests/Background Menu.png
+patrol_area.gd::GDScript::-1::1689800913::0::1::::<>Node2D<>::
+patrol_area.tscn::PackedScene::3511857889642319646::1689800913::0::1::::<><>::res://patrol_area.gd
+Project Doll House.tscn::PackedScene::8087217666864239163::1690493032::0::1::::<><>::uid://cq4wujx3j51df::::res://art shit/s1 fixed...question mark.png<>uid://cikwu24u6n6g4::::res://art shit/Ref photos/s2 .png<>uid://dm5f7oom8yriv::::res://art shit/Ref photos/s3 .png<>uid://cvrwr1khl4ypw::::res://art shit/Ref photos/s4 and s5 unfinished.png<>uid://cpchwot4mg1s5::::res://art shit/The actual floor stuff/New tile test-1.png.png<>uid://bwa08p2ovb13v::::res://art shit/box designs/cop box long.png<>uid://dnqtg8wb641gl::::res://art shit/box designs/cop box.png<>uid://ru70ovmrpsuo::::res://art shit/box designs/ACB box diff color-1.png.png<>uid://cgmi00frp25i2::::res://art shit/box designs/sleepy box.png<>uid://cjs6bpwf342je::::res://art shit/box designs/no face box.png<>uid://ba1adp336t4b2::::res://art shit/box designs/barricade.png<>uid://c4fb2i7nkd3ia::::res://art shit/box designs/moldy box.png
+redDrone.gd::GDScript::-1::1690489538::0::1::::<>CharacterBody2D<>::
+redDrone.tscn::PackedScene::7283026396578135552::1690492517::0::1::::<><>::res://redDrone.gd<>uid://dutx35llc5ktu::::res://assests/Red Drone F1.png<>uid://m7hhkb2sx2n8::::res://assests/Red Drone F2.png
+stun_projectile.gd::GDScript::-1::1690489320::0::1::::<>CharacterBody2D<>::
+stun_projectile.tscn::PackedScene::4594796268894625584::1690401666::0::1::::<><>::res://stun_projectile.gd<>uid://hv6m2mpjrh6t::::res://icon.svg
+test_move.gd::GDScript::-1::1690401666::0::1::::<>Node2D<>::
+test_move.tscn::PackedScene::6282894532957385145::1689800913::0::1::::<><>::res://test_move.gd<>uid://hv6m2mpjrh6t::::res://icon.svg
+train.gd::GDScript::-1::1690401666::0::1::::<>CharacterBody2D<>::
+train.tscn::PackedScene::5468646192326976551::1690393169::0::1::::<><>::uid://hv6m2mpjrh6t::::res://icon.svg<>res://train.gd
+trying this stuff with some things.tscn::PackedScene::2552618765039073914::1690492166::0::1::::<><>::uid://cq4wujx3j51df::::res://art shit/s1 fixed...question mark.png<>uid://cpchwot4mg1s5::::res://art shit/The actual floor stuff/New tile test-1.png.png<>uid://cikwu24u6n6g4::::res://art shit/Ref photos/s2 .png<>uid://dm5f7oom8yriv::::res://art shit/Ref photos/s3 .png<>uid://cgsvrllf63jtq::::res://art shit/box designs/ACB.png<>uid://cvrwr1khl4ypw::::res://art shit/Ref photos/s4 and s5 unfinished.png
+warning.gd::GDScript::-1::1689800913::0::1::::<>Node2D<>::
+warning.tscn::PackedScene::6391909807162156401::1689800913::0::1::::<><>::res://warning.gd<>uid://hv6m2mpjrh6t::::res://icon.svg
+::res://art shit/::1690492052
+::res://art shit/box designs/::1690493032
+ACB box diff color-1.png.png::CompressedTexture2D::1236486253880243910::1690492052::1690492059::1::::<><>::
+ACB.png::CompressedTexture2D::5232439239151366634::1690492052::1690492059::1::::<><>::
+barricade.png::CompressedTexture2D::2440100695099544377::1690492052::1690492059::1::::<><>::
+cop box long.png::CompressedTexture2D::3932152929972037389::1690492052::1690492060::1::::<><>::
+cop box no cop.png::CompressedTexture2D::8127375590787945880::1690492052::1690492059::1::::<><>::
+cop box.png::CompressedTexture2D::8105913167408956599::1690492052::1690492059::1::::<><>::
+moldy box.png::CompressedTexture2D::6818749125312355672::1690492052::1690492058::1::::<><>::
+mr pew pew box.png::CompressedTexture2D::7191537470230437937::1690492052::1690492059::1::::<><>::
+no face box.png::CompressedTexture2D::5443584594372949994::1690492052::1690492058::1::::<><>::
+place holder box.png::CompressedTexture2D::907968017030105926::1690492052::1690492059::1::::<><>::
+sleepy box.png::CompressedTexture2D::5219278664654186955::1690492052::1690492058::1::::<><>::
+::res://art shit/Ref photos/::1690492058
+s1 fixed...question mark.png::CompressedTexture2D::8461617628598520874::1690492052::1690492058::1::::<><>::
+s2 .png::CompressedTexture2D::5356368847630482941::1690492052::1690492058::1::::<><>::
+s3 .png::CompressedTexture2D::8063820995270725305::1690492052::1690492058::1::::<><>::
+s4 and s5 unfinished.png::CompressedTexture2D::6283269019330207468::1690492052::1690492058::1::::<><>::
+::res://art shit/The actual floor stuff/::1690492058
+New tile test-1.png.png::CompressedTexture2D::5830267849892196154::1690492052::1690492058::1::::<><>::
+::res://assests/::1690491647
+Background Menu.png::CompressedTexture2D::4344346721403206874::1690401666::1690401666::1::::<><>::
+BarB Walk 1.png::CompressedTexture2D::5738057451087358746::1689800913::1690401694::1::::<><>::
+Barb Walk 2.png::CompressedTexture2D::292811594451284246::1689800913::1690401694::1::::<><>::
+BarB.png::CompressedTexture2D::366487689869980825::1689800913::1690401694::1::::<><>::
+BarB_Demo_Img.png::CompressedTexture2D::412034896590066474::1689800913::1690401694::1::::<><>::
+Bear_Demo_Img.png::CompressedTexture2D::4720773793630501872::1689800913::1690401694::1::::<><>::
+Blue Drone F1.png::CompressedTexture2D::5701780659837432840::1690401666::1690401666::1::::<><>::
+Blue Drone F2.png::CompressedTexture2D::3408254846011480483::1690401666::1690401666::1::::<><>::
+Cop Stunned F1.png::CompressedTexture2D::5412471051406385864::1690485058::1690485064::1::::<><>::
+Cop Stunned F2.png::CompressedTexture2D::1681982404808765155::1690485003::1690485064::1::::<><>::
+cop.png::CompressedTexture2D::3191517102001729709::1689800913::1690401694::1::::<><>::
+Cop._Demo.png::CompressedTexture2D::546552669977442270::1690401666::1690401666::1::::<><>::
+double jump.mp3::AudioStreamMP3::5144338839852125320::1689800913::1690401690::1::::<><>::
+double jump.ogg::AudioStreamOggVorbis::2366766527135983709::1689800913::1690401690::1::::<><>::
+Drone F1.png::CompressedTexture2D::7176074571952651926::1690401666::1690401666::1::::<><>::
+Drone F2.png::CompressedTexture2D::3486458422694905129::1690401666::1690401666::1::::<><>::
+Drone F3.png::CompressedTexture2D::4037742519157179121::1690401666::1690401666::1::::<><>::
+full.png::CompressedTexture2D::7312661616979628330::1689800913::1690401694::1::::<><>::
+gray.png::CompressedTexture2D::6433843077929089510::1689800913::1690401693::1::::<><>::
+Green Drone F1.png::CompressedTexture2D::6930639707322358785::1690491517::1690491560::1::::<><>::
+Green Drone F2.png::CompressedTexture2D::1789636539680693698::1690491635::1690491647::1::::<><>::
+jump sound.mp3::AudioStreamMP3::4204383488551192788::1689800913::1690401690::1::::<><>::
+Megaphone.png::CompressedTexture2D::5138423089245783001::1689800913::1690401692::1::::<><>::
+Megaphone_Demo_Img.png::CompressedTexture2D::5876360482874585548::1689800913::1690401693::1::::<><>::
+mixkit-toy-train-whistle-1631.wav::AudioStreamWAV::859061501918273814::1689800913::1690401694::1::::<><>::
+mr pew pew box (this is a placeholder).png::CompressedTexture2D::1506006270890267174::1689875639::1689875914::1::::<><>::
+non textured level.png::CompressedTexture2D::7282306156458159365::1689800913::1690401694::1::::<><>::
+ow1.png::CompressedTexture2D::4652031067063988839::1689800913::1690401692::1::::<><>::
+ow2.png::CompressedTexture2D::6326048528236659470::1689800913::1690401692::1::::<><>::
+ow3.png::CompressedTexture2D::6536996358046651273::1689800913::1690401692::1::::<><>::
+Red Drone F1.png::CompressedTexture2D::8603710187427058930::1690401666::1690401666::1::::<><>::
+Red Drone F2.png::CompressedTexture2D::908764259323052991::1690401666::1690401666::1::::<><>::
+s1 .png::CompressedTexture2D::1223194937648160798::1690401666::1690401666::1::::<><>::
+s2 .png::CompressedTexture2D::1769616486422353171::1690401666::1690401666::1::::<><>::
+s3 .png::CompressedTexture2D::5806498663302182430::1690401666::1690401666::1::::<><>::
+textured level 2 without jump locations.png::CompressedTexture2D::87660224399620422::1689800944::1690401693::1::::<><>::
+::res://Pause Menu/::1690482940
+Pause.tscn::PackedScene::3714098921536308371::1690404238::0::1::::<><>::res://Pause Menu/Pause_Menu.gd<>uid://ddor506su82ot::::res://Pause Menu/Tab.png
+Pause_Menu.gd::GDScript::-1::1690404238::0::1::::<>Control<>::
+Tab.png::CompressedTexture2D::6594654528210145231::1690404238::1690482940::1::::<><>::
+::res://practice/::1690492166
+sprite_2d.tscn::PackedScene::5165400534333035417::1690492166::0::1::::<><>::uid://q5yyegtvvwh7::::res://art shit/s1 .png
