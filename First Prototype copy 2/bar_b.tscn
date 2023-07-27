@@ -13,6 +13,11 @@ height = 302.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cqr6f"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Charging",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_5uvhq")
