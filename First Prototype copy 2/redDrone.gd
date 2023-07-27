@@ -120,3 +120,6 @@ func _on_player_move_body_entered(body):
 func _on_player_move_body_exited(body):
 	if body.name == "BarB":
 		on=false
+
+func death():
+	pass;
