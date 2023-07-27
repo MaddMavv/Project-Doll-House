@@ -15,8 +15,8 @@ events = [SubResource("InputEventJoypadButton_pyjqi")]
 script = ExtResource("1_i2nf6")
 
 [node name="BackgroundMenu" type="Sprite2D" parent="."]
-position = Vector2(3619.83, 2451.07)
-scale = Vector2(2.3886, 2.3886)
+position = Vector2(1430.76, 810.075)
+scale = Vector2(0.78606, 0.78606)
 texture = ExtResource("4_mc4on")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
