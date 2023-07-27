@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="3_mrvp6"]
+[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="PackedScene" uid="uid://ctd6j8s2tx5y8" path="res://bear.tscn" id="5_uhf4m"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]

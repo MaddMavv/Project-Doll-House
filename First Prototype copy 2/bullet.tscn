@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2hxdphrqmtuf"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_u5nlr"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_kxo6a"]
+[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="2_kxo6a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xsw70"]
 animations = [{
