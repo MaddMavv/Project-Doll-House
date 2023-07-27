@@ -8,7 +8,7 @@ extends CharacterBody2D
 # Check the Player node in the inspector, switch to Node, and you'll see the group
 # "Player" I created to make that happen.
 @onready var player = get_tree().get_first_node_in_group("BarB")
-var barb
+@onready var barb : CharacterBody2D = get_node("../../../BarB")
 
 #new drone movement
 var targetY
@@ -21,7 +21,7 @@ var fall = Vector2(0, 400)
 #var top = 250
 #var bottom = 150
 
-var start
+@onready var start
 var chase = false
 var stun = false
 var home = true
@@ -34,7 +34,6 @@ var on = false;
 func _ready():
 	#velocity = Vector2(0, 200)
 	start = get_global_position()
-	barb = get_node("../../../BarB")
 	
 	
 func _process(delta):
