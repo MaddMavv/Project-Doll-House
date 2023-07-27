@@ -92,16 +92,18 @@ func _on_run_away_body_exited(body):
 	if body.name == "BarB":
 		run = false
 		
-func shoot():
+func shoot(bullet_direction: Vector2):
 	var bullet = bullet_scene.instantiate()
 	bullet.rotation = 0.0
 	bullet.position = spawn_point.global_position
-	var rVect := Vector2(-1,0)
-	bullet.direction = global_position.direction_to(rVect)
+	bullet.direction = Vector2(bullet_direction)
 	owner.add_child(bullet)
 
 func _on_timer_timeout():
-	shoot()
+	if !$AnimatedSprite2D.flip_h: 
+		shoot(Vector2.LEFT)
+	else:
+		shoot(Vector2.RIGHT)
 
 	
 func stunned():
