@@ -30,6 +30,7 @@ func _physics_process(delta):
 func chase_after_player():	
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
+		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
@@ -38,7 +39,8 @@ func chase_after_player():
 			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction.x * SPEED
 	else:
-		get_node("AnimatedSprite2D").play("Idle")
+		if stun == false:
+			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
 		
 func stop_and_attack():
@@ -104,6 +106,7 @@ func stunned():
 	stun = true;
 	velocity.x = 0;
 	velocity.y = 0;
+	get_node("AnimatedSprite2D").play("Stunned")
 	#get_node("AnimatedSprite2D").play("Stunned")
 	$StunTimer.start()
 
