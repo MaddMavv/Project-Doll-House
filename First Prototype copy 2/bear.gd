@@ -45,6 +45,8 @@ func _physics_process(delta):
 		
 		#if get_node("AnimatedSprite2D").animation != "Death" && get_node("AnimatedSprite2D").animation != "Stunned":
 		#	get_node("AnimatedSprite2D").play("Idle")
+	else:
+		veloReal = move_toward(veloReal, 0, 50)
 	move_and_slide()
 
 #this checks if the player has entered the decetion area and sets it to chase. I think detection areas is the main way we'll do things with enemies

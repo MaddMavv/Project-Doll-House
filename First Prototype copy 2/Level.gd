@@ -10,6 +10,7 @@ var pain = false
 var howLong = 0;
 var whichTrain
 var trainWait = 0
+var here = false;
 
 func attack():
 		var knockTemp = knock.instantiate()
@@ -30,7 +31,8 @@ func _physics_process(delta):
 		print(howLong)
 	if Input.is_action_just_released("attack"):
 		if howLong < 30:
-			attack();
+			pass
+			#attack();
 		if howLong >= 30:
 			print("cool ig")
 			stunAttack();
@@ -42,27 +44,42 @@ func _on_train_moment_timeout():
 	var trainTemp = train.instantiate()
 	add_child(trainTemp)
 	if whichTrain == 1:
-		trainTemp.position = Vector2(6807, -244)
+		trainTemp.position = Vector2(26000, -1000)
 	if whichTrain == 2:
-		trainTemp.position = Vector2(6807, 325)
+		trainTemp.position = Vector2(26000, -200)
 	if whichTrain == 3:
-		trainTemp.position = Vector2(6807, 894)
+		trainTemp.position = Vector2(26000, 650)
 	
-	$Warning.start()
+	if here == true:
+		$Warning.start()
 
 func _on_warning_timeout():
-	whichTrain = randi_range(1,3)
 	var warnTemp = warn.instantiate()
 	add_child(warnTemp)
 	player = get_node("../Level 2/BarB")
 	
-	if whichTrain == 1:
-		warnTemp.position = Vector2(player.position.x, -254)
-	elif whichTrain == 2:
-		warnTemp.position = Vector2(player.position.x, 315)
-	elif whichTrain == 3:
-		warnTemp.position = Vector2(player.position.x, 884)
+	if player.position.y < -650:
+		warnTemp.position = Vector2(player.position.x, -1000)
+		whichTrain = 1
+	elif player.position.y < 250:
+		warnTemp.position = Vector2(player.position.x, -200)
+		whichTrain = 2
+	else:
+		warnTemp.position = Vector2(player.position.x, 650)
+		whichTrain = 3
 		
 	$TrainMoment.start()
 		
 		
+
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.name == "BarB":
+		here = true
+		$Warning.start()
+
+
+func _on_area_2d_body_exited(body):
+	if body.name == "BarB":
+		here = false;
+		player = get_node("../Level 2/BarB")

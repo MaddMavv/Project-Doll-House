@@ -1,567 +1,383 @@
-[gd_scene load_steps=34 format=3 uid="uid://jhar81iobxiu"]
+[gd_scene load_steps=20 format=3 uid="uid://jhar81iobxiu"]
 
-[ext_resource type="Texture2D" uid="uid://cxwupqs4m5apy" path="res://assests/gray.png" id="1_r7ux5"]
-[ext_resource type="Texture2D" uid="uid://db0urvkygtedx" path="res://assests/non textured level.png" id="2_s2e0v"]
+[ext_resource type="Script" path="res://Boss.gd" id="1_muh0t"]
+[ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="2_wv30y"]
+[ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="3_spd0w"]
+[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="4_02cls"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c10t"]
-size = Vector2(263.5, 8044.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5it7"]
+size = Vector2(5674, 23.5769)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w6sf"]
-size = Vector2(7446.76, 174.029)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkur4"]
+size = Vector2(151.987, 5267.19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m42cg"]
-size = Vector2(280, 41.5535)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojy2k"]
+size = Vector2(559.5, 33)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6fsm"]
-size = Vector2(699.464, 65.6543)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuj4r"]
+size = Vector2(529.75, 5.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8maxv"]
-size = Vector2(659.5, 33.1794)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emdns"]
+size = Vector2(435.938, 3.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaibp"]
-size = Vector2(512.695, 22.0067)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msges"]
+size = Vector2(435.938, 3.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd8v1"]
-size = Vector2(548.775, 16.1263)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe2pc"]
+size = Vector2(409.969, 3.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyfh4"]
-size = Vector2(547.49, 33.3834)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8108"]
+size = Vector2(573.984, 3.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7orc7"]
-size = Vector2(519.67, 31.8035)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0l0s"]
+size = Vector2(439.992, 3.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxjio"]
-size = Vector2(689.769, 26.2245)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk4w7"]
+size = Vector2(403.996, 3.875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_veckd"]
-size = Vector2(547.082, 18.9172)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb606"]
+size = Vector2(425.998, 6.9375)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx3am"]
-size = Vector2(509, 20.578)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lo2o"]
+size = Vector2(523.999, 6.46875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34yaj"]
-size = Vector2(540.415, 22.6874)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujtbh"]
+size = Vector2(92.9995, 6.46875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21eea"]
-size = Vector2(660.994, 18.9172)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh5md"]
+size = Vector2(462.5, 6.46875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7lfm"]
-size = Vector2(701.056, 29.3188)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkx18"]
-size = Vector2(659.5, 10.7882)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wom0j"]
-size = Vector2(269.42, 27.0873)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdole"]
-size = Vector2(699.464, 23.0222)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxe6k"]
-size = Vector2(659.5, 13.014)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijswb"]
-size = Vector2(509.346, 26.4577)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_451j4"]
-size = Vector2(548.775, 16.1263)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjn45"]
-size = Vector2(548.775, 16.1263)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_win12"]
-size = Vector2(518.557, 20.6757)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0ib4"]
-size = Vector2(689.769, 26.2245)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm6sd"]
-size = Vector2(547.082, 18.9172)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orpe1"]
-size = Vector2(509, 20.578)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35dwa"]
-size = Vector2(537.077, 17.1238)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aebkt"]
-size = Vector2(283.361, 29.3643)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfwji"]
-size = Vector2(703.637, 36.041)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_imc4j"]
-size = Vector2(663.398, 44.9431)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfg4n"]
-size = Vector2(130.494, 74.1743)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k26d"]
+size = Vector2(3625.62, 2739.09)
 
 [node name="Boss" type="Node2D"]
+script = ExtResource("1_muh0t")
 
-[node name="Gray" type="Sprite2D" parent="."]
-position = Vector2(1914, 860)
-scale = Vector2(114.065, 114.757)
-texture = ExtResource("1_r7ux5")
+[node name="Tiles" type="Node2D" parent="."]
 
-[node name="Shelf 1" type="Node2D" parent="Gray"]
-position = Vector2(-16.8144, -3.43246)
-scale = Vector2(0.00499388, 0.00496379)
+[node name="Tile 1" type="Node2D" parent="Tiles"]
+position = Vector2(0, 191)
+scale = Vector2(0.815855, 0.815855)
 
-[node name="NonTexturedLevel2" type="Sprite2D" parent="Gray/Shelf 1"]
-position = Vector2(3150.01, 621)
-scale = Vector2(1.1202, 1.1202)
-texture = ExtResource("2_s2e0v")
+[node name="Ground level" type="Sprite2D" parent="Tiles/Tile 1"]
+position = Vector2(2832, 399)
+texture = ExtResource("2_wv30y")
 
-[node name="Boxs" type="Node2D" parent="Gray/Shelf 1/NonTexturedLevel2"]
-position = Vector2(-2814.18, -547.916)
-scale = Vector2(0.802219, 0.802219)
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Ground level"]
 
-[node name="self" type="StaticBody2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
+position = Vector2(-1, 628)
+shape = SubResource("RectangleShape2D_i5it7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/self"]
-position = Vector2(-117.472, -2738.09)
-shape = SubResource("RectangleShape2D_7c10t")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
+position = Vector2(-2857.74, -2017.38)
+shape = SubResource("RectangleShape2D_pkur4")
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/self"]
-position = Vector2(6593.8, -2715.82)
-shape = SubResource("RectangleShape2D_7c10t")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
+position = Vector2(73500.2, -2030.42)
+shape = SubResource("RectangleShape2D_pkur4")
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/self"]
-position = Vector2(3446.78, 1236.05)
-shape = SubResource("RectangleShape2D_0w6sf")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Ground"]
+position = Vector2(73500.2, -2030.42)
+shape = SubResource("RectangleShape2D_pkur4")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Ground level"]
 collision_layer = 2
 
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(117, 771.277)
-shape = SubResource("RectangleShape2D_m42cg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-2334.75, 56.5)
+shape = SubResource("RectangleShape2D_ojy2k")
 one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(597.732, 554.474)
-shape = SubResource("RectangleShape2D_q6fsm")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-1940.88, 245.25)
+shape = SubResource("RectangleShape2D_vuj4r")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1088.25, 787.84)
-shape = SubResource("RectangleShape2D_8maxv")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-1577.94, 299)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1537.24, 851.031)
-shape = SubResource("RectangleShape2D_eaibp")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-1153.97, 123.125)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2068.04, 631.812)
-shape = SubResource("RectangleShape2D_qd8v1")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2617.76, 427.06)
-shape = SubResource("RectangleShape2D_yyfh4")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_msges")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3164.69, 776.152)
-shape = SubResource("RectangleShape2D_7orc7")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(-274.984, 231)
+shape = SubResource("RectangleShape2D_pe2pc")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3782.92, 763.362)
-shape = SubResource("RectangleShape2D_yxjio")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(231.008, 226)
+shape = SubResource("RectangleShape2D_n8108")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4402.66, 529.436)
-shape = SubResource("RectangleShape2D_veckd")
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(719, 43)
+shape = SubResource("RectangleShape2D_k0l0s")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4930.5, 779.539)
-shape = SubResource("RectangleShape2D_bx3am")
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(1143, 243.062)
+shape = SubResource("RectangleShape2D_nk4w7")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5455.56, 850.815)
-shape = SubResource("RectangleShape2D_34yaj")
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(1561, 299.531)
+shape = SubResource("RectangleShape2D_vb606")
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5886.01, 630.143)
-shape = SubResource("RectangleShape2D_21eea")
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(1909, 128)
+shape = SubResource("RectangleShape2D_6lo2o")
 one_way_collision = true
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 1/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(6409.02, 425.754)
-shape = SubResource("RectangleShape2D_y7lfm")
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(2094, -32)
+rotation = -0.149445
+shape = SubResource("RectangleShape2D_ujtbh")
 one_way_collision = true
 
-[node name="Shelf 2" type="Node2D" parent="Gray"]
-position = Vector2(-23.1017, -8.39625)
-scale = Vector2(0.00499388, 0.00496379)
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Ground level/Boxs"]
+position = Vector2(2374, -47)
+shape = SubResource("RectangleShape2D_kh5md")
+one_way_collision = true
 
-[node name="NonTexturedLevel2" type="Sprite2D" parent="Gray/Shelf 2"]
-position = Vector2(3150.01, 621)
-scale = Vector2(1.1202, 1.1202)
-texture = ExtResource("2_s2e0v")
+[node name="Middle Shelf" type="Sprite2D" parent="Tiles/Tile 1"]
+position = Vector2(2832, -685)
+texture = ExtResource("2_wv30y")
 
-[node name="Boxs" type="Node2D" parent="Gray/Shelf 2/NonTexturedLevel2"]
-position = Vector2(-2814.18, -547.916)
-scale = Vector2(0.802219, 0.802219)
-
-[node name="self" type="StaticBody2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/self"]
-position = Vector2(3468.46, 1235.27)
-shape = SubResource("RectangleShape2D_0w6sf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Ground"]
+position = Vector2(-1, 650.212)
+shape = SubResource("RectangleShape2D_i5it7")
 one_way_collision = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Middle Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(117, 771.277)
-shape = SubResource("RectangleShape2D_m42cg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-2334.75, 56.5)
+shape = SubResource("RectangleShape2D_ojy2k")
 one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(597.732, 554.474)
-shape = SubResource("RectangleShape2D_q6fsm")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-1940.88, 245.25)
+shape = SubResource("RectangleShape2D_vuj4r")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1088.25, 776.644)
-shape = SubResource("RectangleShape2D_lkx18")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-1577.94, 299)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1537.24, 851.031)
-shape = SubResource("RectangleShape2D_eaibp")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-1153.97, 123.125)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2068.04, 631.812)
-shape = SubResource("RectangleShape2D_qd8v1")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2617.76, 427.06)
-shape = SubResource("RectangleShape2D_yyfh4")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_msges")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3164.69, 776.152)
-shape = SubResource("RectangleShape2D_7orc7")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(-274.984, 231)
+shape = SubResource("RectangleShape2D_pe2pc")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3782.92, 763.362)
-shape = SubResource("RectangleShape2D_yxjio")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(231.008, 226)
+shape = SubResource("RectangleShape2D_n8108")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4402.66, 529.436)
-shape = SubResource("RectangleShape2D_veckd")
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(719, 43)
+shape = SubResource("RectangleShape2D_k0l0s")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4930.5, 779.539)
-shape = SubResource("RectangleShape2D_bx3am")
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(1143, 243.062)
+shape = SubResource("RectangleShape2D_nk4w7")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5455.56, 850.815)
-shape = SubResource("RectangleShape2D_34yaj")
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(1561, 299.531)
+shape = SubResource("RectangleShape2D_vb606")
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5886.01, 630.143)
-shape = SubResource("RectangleShape2D_21eea")
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(1909, 128)
+shape = SubResource("RectangleShape2D_6lo2o")
 one_way_collision = true
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(6409.02, 425.754)
-shape = SubResource("RectangleShape2D_y7lfm")
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(2094, -32)
+rotation = -0.149445
+shape = SubResource("RectangleShape2D_ujtbh")
 one_way_collision = true
 
-[node name="NonTexturedLevel5" type="Sprite2D" parent="Gray/Shelf 2"]
-position = Vector2(9249, 621)
-scale = Vector2(1.1202, 1.1202)
-texture = ExtResource("2_s2e0v")
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Middle Shelf/Boxs"]
+position = Vector2(2374, -47)
+shape = SubResource("RectangleShape2D_kh5md")
+one_way_collision = true
 
-[node name="Boxs" type="Node2D" parent="Gray/Shelf 2/NonTexturedLevel5"]
-position = Vector2(-2814.18, -547.916)
-scale = Vector2(0.802219, 0.802219)
+[node name="Top Shelf" type="Sprite2D" parent="Tiles/Tile 1"]
+position = Vector2(2832, -1769)
+texture = ExtResource("2_wv30y")
 
-[node name="self" type="StaticBody2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs"]
+[node name="Ground" type="StaticBody2D" parent="Tiles/Tile 1/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/self"]
-position = Vector2(3446.78, 1236.05)
-shape = SubResource("RectangleShape2D_0w6sf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Ground"]
+position = Vector2(-1, 650.212)
+shape = SubResource("RectangleShape2D_i5it7")
 one_way_collision = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs"]
+[node name="Boxs" type="StaticBody2D" parent="Tiles/Tile 1/Top Shelf"]
 collision_layer = 2
 
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(111.71, 764.044)
-shape = SubResource("RectangleShape2D_wom0j")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-2334.75, 56.5)
+shape = SubResource("RectangleShape2D_ojy2k")
 one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(595.834, 535.73)
-shape = SubResource("RectangleShape2D_fdole")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-1940.88, 245.25)
+shape = SubResource("RectangleShape2D_vuj4r")
 one_way_collision = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(1088.25, 777.757)
-shape = SubResource("RectangleShape2D_sxe6k")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-1577.94, 299)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(1539.48, 854.37)
-shape = SubResource("RectangleShape2D_ijswb")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-1153.97, 123.125)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(2064.71, 630.7)
-shape = SubResource("RectangleShape2D_451j4")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_emdns")
 one_way_collision = true
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(2622.22, 418.158)
-shape = SubResource("RectangleShape2D_vjn45")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-713, -44)
+shape = SubResource("RectangleShape2D_msges")
 one_way_collision = true
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(3164.15, 770.588)
-shape = SubResource("RectangleShape2D_win12")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(-274.984, 231)
+shape = SubResource("RectangleShape2D_pe2pc")
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(3781.74, 764.234)
-shape = SubResource("RectangleShape2D_y0ib4")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(231.008, 226)
+shape = SubResource("RectangleShape2D_n8108")
 one_way_collision = true
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(4402.67, 531.662)
-shape = SubResource("RectangleShape2D_pm6sd")
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(719, 43)
+shape = SubResource("RectangleShape2D_k0l0s")
 one_way_collision = true
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(4933.47, 783.151)
-shape = SubResource("RectangleShape2D_orpe1")
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(1143, 243.062)
+shape = SubResource("RectangleShape2D_nk4w7")
 one_way_collision = true
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(5455.37, 847.693)
-shape = SubResource("RectangleShape2D_35dwa")
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(1561, 299.531)
+shape = SubResource("RectangleShape2D_vb606")
 one_way_collision = true
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(6899.01, 772.92)
-shape = SubResource("RectangleShape2D_aebkt")
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(1909, 128)
+shape = SubResource("RectangleShape2D_6lo2o")
 one_way_collision = true
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(6405.69, 425.731)
-shape = SubResource("RectangleShape2D_mfwji")
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(2094, -32)
+rotation = -0.149445
+shape = SubResource("RectangleShape2D_ujtbh")
 one_way_collision = true
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 2/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(5888.33, 646.063)
-shape = SubResource("RectangleShape2D_imc4j")
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/Tile 1/Top Shelf/Boxs"]
+position = Vector2(2374, -47)
+shape = SubResource("RectangleShape2D_kh5md")
 one_way_collision = true
 
-[node name="Shelf 3" type="Node2D" parent="Gray"]
-position = Vector2(-19.1465, -13.3451)
-scale = Vector2(0.00499388, 0.00496379)
+[node name="BarB" parent="." instance=ExtResource("3_spd0w")]
+position = Vector2(590.001, -1626)
 
-[node name="NonTexturedLevel2" type="Sprite2D" parent="Gray/Shelf 3"]
-position = Vector2(3150.01, 621)
-scale = Vector2(1.1202, 1.1202)
-texture = ExtResource("2_s2e0v")
+[node name="Icon7" type="Sprite2D" parent="BarB"]
+position = Vector2(34.9994, -14.2858)
+scale = Vector2(0.262277, 0.714286)
+texture = ExtResource("4_02cls")
 
-[node name="Boxs" type="Node2D" parent="Gray/Shelf 3/NonTexturedLevel2"]
-position = Vector2(-2814.18, -547.916)
-scale = Vector2(0.802219, 0.802219)
+[node name="bossCam" type="Camera2D" parent="."]
+position = Vector2(2989, -606)
+zoom = Vector2(0.49, 0.49)
 
-[node name="self" type="StaticBody2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs"]
-collision_layer = 2
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(5131.75, -660)
+scale = Vector2(8.40625, 9.30469)
+texture = ExtResource("4_02cls")
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/self"]
-position = Vector2(3468.46, 1235.27)
-shape = SubResource("RectangleShape2D_0w6sf")
-one_way_collision = true
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(4797, 414)
+scale = Vector2(2.99219, 9.30469)
+texture = ExtResource("4_02cls")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs"]
-collision_layer = 2
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(5442, 383)
+scale = Vector2(2.99219, 9.30469)
+texture = ExtResource("4_02cls")
 
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(117, 771.277)
-shape = SubResource("RectangleShape2D_m42cg")
-one_way_collision = true
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(4294.75, -1052)
+scale = Vector2(7.96484, 2.12109)
+texture = ExtResource("4_02cls")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(597.732, 554.474)
-shape = SubResource("RectangleShape2D_q6fsm")
-one_way_collision = true
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(5697.88, -752.375)
+scale = Vector2(2.74805, 7.42773)
+texture = ExtResource("4_02cls")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1088.25, 776.644)
-shape = SubResource("RectangleShape2D_lkx18")
-one_way_collision = true
+[node name="Icon6" type="Sprite2D" parent="."]
+position = Vector2(5131.75, -1343.81)
+scale = Vector2(2.74805, 2.83105)
+texture = ExtResource("4_02cls")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(1537.24, 851.031)
-shape = SubResource("RectangleShape2D_eaibp")
-one_way_collision = true
+[node name="TrainMoment" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2068.04, 631.812)
-shape = SubResource("RectangleShape2D_qd8v1")
-one_way_collision = true
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(2617.76, 427.06)
-shape = SubResource("RectangleShape2D_yyfh4")
-one_way_collision = true
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3164.69, 776.152)
-shape = SubResource("RectangleShape2D_7orc7")
-one_way_collision = true
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(3782.92, 763.362)
-shape = SubResource("RectangleShape2D_yxjio")
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4402.66, 529.436)
-shape = SubResource("RectangleShape2D_veckd")
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(4930.5, 779.539)
-shape = SubResource("RectangleShape2D_bx3am")
-one_way_collision = true
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5455.56, 850.815)
-shape = SubResource("RectangleShape2D_34yaj")
-one_way_collision = true
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(5886.01, 630.143)
-shape = SubResource("RectangleShape2D_21eea")
-one_way_collision = true
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel2/Boxs/StaticBody2D2"]
-position = Vector2(6409.02, 425.754)
-shape = SubResource("RectangleShape2D_y7lfm")
-one_way_collision = true
-
-[node name="NonTexturedLevel5" type="Sprite2D" parent="Gray/Shelf 3"]
-position = Vector2(9249, 621)
-scale = Vector2(1.1202, 1.1202)
-texture = ExtResource("2_s2e0v")
-
-[node name="Boxs" type="Node2D" parent="Gray/Shelf 3/NonTexturedLevel5"]
-position = Vector2(-2814.18, -547.916)
-scale = Vector2(0.802219, 0.802219)
-
-[node name="self" type="StaticBody2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs"]
-collision_layer = 2
-
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/self"]
-position = Vector2(3446.78, 1236.05)
-shape = SubResource("RectangleShape2D_0w6sf")
-one_way_collision = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs"]
-collision_layer = 2
-
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(111.71, 764.044)
-shape = SubResource("RectangleShape2D_wom0j")
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(595.834, 535.73)
-shape = SubResource("RectangleShape2D_fdole")
-one_way_collision = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(1088.25, 777.757)
-shape = SubResource("RectangleShape2D_sxe6k")
-one_way_collision = true
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(1539.48, 854.37)
-shape = SubResource("RectangleShape2D_ijswb")
-one_way_collision = true
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(2064.71, 630.7)
-shape = SubResource("RectangleShape2D_451j4")
-one_way_collision = true
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(2622.22, 418.158)
-shape = SubResource("RectangleShape2D_vjn45")
-one_way_collision = true
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(3164.15, 770.588)
-shape = SubResource("RectangleShape2D_win12")
-one_way_collision = true
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(3781.74, 764.234)
-shape = SubResource("RectangleShape2D_y0ib4")
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(4402.67, 531.662)
-shape = SubResource("RectangleShape2D_pm6sd")
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(4933.47, 783.151)
-shape = SubResource("RectangleShape2D_orpe1")
-one_way_collision = true
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(5455.37, 847.693)
-shape = SubResource("RectangleShape2D_35dwa")
-one_way_collision = true
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(6899.01, 772.92)
-shape = SubResource("RectangleShape2D_aebkt")
-one_way_collision = true
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(6405.69, 425.731)
-shape = SubResource("RectangleShape2D_mfwji")
-one_way_collision = true
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Gray/Shelf 3/NonTexturedLevel5/Boxs/StaticBody2D2"]
-position = Vector2(5888.33, 646.063)
-shape = SubResource("RectangleShape2D_imc4j")
-one_way_collision = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Gray"]
+[node name="byeTrain" type="StaticBody2D" parent="."]
 collision_mask = 4
 
-[node name="byeTrain" type="CollisionShape2D" parent="Gray/StaticBody2D"]
-position = Vector2(-95.4682, -11.032)
-shape = SubResource("RectangleShape2D_gfg4n")
+[node name="byeTrain" type="CollisionShape2D" parent="byeTrain"]
+position = Vector2(6944.19, -356)
+shape = SubResource("RectangleShape2D_0k26d")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1752, 6)
+[connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]

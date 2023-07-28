@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsxphgta50vjo"]
+[gd_scene load_steps=7 format=3 uid="uid://bsxphgta50vjo"]
 
 [ext_resource type="Texture2D" uid="uid://f4ufiwl1higg" path="res://assests/BarB_Demo_Img.png" id="1_byej3"]
 [ext_resource type="Script" path="res://main menu.gd" id="1_i2nf6"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_6pn6y"]
+[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="2_6pn6y"]
+[ext_resource type="Texture2D" uid="uid://b25o0xxmbywhe" path="res://assests/Background Menu.png" id="4_mc4on"]
 
-[node name="Node2D" type="Node2D"]
-scale = Vector2(1.54535, 1.54663)
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_pyjqi"]
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_cewsu"]
+events = [SubResource("InputEventJoypadButton_pyjqi")]
+
+[node name="Node" type="Node"]
 script = ExtResource("1_i2nf6")
 
+[node name="BackgroundMenu" type="Sprite2D" parent="."]
+position = Vector2(1430.76, 810.075)
+scale = Vector2(0.78606, 0.78606)
+texture = ExtResource("4_mc4on")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 3
 
 [node name="Quit" type="Button" parent="ParallaxBackground"]
 offset_left = 57.0
@@ -20,19 +32,22 @@ theme_override_font_sizes/font_size = 101
 text = "Leave"
 
 [node name="Play" type="Button" parent="ParallaxBackground"]
-offset_left = 1882.0
-offset_top = 1057.0
-offset_right = 2738.0
-offset_bottom = 1546.0
-theme_override_font_sizes/font_size = 351
+modulate = Color(1, 1, 1, 0)
+offset_left = 1605.0
+offset_top = 1215.0
+offset_right = 2417.0
+offset_bottom = 1452.0
+shortcut = SubResource("Shortcut_cewsu")
 text = "Play"
 
 [node name="BarBDemoImg" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(607.333, 429)
 scale = Vector2(0.523457, 0.523457)
 texture = ExtResource("1_byej3")
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1510, 357)
 scale = Vector2(3.39062, 3.39062)
 texture = ExtResource("2_6pn6y")

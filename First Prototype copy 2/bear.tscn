@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctd6j8s2tx5y8"]
 
 [ext_resource type="Script" path="res://bear.gd" id="1_4je60"]
-[ext_resource type="Texture2D" uid="uid://b8i1ppuiou4ho" path="res://assests/Bear_Demo_Img.png" id="1_ft26f"]
+[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_f2bqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05284"]
 size = Vector2(182, 390)
@@ -10,7 +10,7 @@ size = Vector2(182, 390)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ft26f")
+"texture": ExtResource("2_f2bqw")
 }],
 "loop": true,
 "name": &"default",

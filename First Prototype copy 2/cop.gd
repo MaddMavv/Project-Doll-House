@@ -5,13 +5,14 @@ extends CharacterBody2D
 @onready var spawn_point: Marker2D = $SpawnPoint
 @onready var player = get_tree().get_first_node_in_group("BarB")
 
-var SPEED = 250
+var SPEED = 900
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var run = false
 var stop = false
-var runLeft = 300
-var runRight = 300
+var runLeft = 600
+var runRight = 600
+var stun = false
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
@@ -19,16 +20,18 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	chase_after_player()
-	stop_and_attack()
-	run_from_player(delta)
+	if stun == false:
+		chase_after_player()
+		stop_and_attack()
+		run_from_player(delta)
 	move_and_slide()
 	
 	
 func chase_after_player():	
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../BarB")
+		get_node("AnimatedSprite2D").play("Run")
+		player = get_node("../../../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
@@ -36,7 +39,8 @@ func chase_after_player():
 			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction.x * SPEED
 	else:
-		get_node("AnimatedSprite2D").play("Idle")
+		if stun == false:
+			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
 		
 func stop_and_attack():
@@ -47,7 +51,7 @@ func stop_and_attack():
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../BarB")
+		player = get_node("../../../BarB")
 		if player.position.x < position.x:
 			velocity.x += runRight * delta
 		if player.position.x > position.x:
@@ -90,9 +94,27 @@ func _on_run_away_body_exited(body):
 		
 func shoot():
 	var bullet = bullet_scene.instantiate()
+	bullet.rotation = 0.0
 	bullet.position = spawn_point.global_position
-	bullet.direction = global_position.direction_to(player.position)
+	var rVect := Vector2(-1,0)
+	bullet.direction = global_position.direction_to(rVect)
 	owner.add_child(bullet)
 
 func _on_timer_timeout():
 	shoot()
+
+	
+func stunned():
+	stun = true;
+	velocity.x = 0;
+	velocity.y = 0;
+	get_node("AnimatedSprite2D").play("Stunned")
+	#get_node("AnimatedSprite2D").play("Stunned")
+	$StunTimer.start()
+
+
+func _on_stun_timer_timeout():
+	stun = false;
+
+func death():
+	self.queue_free()

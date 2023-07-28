@@ -13,6 +13,11 @@ height = 302.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cqr6f"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Charging",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_5uvhq")
@@ -381,7 +386,8 @@ script = ExtResource("1_w7i21")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b5fqr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="EYES" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
 limit_left = 0
 limit_top = -15000
 limit_right = 62200
