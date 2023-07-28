@@ -251,7 +251,7 @@ position = Vector2(952.588, 610.984)
 shape = SubResource("RectangleShape2D_renqu")
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(8036, -1098)
+position = Vector2(27586, -1896)
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28907, -1380)
