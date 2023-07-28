@@ -21,7 +21,7 @@ var fall = Vector2(0, 400)
 #var top = 250
 #var bottom = 150
 
-@onready var start
+@onready var start = get_global_position()
 var chase = false
 var stun = false
 var home = true
@@ -32,8 +32,7 @@ var on = false;
 
 
 func _ready():
-	#velocity = Vector2(0, 200)
-	start = get_global_position()
+	pass
 	
 	
 func _process(delta):
@@ -54,10 +53,17 @@ func move(delta):
 		move_and_collide(fall * delta)
 
 	elif stun == false and home == false:
-		position.y -= 225 * delta
+		var direction = (player.position - self.position).normalized()
+		position.y = direction.y * 5000 * delta;
+			
+			#var diff = position.y - start.y
+			#position.y -= diff / 2 * delta
 	
-	if stun == false and position.y < start.y:
-		home = true
+	if stun == false and position.y == start.y:
+			home = true
+	
+	#if stun == false and position.y == start.y:
+	#	home = true
 	
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
