@@ -1,11 +1,16 @@
 extends Node2D
 
+# The @onready annotation means the values for this variable will be assigned once this scene finishes loading.
+# This is so we don't try to preload stuff before it's ready.
+# It's the same as adding "var varname = preload(path to resource)" in the _process function.
+@onready var knock := preload("res://knockback_projectile.tscn")
+@onready var stun := preload("res://stun_projectile.tscn")
+@onready var train := preload("res://train.tscn")
+@onready var warn := preload("res://warning.tscn")
 
-var knock = preload("res://knockback_projectile.tscn")
-var stun = preload("res://stun_projectile.tscn")
-var train = preload("res://train.tscn")
-var warn = preload("res://warning.tscn")
-var player
+# You only need to do this once if you do it like this:
+@onready var player := get_node("../Level 2/BarB")
+
 var pain = false
 var howLong = 0;
 var whichTrain
@@ -15,14 +20,14 @@ var here = false;
 func attack():
 		var knockTemp = knock.instantiate()
 		add_child(knockTemp)
-		player = get_node("../Level 2/BarB")
+#		player = get_node("../Level 2/BarB")
 		knockTemp.global_position = player.position
 func stunAttack():
 		var stunTemp = stun.instantiate()
 		add_child(stunTemp)
-		player = get_node("../Level 2/BarB")
+#		player = get_node("../Level 2/BarB")
 		stunTemp.global_position = player.position
-		
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		pain = true;
@@ -38,7 +43,7 @@ func _physics_process(delta):
 			stunAttack();
 		pain = false;
 		howLong = 0
-		
+
 
 func _on_train_moment_timeout():
 	var trainTemp = train.instantiate()
@@ -49,15 +54,15 @@ func _on_train_moment_timeout():
 		trainTemp.position = Vector2(26000, -200)
 	if whichTrain == 3:
 		trainTemp.position = Vector2(26000, 650)
-	
+
 	if here == true:
 		$Warning.start()
 
 func _on_warning_timeout():
 	var warnTemp = warn.instantiate()
 	add_child(warnTemp)
-	player = get_node("../Level 2/BarB")
-	
+#	player = get_node("../Level 2/BarB")
+
 	if player.position.y < -650:
 		warnTemp.position = Vector2(player.position.x, -1000)
 		whichTrain = 1
@@ -67,10 +72,8 @@ func _on_warning_timeout():
 	else:
 		warnTemp.position = Vector2(player.position.x, 650)
 		whichTrain = 3
-		
+
 	$TrainMoment.start()
-		
-		
 
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
@@ -82,4 +85,4 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 func _on_area_2d_body_exited(body):
 	if body.name == "BarB":
 		here = false;
-		player = get_node("../Level 2/BarB")
+#		player = get_node("../Level 2/BarB")

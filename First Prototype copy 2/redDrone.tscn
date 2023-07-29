@@ -90,6 +90,5 @@ shape = SubResource("RectangleShape2D_agbgi")
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
-[connection signal="area_shape_entered" from="switchDirection" to="." method="_on_switch_direction_area_shape_entered"]
 [connection signal="body_entered" from="playerMove" to="." method="_on_player_move_body_entered"]
 [connection signal="body_exited" from="playerMove" to="." method="_on_player_move_body_exited"]

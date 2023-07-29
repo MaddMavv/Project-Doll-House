@@ -25,8 +25,8 @@ var stun = false
 func _ready():
 	velocity = Vector2(.16, .07)
 	start = get_global_position()
-	
-	
+
+
 func _process(delta):
 	chase_after_player(delta)
 
@@ -40,21 +40,21 @@ func chase_after_player(delta):
 		else:
 			self.scale.x = 6
 		home = false
-		
+
 	else:
 		if home == false && stun == false:
 			position = lerp(position, start, .7 * delta)
-		
+
 	if chase == false and position.x < start.x + 5 and position.x > start.x - 5 and position.y < start.y + 2 and position.y > start.y - 2:
 		home = true
-			
+
 	if home == true && stun == false:
 		position += velocity
 		if position.y > start.y + bottom or position.y < start.y - top:
 			velocity.y *= -1
-		if position.x > start.x + right or position.x < start.x - left: 
+		if position.x > start.x + right or position.x < start.x - left:
 			velocity.x *= -1
-	
+
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -78,8 +78,8 @@ func shoot():
 
 func _on_timer_timeout():
 	if stun == false:
-		shoot() 
-	
+		shoot()
+
 func stunned():
 	stun = true;
 	velocity.x = 0;

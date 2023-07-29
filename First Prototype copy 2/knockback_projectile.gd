@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
+@onready var player = get_node("../BarB")
 
 var speed = 3600;
-var player
 var direction
 var help = 0
 
 func _ready():
-	player = get_node("../BarB")
 	if player.scale.y > 0:
 		direction = Vector2.RIGHT.rotated(rotation)
 	if player.scale.y < 0:
@@ -27,4 +26,4 @@ func _on_area_2d_body_entered(body):
 			body.isHitLeft();
 		elif direction == Vector2.LEFT.rotated(rotation):
 			body.isHitRight();
-		
+

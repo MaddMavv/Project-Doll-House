@@ -12,12 +12,12 @@ extends CharacterBody2D
 
 #new drone movement
 var targetY
-@export var range = Vector2(0, 500)
+@export var random_range = Vector2(0, 500)
 @export var v_move = Vector2(0.00, 0.00)
 @export var add = Vector2(0.00, 0.01)
 var fall = Vector2(0, 400)
 
-#old script - track changes for now 
+#old script - track changes for now
 #var top = 250
 #var bottom = 150
 
@@ -34,20 +34,20 @@ var on = false;
 func _ready():
 	#velocity = Vector2(0, 200)
 	start = get_global_position()
-	
-	
+
+
 func _process(delta):
 	move(delta)
 	shoot_at_player()
-	
+
 func move(delta):
 	if stun == false and home == true:
 		#moves up and down
-		targetY = sin(v_move.y) * range.y * delta
+		targetY = sin(v_move.y) * random_range.y * delta
 		position.y += targetY
 		v_move.y += add.y
 		#print(position.y)
-			
+
 	if stun == true:
 		home = false
 		#falls to the ground
@@ -55,16 +55,16 @@ func move(delta):
 
 	elif stun == false and home == false:
 		position.y -= 225 * delta
-	
+
 	if stun == false and position.y < start.y:
 		home = true
-	
+
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
 	if chase == true:
 		barb = get_node("../../../BarB")
-	
-	
+
+
 func shoot():
 	var bullet = bullet_scene.instantiate()
 	bullet.position = spawn_point.global_position
@@ -73,9 +73,9 @@ func shoot():
 
 
 func _on_timer_timeout():
-		shoot() 
-	
-	
+		shoot()
+
+
 func stunned():
 	#press TAB to stun drone
 	####will be replaced with actual stun####
@@ -84,13 +84,13 @@ func stunned():
 		$StunTimer.start()
 		$Timer.stop()
 		$AnimatedSprite2D.play("Stunned")
-		
+
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
 		if stun == false:
 			chase = true
 			$Timer.start()
-			
+
 
 func _on_player_detection_body_exited(body):
 	if body.name == "BarB":
@@ -103,8 +103,8 @@ func _on_stun_timer_timeout():
 	$AnimatedSprite2D.play("Flying")
 	if chase == true:
 		$Timer.start()
-		
-		
+
+
 func isHitLeft():
 	pass;
 func isHitRight():
@@ -114,7 +114,7 @@ func isHitRight():
 func _on_player_move_body_entered(body):
 	if body.name == "BarB":
 		on=true
-		
+
 
 func _on_player_move_body_exited(body):
 	if body.name == "BarB":

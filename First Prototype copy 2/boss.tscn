@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Boss.gd" id="1_muh0t"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="2_wv30y"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="3_spd0w"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="4_02cls"]
+[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="4_02cls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5it7"]
 size = Vector2(5674, 23.5769)

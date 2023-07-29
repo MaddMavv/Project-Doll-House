@@ -2528,11 +2528,9 @@ position = Vector2(5273, -1107)
 
 [node name="blueDrone2" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(10700, 93)
-range = Vector2(650, 0)
 
 [node name="blueDrone3" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(12085, 93)
-range = Vector2(650, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

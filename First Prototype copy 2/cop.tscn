@@ -68,19 +68,21 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(21, 11.5)
 shape = SubResource("RectangleShape2D_yc4g5")
-metadata/_edit_lock_ = true
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="RunAway" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunAway"]
 position = Vector2(-21, 6)
 shape = SubResource("RectangleShape2D_2reyi")
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="Stop" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
 position = Vector2(-10, 8.5)
 shape = SubResource("RectangleShape2D_cmqe0")
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

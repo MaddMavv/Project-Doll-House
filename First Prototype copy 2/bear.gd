@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
 
+@onready var player = get_node("../Boss/BarB")
+@onready var timer = get_node("Timer")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var player
 var projectile
 var chase = false
 var speed = 50000
 var knockback
 var stun = false
-@onready var timer = get_node("Timer")
 
 var veloReal = 0;
 var veloOw = 0;
@@ -30,19 +31,19 @@ func _physics_process(delta):
 	#makes it move towards the player
 	velocity.x = veloReal+veloOw
 	velocity.y = veloRealY+veloOwY
-	
+
 	veloOw = move_toward(veloOw, 0, 50)
 	veloOwY = move_toward(veloOwY, 0, 50)
-	
+
 	if chase == true && stun == false:
-		
+
 		#if get_node("AnimatedSprite2D").animation != "Death":
 		#	get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../../../BarB")
+#		player = get_node("../../../BarB")
 		var direction = (player.position - self.position).normalized()
 		if direction.x:
 			veloReal = direction.x * speed * delta;
-		
+
 		#if get_node("AnimatedSprite2D").animation != "Death" && get_node("AnimatedSprite2D").animation != "Stunned":
 		#	get_node("AnimatedSprite2D").play("Idle")
 	else:
@@ -62,7 +63,7 @@ func _on_player_detection_body_exited(body):
 	if body.name == "BarB":
 		chase = false
 
-		
+
 func death():
 	chase = false
 	#get_node("AnimatedSprite2D").play("Death")
@@ -75,12 +76,12 @@ func isHitLeft():
 		print("left");
 		veloOw = 2000;
 		veloOwY = -300;
-	
+
 func isHitRight():
 		print("right");
 		veloOw = -2000;
 		veloOwY = -300;
-	
+
 func stunned():
 	print("stunned")
 	stun = true;
@@ -88,7 +89,7 @@ func stunned():
 	veloRealY = 0;
 	#get_node("AnimatedSprite2D").play("Stunned")
 	$Timer.start()
-	
+
 
 func _on_player_death_area_entered(area):
 	if area.name == "projectile":

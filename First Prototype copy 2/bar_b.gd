@@ -52,13 +52,13 @@ func _physics_process(delta):
 			self.rotation_degrees = 0;
 			self.scale.y = 1.4
 			flip = false
-	
+
 	velocity.x = veloReal+veloOw
 	velocity.y = veloRealY+veloOwY
-	
+
 	veloOw = move_toward(veloOw, 0, 50)
 	veloOwY = move_toward(veloOwY, 0, 50)
-	
+
 	if direction:
 		veloReal = direction * SPEED
 		if veloRealY == 0:
@@ -75,36 +75,36 @@ func _physics_process(delta):
 				#anim.play("Fall")
 	if Input.is_action_just_pressed("melee"):
 		melee()
-		
+
 	if Input.is_action_just_pressed("shout"):
 		shout()
-	
+
 	move_and_slide()
-	
+
 func melee():
 	if meleeing == false:
 		anim.play("Melee")
 		meleeing = true
 		await anim.animation_finished
 		meleeing = false;
-		
+
 func shout():
 	if meleeing == false:
 		anim.play("Shout")
 		meleeing = true
 		await anim.animation_finished
 		meleeing = false;
-		
+
 func TRAIN():
 	Game.playerHP -= 1;
 	veloOw = -3000;
 	veloOwY = -1500;
-	
+
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Enemies"):
 		body.death();
-		
+
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Enemies"):
 		body.chase = true

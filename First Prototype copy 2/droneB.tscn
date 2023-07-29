@@ -111,6 +111,7 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(0.5, 31.3125)
 shape = SubResource("RectangleShape2D_3uoq6")
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, 15)

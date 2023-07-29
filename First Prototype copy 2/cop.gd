@@ -25,9 +25,9 @@ func _physics_process(delta):
 		stop_and_attack()
 		run_from_player(delta)
 	move_and_slide()
-	
-	
-func chase_after_player():	
+
+
+func chase_after_player():
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
 		get_node("AnimatedSprite2D").play("Run")
@@ -42,12 +42,12 @@ func chase_after_player():
 		if stun == false:
 			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
-		
+
 func stop_and_attack():
 	if stop == true:
 		get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
-		
+
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
@@ -62,7 +62,7 @@ func run_from_player(delta):
 		#else:
 		#	get_node("AnimatedSprite2D").flip_h = true
 		#velocity.x = direction.x * SPEED
-		
+
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -79,11 +79,11 @@ func _on_stop_body_entered(body):
 	if body.name == "BarB":
 		if run == false:
 			stop = true
-		
+
 func _on_stop_body_exited(body):
 	if body.name == "BarB":
 		stop = false
-		
+
 func _on_run_away_body_entered(body):
 	if body.name == "BarB":
 		run = true
@@ -91,7 +91,7 @@ func _on_run_away_body_entered(body):
 func _on_run_away_body_exited(body):
 	if body.name == "BarB":
 		run = false
-		
+
 func shoot():
 	var bullet = bullet_scene.instantiate()
 	bullet.rotation = 0.0
@@ -103,7 +103,7 @@ func shoot():
 func _on_timer_timeout():
 	shoot()
 
-	
+
 func stunned():
 	stun = true;
 	velocity.x = 0;
