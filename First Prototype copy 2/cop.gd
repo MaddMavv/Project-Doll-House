@@ -32,12 +32,15 @@ func chase_after_player():
 		#get_node("AnimatedSprite2D").play("Jump")
 		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../../BarB")
-		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
+		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
+			velocity.x = 0
 		else:
-			get_node("AnimatedSprite2D").flip_h = false
-		velocity.x = direction.x * SPEED
+			var direction = (player.position - self.position).normalized()
+			if direction.x > 0:
+				get_node("AnimatedSprite2D").flip_h = true
+			else:
+				get_node("AnimatedSprite2D").flip_h = false
+			velocity.x = direction.x * SPEED
 	else:
 		if stun == false:
 			get_node("AnimatedSprite2D").play("Idle")
@@ -52,11 +55,14 @@ func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../../../BarB")
-		if player.position.x < position.x:
-			velocity.x += runRight * delta
-		if player.position.x > position.x:
-			velocity.x -= runLeft * delta
-		position.x += velocity.x
+		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
+			velocity.x = 0
+		else:
+			if player.position.x < position.x:
+				velocity.x += runRight * delta
+			if player.position.x > position.x:
+				velocity.x -= runLeft * delta
+			position.x += velocity.x
 		#if direction.x > 0:
 		#	get_node("AnimatedSprite2D").flip_h = false
 		#else:
