@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d0ivq3mdhg005"]
+[gd_scene load_steps=28 format=3 uid="uid://dnhrj8gok2sb0"]
 
 [ext_resource type="Texture2D" uid="uid://cq4wujx3j51df" path="res://art shit/s1 fixed...question mark.png" id="1_55786"]
 [ext_resource type="Texture2D" uid="uid://cikwu24u6n6g4" path="res://art shit/Ref photos/s2 .png" id="2_0o8h2"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cjs6bpwf342je" path="res://art shit/box designs/no face box.png" id="10_m48jv"]
 [ext_resource type="Texture2D" uid="uid://ba1adp336t4b2" path="res://art shit/box designs/barricade.png" id="11_emp0b"]
 [ext_resource type="Texture2D" uid="uid://c4fb2i7nkd3ia" path="res://art shit/box designs/moldy box.png" id="12_xdf66"]
-[ext_resource type="PackedScene" path="res://bar_b.tscn" id="13_f1mpm"]
+[ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="13_f1mpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awaxp"]
 size = Vector2(31.7355, 27.1035)
