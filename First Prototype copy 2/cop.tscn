@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iepj63r3yt31"]
+[gd_scene load_steps=10 format=3 uid="uid://cogbm8n36jfky"]
 
 [ext_resource type="Script" path="res://cop.gd" id="1_u4vm7"]
 [ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_8jdol"]

@@ -1,26 +1,37 @@
-[gd_scene load_steps=66 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=91 format=3 uid="uid://d611ww8k11lu"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
-[ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
-[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
+[ext_resource type="PackedScene" path="res://bar_b.tscn" id="1_mv7hs"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="3_mrvp6"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
-[ext_resource type="PackedScene" uid="uid://ctd6j8s2tx5y8" path="res://bear.tscn" id="5_uhf4m"]
+[ext_resource type="PackedScene" path="res://bear.tscn" id="5_uhf4m"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
-[ext_resource type="PackedScene" uid="uid://cnqsuyouetc2o" path="res://droneB.tscn" id="7_261k5"]
+[ext_resource type="PackedScene" path="res://droneB.tscn" id="7_261k5"]
 [ext_resource type="Texture2D" uid="uid://0q6b1re8qmb7" path="res://assests/Green Drone F2.png" id="7_ftw72"]
 [ext_resource type="Texture2D" uid="uid://ror3virm5ave" path="res://assests/s1 .png" id="8_bcoma"]
 [ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="9_13sgr"]
-[ext_resource type="PackedScene" uid="uid://db07m7ctkl7x1" path="res://redDrone.tscn" id="10_lhnsx"]
-[ext_resource type="PackedScene" uid="uid://d4ggx1n2o3dix" path="res://L block.tscn" id="13_2uue8"]
-[ext_resource type="PackedScene" uid="uid://7ue7kdbpu0t3" path="res://blueDrone.tscn" id="14_r1v73"]
-[ext_resource type="PackedScene" uid="uid://iepj63r3yt31" path="res://cop.tscn" id="15_xdgsa"]
+[ext_resource type="PackedScene" path="res://redDrone.tscn" id="10_lhnsx"]
+[ext_resource type="PackedScene" path="res://blueDrone.tscn" id="14_r1v73"]
+[ext_resource type="PackedScene" uid="uid://cogbm8n36jfky" path="res://cop.tscn" id="15_xdgsa"]
 [ext_resource type="Script" path="res://HP.gd" id="16_y8jng"]
 [ext_resource type="Texture2D" uid="uid://dcgkp6rrej3ny" path="res://assests/full.png" id="17_bi7oo"]
 [ext_resource type="Texture2D" uid="uid://b7jqjio4ewe7h" path="res://assests/ow1.png" id="18_wvwyg"]
 [ext_resource type="Texture2D" uid="uid://cwendh3na5lco" path="res://assests/ow2.png" id="19_nlgot"]
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
+[ext_resource type="Texture2D" uid="uid://cq4wujx3j51df" path="res://art shit/s1 fixed...question mark.png" id="22_bkr03"]
+[ext_resource type="Texture2D" uid="uid://cikwu24u6n6g4" path="res://art shit/Ref photos/s2 .png" id="23_i7qcf"]
+[ext_resource type="Texture2D" uid="uid://dm5f7oom8yriv" path="res://art shit/Ref photos/s3 .png" id="24_k42ep"]
+[ext_resource type="Texture2D" uid="uid://cvrwr1khl4ypw" path="res://art shit/Ref photos/s4 and s5 unfinished.png" id="25_nweac"]
+[ext_resource type="Texture2D" uid="uid://cpchwot4mg1s5" path="res://art shit/The actual floor stuff/New tile test-1.png.png" id="26_h48gn"]
+[ext_resource type="Texture2D" uid="uid://bwa08p2ovb13v" path="res://art shit/box designs/cop box long.png" id="27_2xhco"]
+[ext_resource type="Texture2D" uid="uid://dnqtg8wb641gl" path="res://art shit/box designs/cop box.png" id="28_13cbf"]
+[ext_resource type="Texture2D" uid="uid://ru70ovmrpsuo" path="res://art shit/box designs/ACB box diff color-1.png.png" id="29_5mm1f"]
+[ext_resource type="Texture2D" uid="uid://cgmi00frp25i2" path="res://art shit/box designs/sleepy box.png" id="30_7ksdx"]
+[ext_resource type="Texture2D" uid="uid://cjs6bpwf342je" path="res://art shit/box designs/no face box.png" id="31_y3o7y"]
+[ext_resource type="Texture2D" uid="uid://ba1adp336t4b2" path="res://art shit/box designs/barricade.png" id="32_dabc7"]
+[ext_resource type="Texture2D" uid="uid://c4fb2i7nkd3ia" path="res://art shit/box designs/moldy box.png" id="33_6x4m7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -197,11 +208,55 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i22eh"]
+size = Vector2(31.7355, 27.1035)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptpc3"]
+atlas = ExtResource("26_h48gn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot22k"]
+size = Vector2(31.4488, 28.6975)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3n0b"]
+atlas = ExtResource("26_h48gn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4s54t"]
+size = Vector2(31.6331, 26.7654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m2i3"]
+size = Vector2(1194.39, 1798.24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ck7f"]
+size = Vector2(1791.58, 1180.1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21c5l"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq1kt"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jic2"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wldi2"]
+size = Vector2(30, 62.6526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10b78"]
+size = Vector2(29.1971, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dusbm"]
+size = Vector2(29.1971, 23.614)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djbec"]
+size = Vector2(112.873, 112.823)
+
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
 
 [node name="S1" type="Sprite2D" parent="."]
-position = Vector2(8232, -346)
+position = Vector2(8232.32, -7889.09)
 scale = Vector2(11.6896, 11.6896)
 texture = ExtResource("8_bcoma")
 
@@ -251,7 +306,7 @@ position = Vector2(952.588, 610.984)
 shape = SubResource("RectangleShape2D_renqu")
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(27586, -1896)
+position = Vector2(251.002, -1322)
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28907, -1380)
@@ -293,6 +348,7 @@ position = Vector2(61.333, -99.1932)
 shape = SubResource("RectangleShape2D_s1xew")
 
 [node name="Placeholders" type="Node2D" parent="."]
+position = Vector2(0.323242, -7543.09)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Placeholders"]
 position = Vector2(2246, -966)
@@ -2521,8 +2577,6 @@ position = Vector2(1722, -1164)
 scale = Vector2(0.339352, 0.339352)
 texture = ExtResource("9_13sgr")
 
-[node name="Sprite2D" parent="." instance=ExtResource("13_2uue8")]
-
 [node name="blueDrone" parent="." instance=ExtResource("14_r1v73")]
 position = Vector2(5273, -1107)
 
@@ -2549,6 +2603,1230 @@ position = Vector2(1331, -646)
 sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
+
+[node name="Level (for scaling)" type="Node2D" parent="."]
+position = Vector2(6290, -479)
+scale = Vector2(7.4, 7.4)
+
+[node name="Ref Background s1" type="Sprite2D" parent="Level (for scaling)"]
+visible = false
+modulate = Color(1, 1, 1, 0.807843)
+texture_filter = 1
+scale = Vector2(1, 1.74268)
+texture = ExtResource("22_bkr03")
+
+[node name="Ref Background s2" type="Sprite2D" parent="Level (for scaling)"]
+visible = false
+modulate = Color(1, 1, 1, 0.729412)
+position = Vector2(1272, 26)
+scale = Vector2(1, 1.45816)
+texture = ExtResource("23_i7qcf")
+
+[node name="Ref Backrgound s3" type="Sprite2D" parent="Level (for scaling)"]
+visible = false
+position = Vector2(2679, 23.75)
+scale = Vector2(1, 1.46234)
+texture = ExtResource("24_k42ep")
+
+[node name="Background Ref s4 and s5" type="Sprite2D" parent="Level (for scaling)"]
+visible = false
+position = Vector2(4122.75, 15.75)
+scale = Vector2(1.03087, 1.52929)
+texture = ExtResource("25_nweac")
+
+[node name="floor tile G" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-444.75, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G10" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-718.919, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G10/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G2" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-170.5, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G2/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G3" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(102.5, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G3/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G4" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(376.5, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G4/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G5" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(747, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G5/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G6" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1020, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G6/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G7" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1294, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G7/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G9" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1568, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G9/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G8" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(2248, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G8/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G11" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(2522.5, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G11/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G12" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(2797, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G12/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G13" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3071.5, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G13/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G14" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3537, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G14/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G15" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3716, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G15/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G16" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4327.66, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G16/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile G17" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4568, 199)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile G17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile G17/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M1" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-444.75, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M1/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M4" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-718.919, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M4/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level (for scaling)/M4/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M2" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-170.75, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M2/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M3" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(103.25, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="StaticBody2D" parent="Level (for scaling)/M3"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M3/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="SFT M4" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(461.25, 79)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT M4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT M4/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="M5" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(847, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M5/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M6" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1121, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M6/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M7" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1395, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M7/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="SFT M8" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1561, 79)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT M8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT M8/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="SFT M9" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(2141.04, 79)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT M9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT M9/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="SFT M10" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(2141.04, -41)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT M10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT M10/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="M10" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3071.5, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M10/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="floor tile m9" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(847, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/floor tile m9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/floor tile m9/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M11" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3537, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M11/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M12" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3653.52, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M12/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M13" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4327.66, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M13/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="M14" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4568, 79)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/M14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/M14/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="Tile T1" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-445, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T1/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="Tile T5" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-718.919, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="StaticBody2D" parent="Level (for scaling)/Tile T5"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T5/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+one_way_collision = true
+
+[node name="Tile T2" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-258, -41)
+scale = Vector2(3.16125, 0.453)
+texture = SubResource("AtlasTexture_x3n0b")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T2/Area2D"]
+position = Vector2(0, 3.862)
+shape = SubResource("RectangleShape2D_4s54t")
+
+[node name="Tile T3" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(21, -41)
+scale = Vector2(3.16125, 0.453)
+texture = SubResource("AtlasTexture_x3n0b")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T3/Area2D"]
+position = Vector2(0, 3.862)
+shape = SubResource("RectangleShape2D_4s54t")
+
+[node name="Tile T4" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(278, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T4/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="SFT T5" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(794, -41)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT T5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT T5/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="SFT T6" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(444, -41)
+scale = Vector2(1.82837, 0.453)
+texture = SubResource("AtlasTexture_ptpc3")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/SFT T6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/SFT T6/Area2D"]
+position = Vector2(-0.0022583, 3.31125)
+shape = SubResource("RectangleShape2D_ot22k")
+
+[node name="Tile T7" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1017, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T7/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="Tile T8" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1365, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T8/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="Tile T9" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1552.75, -41)
+scale = Vector2(3.16125, 0.453)
+texture = SubResource("AtlasTexture_x3n0b")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Tile T9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Tile T9/Area2D"]
+position = Vector2(0, 3.862)
+scale = Vector2(1.00613, 1.0186)
+shape = SubResource("RectangleShape2D_4s54t")
+
+[node name="T11" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3071.5, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/T11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/T11/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="T12" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3537, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/T12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/T12/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="T13" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3663, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/T13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/T13/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="T14" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4327.66, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/T14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/T14/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="T15" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4568, -41)
+scale = Vector2(8.57813, 0.453125)
+texture = ExtResource("26_h48gn")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/T15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/T15/Area2D"]
+position = Vector2(0.0291424, 3.86212)
+shape = SubResource("RectangleShape2D_i22eh")
+
+[node name="Node2D" type="Node2D" parent="Level (for scaling)"]
+position = Vector2(-582, -41)
+
+[node name="cop box test" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1503.09, 83.536)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="cop box test2" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1546.38, 83.536)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test2/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="cop box test3" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1694.22, 83.536)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test3/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="cop box test4" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1840, 83.536)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test4/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="cop box test5" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1500.91, -35.399)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test5/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="cop box test6" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1500.91, -35.399)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("27_2xhco")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/cop box test6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/cop box test6/Area2D"]
+position = Vector2(-2.80469, -0.87793)
+shape = SubResource("RectangleShape2D_5m2i3")
+
+[node name="side cop box" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1551.89, -25)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("28_13cbf")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/side cop box"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/side cop box/Area2D"]
+shape = SubResource("RectangleShape2D_8ck7f")
+
+[node name="side cop box2" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1891, 94)
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("28_13cbf")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/side cop box2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/side cop box2/Area2D"]
+shape = SubResource("RectangleShape2D_8ck7f")
+
+[node name="side cop box3" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(2098.87, 94)
+rotation = -3.14159
+scale = Vector2(0.0334898, 0.0355903)
+texture = ExtResource("28_13cbf")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/side cop box3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/side cop box3/Area2D"]
+shape = SubResource("RectangleShape2D_8ck7f")
+
+[node name="the funny small box" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(262.495, -18.5)
+scale = Vector2(1.034, 1)
+texture = ExtResource("29_5mm1f")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/the funny small box"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/the funny small box/Area2D"]
+shape = SubResource("RectangleShape2D_21c5l")
+
+[node name="sleepy box PH" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(264.09, -50.62)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH2" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(317.92, 99.37)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH2"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH2/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH3" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(296.215, -50.38)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH3"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH3/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH4" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(300.95, -18.5)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH4"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH4/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH5" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(254.32, 99.3)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH5"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH5/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH6" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(227.24, 220)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH6"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH6/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH7" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(259.755, 220)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH7"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH7/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="sleepy box PH8" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(75, 220)
+texture = ExtResource("30_7ksdx")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/sleepy box PH8"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/sleepy box PH8/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_uq1kt")
+
+[node name="nfb" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(480, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb2" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(650, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb2/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb3" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(682.15, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb3/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb4" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(650, 188.76)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb4/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb5" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(850, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb5/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb6" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1010, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb6/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb7" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1010, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb7/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb8" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1010, 155)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb8/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb9" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1043.11, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb9/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb10" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1043.11, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb10/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb11" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1480, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb11/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb12" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1480, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb12/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb13" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1447.61, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb13/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb14" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1585.13, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb14/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb15" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1598.96, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb15/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb16" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1618.69, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb16/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb17" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1750.31, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb17/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb18" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1766.47, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb18"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb18/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb19" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1790.96, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb19"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb19/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb20" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(2023.96, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb20"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb20/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb21" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(2023.96, 188)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb21/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="nfb22" type="Sprite2D" parent="Level (for scaling)/Node2D"]
+texture_filter = 1
+position = Vector2(1990.34, 220)
+texture = ExtResource("31_y3o7y")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/Node2D/nfb22"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/Node2D/nfb22/Area2D"]
+shape = SubResource("RectangleShape2D_4jic2")
+
+[node name="barricade" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(-521, -93.5)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade2" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(451.38, -93.5)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade2/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade3" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(164.385, -93.5)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade3/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade4" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(46.35, 26.84)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade4/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade5" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(36.755, 147.02)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade5/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade6" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1618, 147.02)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade6/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade7" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1566.57, 27.045)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade7/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade8" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(1395.58, -91.99)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade8/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade9" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3418, 25.62)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade9/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade10" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3418, 145.135)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade10/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade13" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3769.79, 25.62)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade13/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade14" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3808.85, 145.135)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade14/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade15" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4247.42, -93.125)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade15/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade16" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(4247.42, 145.135)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade16/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade11" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3150.48, 25.62)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade11/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade12" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3150.48, 145.135)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade12/Area2D"]
+shape = SubResource("RectangleShape2D_wldi2")
+
+[node name="barricade w window" type="Sprite2D" parent="Level (for scaling)"]
+texture_filter = 1
+position = Vector2(-518, 28)
+scale = Vector2(0.685, 1.39563)
+texture = ExtResource("32_dabc7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/barricade w window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade w window/Area2D"]
+position = Vector2(0, -21.4957)
+shape = SubResource("RectangleShape2D_10b78")
+
+[node name="Area2D2" type="Area2D" parent="Level (for scaling)/barricade w window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/barricade w window/Area2D2"]
+position = Vector2(0, 19.6888)
+shape = SubResource("RectangleShape2D_dusbm")
+
+[node name="moldy box" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3757.27, -76.1553)
+scale = Vector2(0.345526, 0.514078)
+texture = ExtResource("33_6x4m7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/moldy box"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/moldy box/Area2D"]
+position = Vector2(0.671875, 0.302162)
+shape = SubResource("RectangleShape2D_djbec")
+
+[node name="moldy box2" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3656.56, -76.155)
+scale = Vector2(0.345526, 0.514078)
+texture = ExtResource("33_6x4m7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/moldy box2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/moldy box2/Area2D"]
+position = Vector2(0.671875, 0.302162)
+shape = SubResource("RectangleShape2D_djbec")
+
+[node name="moldy box3" type="Sprite2D" parent="Level (for scaling)"]
+position = Vector2(3500.62, -76.155)
+scale = Vector2(0.345526, 0.514078)
+texture = ExtResource("33_6x4m7")
+
+[node name="Area2D" type="Area2D" parent="Level (for scaling)/moldy box3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level (for scaling)/moldy box3/Area2D"]
+position = Vector2(0.671875, 0.302162)
+shape = SubResource("RectangleShape2D_djbec")
 
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvrqmcnr5sggf"]
+[gd_scene load_steps=3 format=3 uid="uid://ttlg2plvte2p"]
 
 [ext_resource type="Script" path="res://test_move.gd" id="1_urb8i"]
-[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="2_o2d08"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_o2d08"]
 
 [node name="test_move" type="Node2D"]
 script = ExtResource("1_urb8i")
