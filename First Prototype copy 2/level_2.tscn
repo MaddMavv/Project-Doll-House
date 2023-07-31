@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=67 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="Texture2D" uid="uid://bip0si1wnsla" path="res://assests/textured level 2 without jump locations.png" id="1_mk7v3"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cwendh3na5lco" path="res://assests/ow2.png" id="19_nlgot"]
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
+[ext_resource type="PackedScene" uid="uid://ce1bgeqwvjtu" path="res://melee_cop.tscn" id="22_l17hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -251,7 +252,7 @@ position = Vector2(952.588, 610.984)
 shape = SubResource("RectangleShape2D_renqu")
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(8036, -1098)
+position = Vector2(4371, -212)
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28907, -1380)
@@ -1297,6 +1298,7 @@ position = Vector2(6736, -273)
 shape = SubResource("RectangleShape2D_kmmmv")
 
 [node name="Melee Cops" type="Node2D" parent="Baddies"]
+position = Vector2(-3, 0)
 
 [node name="Bear12" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
 position = Vector2(41142, -1115)
@@ -1315,6 +1317,10 @@ position = Vector2(56927, -337)
 
 [node name="Bear17" parent="Baddies/Melee Cops" instance=ExtResource("5_uhf4m")]
 position = Vector2(58670, -1179)
+
+[node name="melee cop" parent="Baddies/Melee Cops" instance=ExtResource("22_l17hq")]
+position = Vector2(7206, -360)
+scale = Vector2(2.5, 2.5)
 
 [node name="Red Drones" type="Node2D" parent="Baddies"]
 

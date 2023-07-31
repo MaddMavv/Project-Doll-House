@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://ce1bgeqwvjtu"]
+
+[ext_resource type="Script" path="res://melee_cop.gd" id="1_tomh6"]
+[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_ss07f"]
+[ext_resource type="Texture2D" uid="uid://cjd3uwhajuf7e" path="res://assests/Cop Stunned F1.png" id="3_stfme"]
+[ext_resource type="Texture2D" uid="uid://x71affs0ec6n" path="res://assests/Cop Stunned F2.png" id="4_a5ucy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5q"]
+size = Vector2(102, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apku0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ss07f")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ss07f")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_stfme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a5ucy")
+}],
+"loop": true,
+"name": &"Stunned",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4g5"]
+size = Vector2(2170, 287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
+size = Vector2(176, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
+size = Vector2(848, 269)
+
+[node name="melee cop" type="CharacterBody2D" groups=["Enemies"]]
+collision_mask = 3
+script = ExtResource("1_tomh6")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 17.5)
+shape = SubResource("RectangleShape2D_tbd5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.142418, 0.142418)
+sprite_frames = SubResource("SpriteFrames_apku0")
+animation = &"Stunned"
+autoplay = "Idle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(21, 11.5)
+shape = SubResource("RectangleShape2D_yc4g5")
+metadata/_edit_lock_ = true
+
+[node name="damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_2reyi")
+
+[node name="Stop" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
+position = Vector2(-10, 8.5)
+shape = SubResource("RectangleShape2D_cmqe0")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-88, -135)
+
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="damage" to="." method="_on_run_away_body_entered"]
+[connection signal="body_exited" from="damage" to="." method="_on_run_away_body_exited"]
+[connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
+[connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
