@@ -63,7 +63,7 @@ func move(delta):
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
 	if chase == true:
-		barb = get_node("../../../BarB")
+		barb = get_node("../../../../BarB")
 	
 	
 func shoot():
