@@ -8,7 +8,7 @@ extends CharacterBody2D
 # Check the Player node in the inspector, switch to Node, and you'll see the group
 # "Player" I created to make that happen.
 @onready var player = get_tree().get_first_node_in_group("BarB")
-@onready var barb : CharacterBody2D = get_node("../../../BarB")
+@onready var barb : CharacterBody2D = get_node("../../../../BarB")
 
 #new drone movement
 var targetY

@@ -65,7 +65,7 @@ size = Vector2(29.1971, 23.614)
 [node name="Node2D" type="Node2D"]
 
 [node name="part 2" type="Node2D" parent="."]
-position = Vector2(5799, 1307)
+position = Vector2(9448, 1307)
 
 [node name="floor tile G8" type="Sprite2D" parent="part 2"]
 position = Vector2(-788, -1067)

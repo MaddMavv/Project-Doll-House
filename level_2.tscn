@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
-size = Vector2(7158.79, 825.369)
+size = Vector2(8804.9, 825.369)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ues"]
 size = Vector2(42.3489, 179.396)
@@ -155,14 +155,14 @@ scale = Vector2(7.45, 7.45)
 [node name="kill box" type="Area2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/kill box"]
-position = Vector2(2699.06, 875.302)
+position = Vector2(3522.11, 875.302)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_s2lqf")
 
 [node name="DroneStop" type="Area2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DroneStop"]
-position = Vector2(4884.43, 175.302)
+position = Vector2(4852.08, 175.302)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_y5ues")
 
@@ -1269,8 +1269,8 @@ position = Vector2(10302, -297)
 scale = Vector2(2.5, 2.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(28033, -950)
-scale = Vector2(96.1484, 1)
+position = Vector2(30142.8, -836)
+scale = Vector2(129.113, 2.78125)
 texture = ExtResource("3_mrvp6")
 
 [node name="Warning" type="Timer" parent="."]
