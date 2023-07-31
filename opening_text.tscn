@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://7wai0ydce74r"]
+
+[ext_resource type="Script" path="res://opening_text.gd" id="1_kytq2"]
+
+[node name="Textbox" type="CanvasLayer"]
+script = ExtResource("1_kytq2")
+
+[node name="Container" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.959
+anchor_top = 0.15
+anchor_right = 0.959
+anchor_bottom = 0.15
+offset_left = -959.92
+offset_top = -72.0
+offset_right = 1.07983
+offset_bottom = 183.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "*"
+
+[node name="theText" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+text = "flkjsd;lfkjd;dlkjas;ldkjas"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="End" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "v"
