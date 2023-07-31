@@ -33,8 +33,8 @@ func _process(delta):
 func chase_after_player(delta):
 	if chase == true && stun == false:
 		barb = get_node("../../../BarB")
-		position.y = lerp(position.y, barb.position.y - 400, .7 * delta)
-		position.x = lerp(position.x, barb.position.x + 375, .4 * delta)
+		position.y = lerp(position.y, barb.position.y - 450, .9 * delta)
+		position.x = lerp(position.x, barb.position.x + 600, .6 * delta)
 		if position.x < barb.position.x:
 			self.scale.x = -6;
 		else:
@@ -43,7 +43,7 @@ func chase_after_player(delta):
 		
 	else:
 		if home == false && stun == false:
-			position = lerp(position, start, .7 * delta)
+			position = lerp(position, start, .4 * delta)
 		
 	if chase == false and position.x < start.x + 5 and position.x > start.x - 5 and position.y < start.y + 2 and position.y > start.y - 2:
 		home = true
