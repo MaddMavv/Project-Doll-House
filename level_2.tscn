@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=46 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -17,6 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
+size = Vector2(8804.9, 825.369)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ues"]
+size = Vector2(42.3489, 179.396)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -145,6 +151,20 @@ script = ExtResource("1_h6txy")
 [node name="Level" parent="." instance=ExtResource("23_gx0ag")]
 position = Vector2(2021, -791)
 scale = Vector2(7.45, 7.45)
+
+[node name="kill box" type="Area2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/kill box"]
+position = Vector2(3522.11, 875.302)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_s2lqf")
+
+[node name="DroneStop" type="Area2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DroneStop"]
+position = Vector2(4852.08, 175.302)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_y5ues")
 
 [node name="Stuff to delete" type="Node2D" parent="."]
 
@@ -1159,9 +1179,6 @@ position = Vector2(2548, -1213)
 scale = Vector2(0.109366, 0.781251)
 texture = ExtResource("3_mrvp6")
 
-[node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(6283, -1202)
-
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(20008, -552)
 scale = Vector2(2.83285, 2.83285)
@@ -1201,6 +1218,9 @@ frame_progress = 0.0232401
 [node name="Player Detection" type="CollisionShape2D" parent="GREEN DRONE/Area2D"]
 position = Vector2(61.333, -99.1932)
 shape = SubResource("RectangleShape2D_s1xew")
+
+[node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
+position = Vector2(17730, -1336)
 
 [node name="Baddies" type="Node2D" parent="."]
 
@@ -1249,8 +1269,8 @@ position = Vector2(10302, -297)
 scale = Vector2(2.5, 2.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(21141, -3108)
-scale = Vector2(96.1484, 1)
+position = Vector2(30142.8, -836)
+scale = Vector2(129.113, 2.78125)
 texture = ExtResource("3_mrvp6")
 
 [node name="Warning" type="Timer" parent="."]
@@ -1277,6 +1297,39 @@ sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 18813.0
+offset_top = -818.0
+offset_right = 21026.0
+offset_bottom = -431.0
+theme_override_font_sizes/font_size = 281
+text = "final destination"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 39614.0
+offset_top = 196.0
+offset_right = 43262.0
+offset_bottom = 583.0
+theme_override_font_sizes/font_size = 281
+text = "trains and up down drones"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 14232.0
+offset_top = 456.0
+offset_right = 17880.0
+offset_bottom = 843.0
+theme_override_font_sizes/font_size = 281
+text = "train"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 52349.0
+offset_top = -348.0
+offset_right = 55997.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 281
+text = "trains on each level"
+
+[connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
 [connection signal="body_exited" from="Stuff to delete/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_shape_entered" from="Stuff to delete/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
