@@ -1,11 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcmri1ncjl1i1"]
+[gd_scene load_steps=9 format=3 uid="uid://bcmri1ncjl1i1"]
 
-[ext_resource type="Texture2D" uid="uid://cq4wujx3j51df" path="res://art shit/s1 fixed...question mark.png" id="1_gcc7a"]
 [ext_resource type="Texture2D" uid="uid://cpchwot4mg1s5" path="res://art shit/The actual floor stuff/New tile test-1.png.png" id="2_i41qi"]
-[ext_resource type="Texture2D" uid="uid://cikwu24u6n6g4" path="res://art shit/Ref photos/s2 .png" id="2_p4wn1"]
-[ext_resource type="Texture2D" uid="uid://dm5f7oom8yriv" path="res://art shit/Ref photos/s3 .png" id="3_8jirk"]
 [ext_resource type="Texture2D" uid="uid://cgsvrllf63jtq" path="res://art shit/box designs/ACB.png" id="3_tavp5"]
-[ext_resource type="Texture2D" uid="uid://cvrwr1khl4ypw" path="res://art shit/Ref photos/s4 and s5 unfinished.png" id="4_fx2r0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awaxp"]
 size = Vector2(31.7355, 27.1035)
@@ -34,20 +30,16 @@ visible = false
 modulate = Color(1, 1, 1, 0.498039)
 texture_filter = 1
 position = Vector2(585, 120)
-texture = ExtResource("1_gcc7a")
 
 [node name="Ref Background s2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.729412)
 position = Vector2(1852, 120)
-texture = ExtResource("2_p4wn1")
 
 [node name="Ref Backrgound s3" type="Sprite2D" parent="."]
 position = Vector2(3261, 120)
-texture = ExtResource("3_8jirk")
 
 [node name="Background Ref s4 and s5" type="Sprite2D" parent="."]
 position = Vector2(4683, 120)
-texture = ExtResource("4_fx2r0")
 
 [node name="floor tile G" type="Sprite2D" parent="."]
 position = Vector2(137.25, 232.25)
