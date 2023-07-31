@@ -72,6 +72,12 @@ size = Vector2(91.794, 90.2627)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fk4go"]
 size = Vector2(43.0731, 138.677)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
+size = Vector2(13557.9, 3430.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk56p"]
+size = Vector2(721.247, 2808.54)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl11q"]
 size = Vector2(17.9557, 6.55402)
 
@@ -97,12 +103,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xew"]
 size = Vector2(760.188, 551.799)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
-size = Vector2(13557.9, 3430.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk56p"]
-size = Vector2(721.247, 2808.54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mhqwo"]
 animations = [{
@@ -1099,8 +1099,68 @@ position = Vector2(3265, 364)
 scale = Vector2(1.71875, 0.386719)
 texture = ExtResource("3_mrvp6")
 
+[node name="Cop8" type="Node2D" parent="Stuff to delete"]
+position = Vector2(6727, -3945)
+
+[node name="Icon3" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2700.5, -907.5)
+rotation = 0.451497
+scale = Vector2(0.585937, 1.69531)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon4" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2803, -910)
+rotation = -0.49911
+scale = Vector2(0.585937, 1.69531)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon5" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2749, -1067)
+scale = Vector2(0.75, 1.63281)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon6" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2648, -1110)
+scale = Vector2(1.41406, 0.558593)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon7" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2851, -1104)
+scale = Vector2(1.41406, 0.558593)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon8" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2752, -1246.12)
+scale = Vector2(1.41406, 1.37305)
+texture = ExtResource("3_mrvp6")
+
+[node name="Icon9" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2580, -1118)
+scale = Vector2(0.671861, 1.5625)
+texture = ExtResource("3_mrvp6")
+
+[node name="Area2D" type="Area2D" parent="Stuff to delete/Cop8/Icon9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stuff to delete/Cop8/Icon9/Area2D"]
+visible = false
+position = Vector2(3429.28, 0)
+shape = SubResource("RectangleShape2D_8ga1s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stuff to delete/Cop8"]
+position = Vector2(-11147, 608)
+collision_mask = 4
+
+[node name="byeTrain" type="CollisionShape2D" parent="Stuff to delete/Cop8/StaticBody2D"]
+position = Vector2(-573, -383)
+shape = SubResource("RectangleShape2D_dk56p")
+
+[node name="Icon10" type="Sprite2D" parent="Stuff to delete/Cop8"]
+position = Vector2(2548, -1213)
+scale = Vector2(0.109366, 0.781251)
+texture = ExtResource("3_mrvp6")
+
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(923, -1239)
+position = Vector2(6283, -1202)
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(20008, -552)
@@ -1144,84 +1204,22 @@ shape = SubResource("RectangleShape2D_s1xew")
 
 [node name="Baddies" type="Node2D" parent="."]
 
-[node name="Cop8" type="Node2D" parent="Baddies"]
-position = Vector2(7110, -608)
-
-[node name="Icon3" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2700.5, -907.5)
-rotation = 0.451497
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon4" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2803, -910)
-rotation = -0.49911
-scale = Vector2(0.585937, 1.69531)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon5" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2749, -1067)
-scale = Vector2(0.75, 1.63281)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon6" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2648, -1110)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon7" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2851, -1104)
-scale = Vector2(1.41406, 0.558593)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon8" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2752, -1246.12)
-scale = Vector2(1.41406, 1.37305)
-texture = ExtResource("3_mrvp6")
-
-[node name="Icon9" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2580, -1118)
-scale = Vector2(0.671861, 1.5625)
-texture = ExtResource("3_mrvp6")
-
-[node name="Area2D" type="Area2D" parent="Baddies/Cop8/Icon9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Baddies/Cop8/Icon9/Area2D"]
-visible = false
-position = Vector2(3429.28, 0)
-shape = SubResource("RectangleShape2D_8ga1s")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Baddies/Cop8"]
-position = Vector2(-11147, 608)
-collision_mask = 4
-
-[node name="byeTrain" type="CollisionShape2D" parent="Baddies/Cop8/StaticBody2D"]
-position = Vector2(-573, -383)
-shape = SubResource("RectangleShape2D_dk56p")
-
-[node name="Icon10" type="Sprite2D" parent="Baddies/Cop8"]
-position = Vector2(2548, -1213)
-scale = Vector2(0.109366, 0.781251)
-texture = ExtResource("3_mrvp6")
-
 [node name="Drones" type="Node2D" parent="Baddies"]
 
 [node name="Red Drones" type="Node2D" parent="Baddies/Drones"]
 
 [node name="redDrone" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(6758, -1010)
+position = Vector2(5783, -1115)
+range = Vector2(0, 300)
 
 [node name="Blue Drones" type="Node2D" parent="Baddies/Drones"]
 
-[node name="blueDrone" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(5273, -1107)
-
 [node name="blueDrone2" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(8378, 115)
-range = Vector2(650, 0)
+position = Vector2(8399, 115)
+range = Vector2(550, 0)
 
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(10255, 115)
+position = Vector2(10290, 115)
 range = Vector2(650, 0)
 
 [node name="cops" type="Node2D" parent="Baddies"]
@@ -1230,16 +1228,24 @@ range = Vector2(650, 0)
 position = Vector2(5348, 587)
 scale = Vector2(2.5, 2.5)
 
+[node name="cop6" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(2913, -1204)
+scale = Vector2(2.5, 2.5)
+
+[node name="cop7" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(2913, -317)
+scale = Vector2(2.5, 2.5)
+
 [node name="cop2" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(3429, 592)
+position = Vector2(2962, 583)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop4" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(8385, -313)
+position = Vector2(8411, -313)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop5" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(10269, -315)
+position = Vector2(10302, -297)
 scale = Vector2(2.5, 2.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -1271,9 +1277,9 @@ sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
 
+[connection signal="body_exited" from="Stuff to delete/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Stuff to delete/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Baddies/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_shape_entered" from="Baddies/Cop8/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
 [connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]
