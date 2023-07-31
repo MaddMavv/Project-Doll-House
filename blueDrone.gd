@@ -45,6 +45,7 @@ func move(delta):
 		targetX = sin(h_move.x) * range.x * delta
 		position.x += targetX
 		h_move.x += add.x
+		#print(position.y)
 		
 		#old movement
 		#position += velocity * delta
@@ -55,18 +56,12 @@ func move(delta):
 		home = false
 		#falls to the ground
 		move_and_collide(fall * delta)
-	elif home == false and position.y > start.y:
+
+	elif stun == false and home == false:
 		position.y -= 225 * delta
-	elif position.y < start.y:
-		position.y = start.y
 	
-	if home == false and position.y == start.y and position.x > start.x:
-		position.x -= 225 * delta
-	
-	if stun == false and home == false and position.y == start.y and position.x < start.x:
-		position.x = start.x
-		home = true 
-		h_move = Vector2(0.00, 0.00)
+	if stun == false and position.y < start.y:
+		home = true
 	
 	
 func shoot_at_player():
