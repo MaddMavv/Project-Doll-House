@@ -25,44 +25,50 @@ func _physics_process(delta):
 		stop_and_attack()
 		run_from_player(delta)
 	move_and_slide()
-	
-	
-func chase_after_player():	
+
+
+func chase_after_player():
 	if chase == true:
 		#get_node("AnimatedSprite2D").play("Jump")
 		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../../BarB")
-		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
+		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
+			velocity.x = 0
 		else:
-			get_node("AnimatedSprite2D").flip_h = false
-		velocity.x = direction.x * SPEED
+			var direction = (player.position - self.position).normalized()
+			if direction.x > 0:
+				get_node("AnimatedSprite2D").flip_h = true
+			else:
+				get_node("AnimatedSprite2D").flip_h = false
+			velocity.x = direction.x * SPEED
 	else:
 		if stun == false:
 			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
-		
+
 func stop_and_attack():
 	if stop == true:
 		get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
-		
+
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../../../BarB")
-		if player.position.x < position.x:
-			velocity.x += runRight * delta
-		if player.position.x > position.x:
-			velocity.x -= runLeft * delta
-		position.x += velocity.x
+		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
+			velocity.x = 0
+		else:
+			if player.position.x < position.x:
+				velocity.x += runRight * delta
+			if player.position.x > position.x:
+				velocity.x -= runLeft * delta
+			position.x += velocity.x
 		#if direction.x > 0:
 		#	get_node("AnimatedSprite2D").flip_h = false
 		#else:
 		#	get_node("AnimatedSprite2D").flip_h = true
 		#velocity.x = direction.x * SPEED
-		
+
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -79,11 +85,11 @@ func _on_stop_body_entered(body):
 	if body.name == "BarB":
 		if run == false:
 			stop = true
-		
+
 func _on_stop_body_exited(body):
 	if body.name == "BarB":
 		stop = false
-		
+
 func _on_run_away_body_entered(body):
 	if body.name == "BarB":
 		run = true
@@ -91,19 +97,21 @@ func _on_run_away_body_entered(body):
 func _on_run_away_body_exited(body):
 	if body.name == "BarB":
 		run = false
-		
-func shoot():
+
+func shoot(bullet_direction : Vector2):
 	var bullet = bullet_scene.instantiate()
 	bullet.rotation = 0.0
 	bullet.position = spawn_point.global_position
-	var rVect := Vector2(-1,0)
-	bullet.direction = global_position.direction_to(rVect)
+	bullet.direction = bullet_direction
 	owner.add_child(bullet)
 
 func _on_timer_timeout():
-	shoot()
+	if position.x > player.position.x:
+		shoot(Vector2.LEFT)
+	else:
+		shoot(Vector2.RIGHT)
 
-	
+
 func stunned():
 	stun = true;
 	velocity.x = 0;

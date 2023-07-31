@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://iepj63r3yt31"]
+[gd_scene load_steps=10 format=3 uid="uid://iepj63r3yt31"]
 
 [ext_resource type="Script" path="res://cop.gd" id="1_u4vm7"]
 [ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_8jdol"]
 [ext_resource type="Texture2D" uid="uid://cjd3uwhajuf7e" path="res://assests/Cop Stunned F1.png" id="3_knt5f"]
 [ext_resource type="Texture2D" uid="uid://x71affs0ec6n" path="res://assests/Cop Stunned F2.png" id="4_2xyhi"]
-[ext_resource type="Texture2D" uid="uid://v3rssbavmwaq" path="res://assests/gun_png_by_xx_thanosbeatbox_xx_ddxajtn-fullview.png" id="5_c4j3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5q"]
 size = Vector2(102, 247)
@@ -54,6 +53,7 @@ script = ExtResource("1_u4vm7")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, 17.5)
 shape = SubResource("RectangleShape2D_tbd5q")
 
@@ -65,39 +65,51 @@ animation = &"Stunned"
 autoplay = "Idle"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
 position = Vector2(21, 11.5)
 shape = SubResource("RectangleShape2D_yc4g5")
-metadata/_edit_lock_ = true
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="RunAway" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunAway"]
+visible = false
 position = Vector2(-21, 6)
 shape = SubResource("RectangleShape2D_2reyi")
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="Stop" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
+visible = false
 position = Vector2(-10, 8.5)
 shape = SubResource("RectangleShape2D_cmqe0")
+debug_color = Color(1, 0.856667, 0.14, 0.027451)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 3.0
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
+visible = false
 position = Vector2(-88, -135)
 
 [node name="StunTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="GunPngByXxThanosbeatboxXxDdxajtn-fullview" type="Sprite2D" parent="."]
-position = Vector2(-1, -22)
-scale = Vector2(0.13715, 0.13715)
-texture = ExtResource("5_c4j3v")
+[node name="LeftEdge" type="RayCast2D" parent="."]
+position = Vector2(-65, 110)
+collision_mask = 3
+
+[node name="RightEdge" type="RayCast2D" parent="."]
+position = Vector2(53, 113)
+collision_mask = 3
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
