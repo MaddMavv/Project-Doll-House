@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://iepj63r3yt31"]
+[gd_scene load_steps=10 format=3 uid="uid://ce1bgeqwvjtu"]
 
-[ext_resource type="Script" path="res://cop.gd" id="1_u4vm7"]
-[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_8jdol"]
-[ext_resource type="Texture2D" uid="uid://cjd3uwhajuf7e" path="res://assests/Cop Stunned F1.png" id="3_knt5f"]
-[ext_resource type="Texture2D" uid="uid://x71affs0ec6n" path="res://assests/Cop Stunned F2.png" id="4_2xyhi"]
-[ext_resource type="Texture2D" uid="uid://v3rssbavmwaq" path="res://assests/gun_png_by_xx_thanosbeatbox_xx_ddxajtn-fullview.png" id="5_c4j3v"]
+[ext_resource type="Script" path="res://melee_cop.gd" id="1_tomh6"]
+[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="2_ss07f"]
+[ext_resource type="Texture2D" uid="uid://cjd3uwhajuf7e" path="res://assests/Cop Stunned F1.png" id="3_stfme"]
+[ext_resource type="Texture2D" uid="uid://x71affs0ec6n" path="res://assests/Cop Stunned F2.png" id="4_a5ucy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5q"]
 size = Vector2(102, 247)
@@ -13,7 +12,7 @@ size = Vector2(102, 247)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8jdol")
+"texture": ExtResource("2_ss07f")
 }],
 "loop": true,
 "name": &"Idle",
@@ -21,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8jdol")
+"texture": ExtResource("2_ss07f")
 }],
 "loop": true,
 "name": &"Run",
@@ -29,10 +28,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_knt5f")
+"texture": ExtResource("3_stfme")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2xyhi")
+"texture": ExtResource("4_a5ucy")
 }],
 "loop": true,
 "name": &"Stunned",
@@ -43,14 +42,14 @@ animations = [{
 size = Vector2(2170, 287)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2reyi"]
-size = Vector2(530, 250)
+size = Vector2(176, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqe0"]
 size = Vector2(848, 269)
 
-[node name="cop" type="CharacterBody2D" groups=["Enemies"]]
+[node name="melee cop" type="CharacterBody2D" groups=["Enemies"]]
 collision_mask = 3
-script = ExtResource("1_u4vm7")
+script = ExtResource("1_tomh6")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -71,10 +70,10 @@ position = Vector2(21, 11.5)
 shape = SubResource("RectangleShape2D_yc4g5")
 metadata/_edit_lock_ = true
 
-[node name="RunAway" type="Area2D" parent="."]
+[node name="damage" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RunAway"]
-position = Vector2(-21, 6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_2reyi")
 
 [node name="Stop" type="Area2D" parent="."]
@@ -94,15 +93,10 @@ position = Vector2(-88, -135)
 wait_time = 2.0
 one_shot = true
 
-[node name="GunPngByXxThanosbeatboxXxDdxajtn-fullview" type="Sprite2D" parent="."]
-position = Vector2(-1, -22)
-scale = Vector2(0.13715, 0.13715)
-texture = ExtResource("5_c4j3v")
-
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="RunAway" to="." method="_on_run_away_body_entered"]
-[connection signal="body_exited" from="RunAway" to="." method="_on_run_away_body_exited"]
+[connection signal="body_entered" from="damage" to="." method="_on_run_away_body_entered"]
+[connection signal="body_exited" from="damage" to="." method="_on_run_away_body_exited"]
 [connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
 [connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
