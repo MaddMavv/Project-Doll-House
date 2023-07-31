@@ -49,11 +49,11 @@ func _physics_process(delta):
 			veloRealY = JUMP_VELOCITY
 			jumpCount = -1
 	var direction = Input.get_axis("move left", "move right")
-	if direction == -1:
+	if direction < 0:
 			self.rotation_degrees = 180
 			self.scale.y = -1.4
 			flip = true
-	elif direction == 1:
+	elif direction > 0:
 			self.rotation_degrees = 0;
 			self.scale.y = 1.4
 			flip = false
