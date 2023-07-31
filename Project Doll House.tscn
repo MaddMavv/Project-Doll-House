@@ -255,10 +255,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M1"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M1/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M4" type="Sprite2D" parent="."]
 position = Vector2(-136, 120)
@@ -271,6 +273,7 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M4/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M2" type="Sprite2D" parent="."]
 position = Vector2(411.25, 120)
@@ -278,10 +281,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M2"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M2/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M3" type="Sprite2D" parent="."]
 position = Vector2(685.25, 120)
@@ -289,10 +294,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M3"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M3/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="SFT M4" type="Sprite2D" parent="."]
 position = Vector2(1043.25, 120)
@@ -300,10 +307,12 @@ scale = Vector2(1.82837, 0.453)
 texture = SubResource("AtlasTexture_n8mj7")
 
 [node name="Area2D" type="StaticBody2D" parent="SFT M4"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFT M4/Area2D"]
 position = Vector2(-0.0022583, 3.31125)
 shape = SubResource("RectangleShape2D_7l8jc")
+one_way_collision = true
 
 [node name="M5" type="Sprite2D" parent="."]
 position = Vector2(1429, 120)
@@ -322,10 +331,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M6"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M6/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M7" type="Sprite2D" parent="."]
 position = Vector2(1977, 120)
@@ -333,10 +344,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M7"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M7/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="SFT M8" type="Sprite2D" parent="."]
 position = Vector2(2143, 120)
@@ -344,10 +357,12 @@ scale = Vector2(1.82837, 0.453)
 texture = SubResource("AtlasTexture_n8mj7")
 
 [node name="Area2D" type="StaticBody2D" parent="SFT M8"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFT M8/Area2D"]
 position = Vector2(-0.0022583, 3.31125)
 shape = SubResource("RectangleShape2D_7l8jc")
+one_way_collision = true
 
 [node name="SFT M9" type="Sprite2D" parent="."]
 position = Vector2(2723.04, 120)
@@ -355,10 +370,12 @@ scale = Vector2(1.82837, 0.453)
 texture = SubResource("AtlasTexture_n8mj7")
 
 [node name="Area2D" type="StaticBody2D" parent="SFT M9"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFT M9/Area2D"]
 position = Vector2(-0.0022583, 3.31125)
 shape = SubResource("RectangleShape2D_7l8jc")
+one_way_collision = true
 
 [node name="SFT M10" type="Sprite2D" parent="."]
 position = Vector2(2723.04, 0)
@@ -379,10 +396,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M10"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M10/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="floor tile m9" type="Sprite2D" parent="."]
 position = Vector2(1429, 120)
@@ -390,10 +409,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="floor tile m9"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor tile m9/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M11" type="Sprite2D" parent="."]
 position = Vector2(4119, 120)
@@ -401,10 +422,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M11"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M11/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M12" type="Sprite2D" parent="."]
 position = Vector2(4235.52, 120)
@@ -412,10 +435,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M12"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M12/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M13" type="Sprite2D" parent="."]
 position = Vector2(4909.66, 120)
@@ -423,10 +448,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M13"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M13/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="M14" type="Sprite2D" parent="."]
 position = Vector2(5150, 120)
@@ -434,10 +461,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="M14"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="M14/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="Tile T1" type="Sprite2D" parent="."]
 position = Vector2(137, 0)
@@ -589,10 +618,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="T12"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="T12/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="T13" type="Sprite2D" parent="."]
 position = Vector2(4245, 0)
@@ -604,6 +635,7 @@ texture = ExtResource("5_lw0dq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="T13/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="T14" type="Sprite2D" parent="."]
 position = Vector2(4909.66, 0)
@@ -611,10 +643,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="T14"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="T14/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="T15" type="Sprite2D" parent="."]
 position = Vector2(5150, 0)
@@ -622,10 +656,12 @@ scale = Vector2(8.57813, 0.453125)
 texture = ExtResource("5_lw0dq")
 
 [node name="Area2D" type="StaticBody2D" parent="T15"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="T15/Area2D"]
 position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
+one_way_collision = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
