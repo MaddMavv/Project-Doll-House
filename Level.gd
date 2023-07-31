@@ -83,3 +83,8 @@ func _on_area_2d_body_exited(body):
 	if body.name == "BarB":
 		here = false;
 		player = get_node("../Level 2/BarB")
+
+
+func _on_kill_box_body_entered(body):
+	if body.name == "BarB":
+		Game.playerHP = 0

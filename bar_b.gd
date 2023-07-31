@@ -48,7 +48,7 @@ func _physics_process(delta):
 		if Input.is_action_just_released("move down"):
 			veloRealY = JUMP_VELOCITY
 			jumpCount = -1
-	var direction = Input.get_axis("move left", "move right")
+	var direction = Input.get_axis("move left ", "move right")
 	if direction < 0:
 			self.rotation_degrees = 180
 			self.scale.y = -1.4
