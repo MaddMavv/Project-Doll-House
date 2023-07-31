@@ -52,13 +52,12 @@ func move(delta):
 		home = false
 		#falls to the ground
 		move_and_collide(fall * delta)
-	elif home == false and position.y > start.y:
+
+	elif stun == false and home == false:
 		position.y -= 225 * delta
 	
-	if stun == false and position.y < start.y and home == false:
-		position.y = start.y
-		home = true 
-		v_move = Vector2(0.00, 0.00)
+	if stun == false and position.y < start.y:
+		home = true
 	
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
