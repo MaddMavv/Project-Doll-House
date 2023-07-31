@@ -591,17 +591,6 @@ position = Vector2(-0.0022583, 3.31125)
 shape = SubResource("RectangleShape2D_7l8jc")
 one_way_collision = true
 
-[node name="M5" type="Sprite2D" parent="."]
-position = Vector2(1429, 120)
-scale = Vector2(8.57813, 0.453125)
-texture = ExtResource("5_lw0dq")
-
-[node name="Area2D" type="StaticBody2D" parent="M5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="M5/Area2D"]
-position = Vector2(0.0291424, 3.86212)
-shape = SubResource("RectangleShape2D_awaxp")
-
 [node name="M6" type="Sprite2D" parent="."]
 position = Vector2(1703, 120)
 scale = Vector2(8.57813, 0.453125)
@@ -801,7 +790,7 @@ shape = SubResource("RectangleShape2D_h2oem")
 
 [node name="cop box test2" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1546.38, 83.536)
+position = Vector2(1543, 83.536)
 scale = Vector2(0.0334898, 0.0355903)
 texture = ExtResource("6_ns42d")
 
@@ -1102,7 +1091,7 @@ shape = SubResource("RectangleShape2D_xqlwa")
 
 [node name="nfb11" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1480, 220)
+position = Vector2(1430, 220)
 texture = ExtResource("10_m48jv")
 
 [node name="Area2D" type="StaticBody2D" parent="Node2D/nfb11"]
@@ -1112,7 +1101,7 @@ shape = SubResource("RectangleShape2D_xqlwa")
 
 [node name="nfb12" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1480, 188)
+position = Vector2(1430, 188)
 texture = ExtResource("10_m48jv")
 
 [node name="Area2D" type="StaticBody2D" parent="Node2D/nfb12"]
@@ -1122,7 +1111,7 @@ shape = SubResource("RectangleShape2D_xqlwa")
 
 [node name="nfb13" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1447.61, 220)
+position = Vector2(1397.61, 220)
 texture = ExtResource("10_m48jv")
 
 [node name="Area2D" type="StaticBody2D" parent="Node2D/nfb13"]
@@ -1142,7 +1131,7 @@ shape = SubResource("RectangleShape2D_xqlwa")
 
 [node name="nfb15" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1598.96, 188)
+position = Vector2(1603, 188)
 texture = ExtResource("10_m48jv")
 
 [node name="Area2D" type="StaticBody2D" parent="Node2D/nfb15"]

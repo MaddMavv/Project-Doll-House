@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if shmovin == true:
-		position.x += 18;
+		position.x += 10;
 		player = get_node("../BarB")
 		if player.position.x <= (self.position.x-1300):
 			player.position.x+=10;

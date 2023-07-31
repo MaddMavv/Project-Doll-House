@@ -3,28 +3,31 @@
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="1_wgj01"]
 [ext_resource type="Script" path="res://train.gd" id="1_wyhpn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljw84"]
+size = Vector2(1024, 326)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwopu"]
 size = Vector2(904, 328)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljw84"]
-size = Vector2(904, 326)
-
 [node name="Train" type="CharacterBody2D"]
-scale = Vector2(0.864328, 0.864328)
-collision_layer = 0
-collision_mask = 0
+position = Vector2(0, -29)
+scale = Vector2(1.5, 1.5)
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_wyhpn")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 24)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ljw84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_mwopu")
-
-[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
-shape = SubResource("RectangleShape2D_ljw84")
+disabled = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(7.04688, 2.23438)
@@ -38,4 +41,4 @@ texture = ExtResource("1_wgj01")
 position = Vector2(305, 124)
 texture = ExtResource("1_wgj01")
 
-[connection signal="body_entered" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

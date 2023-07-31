@@ -11,6 +11,7 @@ var howLong = 0;
 var whichTrain
 var trainWait = 0
 var here = false;
+var mono = false;
 
 func attack():
 		var knockTemp = knock.instantiate()
@@ -48,7 +49,7 @@ func _on_train_moment_timeout():
 	if whichTrain == 2:
 		trainTemp.position = Vector2(26000, -200)
 	if whichTrain == 3:
-		trainTemp.position = Vector2(26000, 650)
+		trainTemp.position = Vector2(26000, 680)
 	
 	if here == true:
 		$Warning.start()
@@ -58,10 +59,10 @@ func _on_warning_timeout():
 	add_child(warnTemp)
 	player = get_node("../Level 2/BarB")
 	
-	if player.position.y < -650:
+	if player.position.y < -650 && mono == false:
 		warnTemp.position = Vector2(player.position.x, -1000)
 		whichTrain = 1
-	elif player.position.y < 250:
+	elif player.position.y < 250 && mono == false:
 		warnTemp.position = Vector2(player.position.x, -200)
 		whichTrain = 2
 	else:
@@ -76,12 +77,14 @@ func _on_warning_timeout():
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "BarB":
 		here = true
+		mono = true
 		$Warning.start()
 
 
 func _on_area_2d_body_exited(body):
 	if body.name == "BarB":
 		here = false;
+		mono = false;
 		player = get_node("../Level 2/BarB")
 
 
