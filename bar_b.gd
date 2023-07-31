@@ -27,23 +27,28 @@ func _physics_process(delta):
 		veloRealY = 0
 	if not is_on_floor():
 		veloRealY += gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		if Input.is_action_pressed("down"):
-			set_collision_mask_value(2, false)
-		else:
-			veloRealY = JUMP_VELOCITY
-			jumpCount = maxjumpCount
-		#anim.play("Jump")
-	# Handle Double and Triple Jump
-	if jumpCount > 0 and Input.is_action_just_pressed("ui_accept"):
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		veloRealY = JUMP_VELOCITY
-		#anim.play("Jump")
+		jumpCount = maxjumpCount
+	# Handle Double jump.
+	if jumpCount > 0 and Input.is_action_just_pressed("jump"):
+		veloRealY = JUMP_VELOCITY
 		jumpCount -= 1
+		#anim.play("Jump")
 		$jumpsound.play()
-
-	var direction = Input.get_axis("ui_left", "ui_right")
+	# Handles drop through platform.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_pressed("move down"):
+			set_collision_mask_value(2, false)
+			veloRealY = JUMP_VELOCITY * -1
+		#anim.play("Jump")
+	# Handles double jump after drop through.
+	if Input.is_action_just_pressed("jump") and not is_on_floor():
+		if Input.is_action_just_released("move down"):
+			veloRealY = JUMP_VELOCITY
+			jumpCount = -1
+	var direction = Input.get_axis("move left", "move right")
 	if direction == -1:
 			self.rotation_degrees = 180
 			self.scale.y = -1.4
