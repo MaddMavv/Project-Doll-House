@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dnhrj8gok2sb0"]
+[gd_scene load_steps=25 format=3 uid="uid://dnhrj8gok2sb0"]
 
 [ext_resource type="Texture2D" uid="uid://cpchwot4mg1s5" path="res://art shit/The actual floor stuff/New tile test-1.png.png" id="5_lw0dq"]
 [ext_resource type="Texture2D" uid="uid://bwa08p2ovb13v" path="res://art shit/box designs/cop box long.png" id="6_ns42d"]
@@ -46,6 +46,9 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tgfg"]
 size = Vector2(30, 62.6526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl543"]
+size = Vector2(13, 81.8525)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdjg"]
 size = Vector2(29.1971, 20)
@@ -1157,6 +1160,11 @@ texture = ExtResource("11_emp0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade6/Area2D"]
 shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="barricade6/Area2D"]
+position = Vector2(-21.5, -81.3606)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sl543")
 
 [node name="barricade7" type="Sprite2D" parent="."]
 position = Vector2(2148.57, 68.045)
