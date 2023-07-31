@@ -15,7 +15,7 @@ events = [SubResource("InputEventJoypadButton_pyjqi")]
 script = ExtResource("1_i2nf6")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1448, 817)
+position = Vector2(1446, 804)
 scale = Vector2(1.52, 1.52)
 texture = ExtResource("2_rrvbv")
 
@@ -36,10 +36,10 @@ layer = 3
 
 [node name="Quit" type="Button" parent="ParallaxBackground"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 2603.0
-offset_top = 19.0
-offset_right = 2960.0
-offset_bottom = 182.0
+offset_left = 2602.0
+offset_top = 8.0
+offset_right = 2959.0
+offset_bottom = 171.0
 scale = Vector2(0.302411, 0.667589)
 theme_override_font_sizes/font_size = 101
 text = "
@@ -47,10 +47,10 @@ text = "
 
 [node name="Play" type="Button" parent="ParallaxBackground"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 1880.0
-offset_top = 1287.0
-offset_right = 2692.0
-offset_bottom = 1524.0
+offset_left = 1866.0
+offset_top = 1267.0
+offset_right = 2678.0
+offset_bottom = 1504.0
 scale = Vector2(0.72, 0.72)
 shortcut = SubResource("Shortcut_cewsu")
 text = "Play"
