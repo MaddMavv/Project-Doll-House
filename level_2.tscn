@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=40 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ror3virm5ave" path="res://assests/s1 .png" id="8_bcoma"]
 [ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="9_13sgr"]
 [ext_resource type="PackedScene" uid="uid://db07m7ctkl7x1" path="res://redDrone.tscn" id="10_lhnsx"]
+[ext_resource type="Script" path="res://Pause Menu/Pause_Menu.gd" id="12_boi7y"]
+[ext_resource type="Texture2D" uid="uid://c07q85b6eyaff" path="res://Pause Menu/Tab.png" id="13_a5dxs"]
 [ext_resource type="PackedScene" uid="uid://7ue7kdbpu0t3" path="res://blueDrone.tscn" id="14_r1v73"]
 [ext_resource type="PackedScene" uid="uid://iepj63r3yt31" path="res://cop.tscn" id="15_xdgsa"]
 [ext_resource type="Script" path="res://HP.gd" id="16_y8jng"]
@@ -157,7 +159,6 @@ texture = ExtResource("3_mrvp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Icon9/Area2D"]
 position = Vector2(-2420.69, 728.959)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8ga1s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Level/Radio Cop"]
@@ -191,7 +192,6 @@ texture = ExtResource("3_mrvp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop2/Icon9/Area2D"]
 position = Vector2(-3921.52, 748.162)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8ga1s")
 
 [node name="Icon10" type="Sprite2D" parent="Level/Radio Cop2"]
@@ -417,6 +417,50 @@ one_shot = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Pause Menu" type="Control" parent="UI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_boi7y")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Pause Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27451)
+
+[node name="Resume Game" type="Button" parent="UI/Pause Menu/ColorRect"]
+layout_mode = 0
+offset_left = 1078.0
+offset_top = 785.0
+offset_right = 1198.0
+offset_bottom = 816.0
+scale = Vector2(5.64, 5.64)
+text = "Resume Game
+"
+
+[node name="Quit" type="Button" parent="UI/Pause Menu/ColorRect"]
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 1014.0
+offset_right = 1201.0
+offset_bottom = 1045.0
+scale = Vector2(5.64, 5.64)
+text = "Quit
+"
+
+[node name="Tab" type="Sprite2D" parent="UI/Pause Menu/ColorRect"]
+position = Vector2(2246, 844)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("13_a5dxs")
+
 [node name="HP" type="Label" parent="UI"]
 visible = false
 offset_right = 199.0
@@ -452,4 +496,6 @@ shape = SubResource("RectangleShape2D_it2v0")
 [connection signal="timeout" from="GREEN DRONE/spawn" to="GREEN DRONE" method="_on_spawn_timeout"]
 [connection signal="timeout" from="Warning" to="." method="_on_warning_timeout"]
 [connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]
+[connection signal="pressed" from="UI/Pause Menu/ColorRect/Resume Game" to="UI/Pause Menu" method="_on_resume_game_pressed"]
+[connection signal="pressed" from="UI/Pause Menu/ColorRect/Quit" to="UI/Pause Menu" method="_on_quit_pressed"]
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_area_2d_body_entered"]
