@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://djobdn0kpo3iw"]
+[gd_scene load_steps=21 format=3 uid="uid://djobdn0kpo3iw"]
 
 [ext_resource type="Texture2D" uid="uid://fhr87rg7652t" path="res://assests/BarB.png" id="1_5uvhq"]
 [ext_resource type="Script" path="res://bar_b.gd" id="1_w7i21"]
@@ -403,8 +403,60 @@ tracks/2/keys = {
 "values": [Vector2(-18, -9), Vector2(3.57143, 4.28571), Vector2(-35, -26.4286), Vector2(5, -25), Vector2(-49.2857, 9.28572), Vector2(24.2857, 30.7143), Vector2(-26.4286, -54.2857), Vector2(-45.7143, 15), Vector2(16.4286, -54.2857), Vector2(-24.2857, 45.7143), Vector2(-47.8571, -55)]
 }
 
+[sub_resource type="Animation" id="Animation_46slq"]
+resource_name = "Charged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Charging"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Megaphone:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0541052]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Megaphone:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.57143, -51.4286)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_plkx7"]
 _data = {
+"Charged": SubResource("Animation_46slq"),
 "Charging": SubResource("Animation_t7e4u"),
 "Idle": SubResource("Animation_qmvpd"),
 "Melee": SubResource("Animation_44bcf"),
