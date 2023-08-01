@@ -1316,7 +1316,6 @@ texture = ExtResource("11_emp0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade/Area2D"]
 position = Vector2(0, -27.9577)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gohqv")
 
 [node name="Area2D2" type="StaticBody2D" parent="barricade"]
@@ -1399,7 +1398,6 @@ texture = ExtResource("11_emp0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade8/Area2D"]
 position = Vector2(0, -26.1085)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pxojs")
 
 [node name="barricade w window" type="Sprite2D" parent="."]

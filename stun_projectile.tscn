@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6p0vgp32aq5e"]
 
 [ext_resource type="Script" path="res://stun_projectile.gd" id="1_0t0ns"]
-[ext_resource type="Texture2D" uid="uid://hv6m2mpjrh6t" path="res://icon.svg" id="2_2nnjn"]
+[ext_resource type="Texture2D" uid="uid://bsa5ilaax1yt2" path="res://assests/Untitled_Artwork-5.png" id="3_7cvgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptg7s"]
 size = Vector2(126, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuqht"]
-size = Vector2(128, 130)
+[sub_resource type="CircleShape2D" id="CircleShape2D_668gc"]
+radius = 67.1193
 
 [node name="Stun projectile" type="CharacterBody2D"]
 script = ExtResource("1_0t0ns")
@@ -16,20 +16,20 @@ script = ExtResource("1_0t0ns")
 shape = SubResource("RectangleShape2D_ptg7s")
 disabled = true
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(-1, -1)
-texture = ExtResource("2_2nnjn")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_xuqht")
+shape = SubResource("CircleShape2D_668gc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
 autostart = true
+
+[node name="UntitledArtwork-5" type="Sprite2D" parent="."]
+position = Vector2(-3, -7)
+scale = Vector2(0.0654297, 0.0634766)
+texture = ExtResource("3_7cvgd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

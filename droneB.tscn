@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnqsuyouetc2o"]
+[gd_scene load_steps=12 format=3 uid="uid://cnqsuyouetc2o"]
 
 [ext_resource type="Script" path="res://DroneB.gd" id="1_6gg65"]
 [ext_resource type="Texture2D" uid="uid://daie5uei7e4lm" path="res://assests/Drone F1.png" id="2_1xlo8"]
@@ -96,6 +96,9 @@ _data = {
 "RESET": SubResource("Animation_6go5i")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00elu"]
+size = Vector2(103.5, 20)
+
 [node name="DroneB" type="CharacterBody2D" groups=["Enemies"]]
 scale = Vector2(4, 4)
 script = ExtResource("1_6gg65")
@@ -106,6 +109,7 @@ scale = Vector2(0.098, 0.034)
 sprite_frames = SubResource("SpriteFrames_r28yn")
 animation = &"Flying"
 autoplay = "Flying"
+frame = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -135,7 +139,14 @@ libraries = {
 wait_time = 3.0
 one_shot = true
 
+[node name="PlatformDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlatformDetection"]
+position = Vector2(3.25, -14)
+shape = SubResource("RectangleShape2D_00elu")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="stunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="body_entered" from="PlatformDetection" to="." method="_on_platform_detection_body_entered"]
