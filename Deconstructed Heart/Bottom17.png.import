@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1ixc5r2ktk2b"
-path="res://.godot/imported/Untitled_Artwork-17.png-66be1a21ae8cb961bdf214d47b6cd081.ctex"
+path="res://.godot/imported/Bottom17.png-085e3056edf944641ea51d738533394d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Deconstructed Heart/Untitled_Artwork-17.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-17.png-66be1a21ae8cb961bdf214d47b6cd081.ctex"]
+source_file="res://Deconstructed Heart/Bottom17.png"
+dest_files=["res://.godot/imported/Bottom17.png-085e3056edf944641ea51d738533394d.ctex"]
 
 [params]
 
