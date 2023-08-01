@@ -34,8 +34,8 @@ func _process(delta):
 func chase_after_player(delta):
 	if chase == true && stun == false:
 		barb = get_node("../../../BarB")
-		position.y = lerp(position.y, barb.position.y - 400, .7 * delta)
-		position.x = lerp(position.x, barb.position.x + 375, .4 * delta)
+		position.y = lerp(position.y, barb.position.y - 400, 1.4 * delta)
+		position.x = lerp(position.x, barb.position.x + 375, .7 * delta)
 		if position.x < barb.position.x:
 			self.scale.x = -4;
 		else:
@@ -44,7 +44,7 @@ func chase_after_player(delta):
 		
 	else:
 		if home == false && stun == false:
-			position = lerp(position, start, .7 * delta)
+			position = lerp(position, start, 1.4 * delta)
 		
 	if chase == false and position.x < start.x + 5 and position.x > start.x - 5 and position.y < start.y + 2 and position.y > start.y - 2:
 		home = true
@@ -59,7 +59,9 @@ func chase_after_player(delta):
 		home = false
 		position = lerp(position, start, .4 * delta)
 		#move_and_collide(fall * delta)
-	
+
+func barb_falls_off():
+	pass
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -98,3 +100,7 @@ func _on_stun_timer_timeout():
 
 func death():
 	pass;
+
+func _on_platform_detection_body_entered(body):
+	if body.name == "BarB":
+		body.TRAIN()
