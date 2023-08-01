@@ -36,9 +36,9 @@ func chase_after_player(delta):
 		position.y = lerp(position.y, barb.position.y - 400, .7 * delta)
 		position.x = lerp(position.x, barb.position.x + 375, .4 * delta)
 		if position.x < barb.position.x:
-			self.scale.x = -6;
+			self.scale.x = -4;
 		else:
-			self.scale.x = 6
+			self.scale.x = 4
 		home = false
 		
 	else:

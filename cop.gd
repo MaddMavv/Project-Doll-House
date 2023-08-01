@@ -99,11 +99,12 @@ func _on_run_away_body_exited(body):
 		run = false
 
 func shoot(bullet_direction : Vector2):
-	var bullet = bullet_scene.instantiate()
-	bullet.rotation = 0.0
-	bullet.position = spawn_point.global_position
-	bullet.direction = bullet_direction
-	owner.add_child(bullet)
+	if stun == false:
+		var bullet = bullet_scene.instantiate()
+		bullet.rotation = 0.0
+		bullet.position = spawn_point.global_position
+		bullet.direction = bullet_direction
+		owner.add_child(bullet)
 
 func _on_timer_timeout():
 	if position.x > player.position.x:

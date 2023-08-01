@@ -13,15 +13,16 @@ var trainWait = 0
 var here = false;
 var mono = false;
 
+func _ready():
+	player = get_node("../Level 2/BarB")
+
 func attack():
 		var knockTemp = knock.instantiate()
 		add_child(knockTemp)
-		player = get_node("../Level 2/BarB")
 		knockTemp.global_position = player.position
 func stunAttack():
 		var stunTemp = stun.instantiate()
 		add_child(stunTemp)
-		player = get_node("../Level 2/BarB")
 		stunTemp.global_position = player.position
 		
 func _physics_process(delta):
@@ -45,11 +46,11 @@ func _on_train_moment_timeout():
 	var trainTemp = train.instantiate()
 	add_child(trainTemp)
 	if whichTrain == 1:
-		trainTemp.position = Vector2(26000, -1000)
+		trainTemp.position = Vector2(player.position.x+6000, -1000)
 	if whichTrain == 2:
-		trainTemp.position = Vector2(26000, -200)
+		trainTemp.position = Vector2(player.position.x+6000, -200)
 	if whichTrain == 3:
-		trainTemp.position = Vector2(26000, 680)
+		trainTemp.position = Vector2(player.position.x+6000, 680)
 	
 	if here == true:
 		$Warning.start()
@@ -57,7 +58,6 @@ func _on_train_moment_timeout():
 func _on_warning_timeout():
 	var warnTemp = warn.instantiate()
 	add_child(warnTemp)
-	player = get_node("../Level 2/BarB")
 	
 	if player.position.y < -650 && mono == false:
 		warnTemp.position = Vector2(player.position.x, -1000)
@@ -85,9 +85,15 @@ func _on_area_2d_body_exited(body):
 	if body.name == "BarB":
 		here = false;
 		mono = false;
-		player = get_node("../Level 2/BarB")
+		$TrainMoment.stop()
+		$Warning.stop()
 
 
 func _on_kill_box_body_entered(body):
 	if body.name == "BarB":
 		Game.playerHP = 0
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "BarB":
+		get_tree().quit()
