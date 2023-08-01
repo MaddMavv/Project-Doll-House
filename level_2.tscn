@@ -296,7 +296,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(195, -1097)
+position = Vector2(590, -1351)
 
 [node name="Baddies" type="Node2D" parent="."]
 
