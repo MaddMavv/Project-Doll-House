@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+var cop = preload("res://cop.tscn")
 var shmovin = false
 var player
 var done = false;
@@ -33,3 +35,12 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 		shmovin = false
 		$Wall1.set_deferred("disabled", true)
 		$Wall2.set_deferred("disabled", true)
+		
+func spawnDude():
+	var copTemp = cop.instantiate()
+	add_child(copTemp)
+	copTemp.position = self.position
+
+
+func _on_spawn_timeout():
+	spawnDude()

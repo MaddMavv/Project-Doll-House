@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dnhrj8gok2sb0"]
+[gd_scene load_steps=27 format=3 uid="uid://dnhrj8gok2sb0"]
 
 [ext_resource type="Texture2D" uid="uid://cpchwot4mg1s5" path="res://art shit/The actual floor stuff/New tile test-1.png.png" id="5_lw0dq"]
 [ext_resource type="Texture2D" uid="uid://bwa08p2ovb13v" path="res://art shit/box designs/cop box long.png" id="6_ns42d"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fb2i7nkd3ia" path="res://art shit/box designs/moldy box.png" id="12_xdf66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awaxp"]
-size = Vector2(31.7355, 27.1035)
+size = Vector2(31.7355, 5.51715)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8mj7"]
 atlas = ExtResource("5_lw0dq")
@@ -50,11 +50,14 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqlwa"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gohqv"]
+size = Vector2(30, 118.568)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x47ga"]
 size = Vector2(30, 62.6526)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl543"]
-size = Vector2(13, 81.8525)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxojs"]
+size = Vector2(30, 114.87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdjg"]
 size = Vector2(29.1971, 20)
@@ -190,7 +193,7 @@ texture = ExtResource("5_lw0dq")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/M10/Area2D"]
-position = Vector2(0.0291424, 3.86212)
+position = Vector2(0.0291748, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
 one_way_collision = true
 
@@ -380,6 +383,22 @@ texture = ExtResource("11_emp0b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade11/Area2D"]
 shape = SubResource("RectangleShape2D_3tgfg")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="part 2/barricade11/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="barricade17" type="Sprite2D" parent="part 2"]
+position = Vector2(-62.0005, -1360)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade17/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="part 2/barricade17/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
 [node name="barricade12" type="Sprite2D" parent="part 2"]
 position = Vector2(114.48, -1120.86)
 scale = Vector2(1, 1.48438)
@@ -446,7 +465,11 @@ position = Vector2(0.0291424, 3.86212)
 shape = SubResource("RectangleShape2D_awaxp")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="floor tile G10/Area2D"]
-position = Vector2(-19.2854, -471.293)
+position = Vector2(1314.86, -423.724)
+shape = SubResource("RectangleShape2D_td1c7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor tile G10/Area2D"]
+position = Vector2(-19.0018, -377.379)
 shape = SubResource("RectangleShape2D_td1c7")
 
 [node name="floor tile G2" type="Sprite2D" parent="."]
@@ -1217,7 +1240,9 @@ texture = ExtResource("11_emp0b")
 [node name="Area2D" type="StaticBody2D" parent="barricade"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade/Area2D"]
-shape = SubResource("RectangleShape2D_3tgfg")
+position = Vector2(0, -27.9577)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gohqv")
 
 [node name="Area2D2" type="StaticBody2D" parent="barricade"]
 collision_layer = 4
@@ -1280,11 +1305,6 @@ texture = ExtResource("11_emp0b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade6/Area2D"]
 shape = SubResource("RectangleShape2D_3tgfg")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="barricade6/Area2D"]
-position = Vector2(-21, -81.529)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_sl543")
-
 [node name="barricade7" type="Sprite2D" parent="."]
 position = Vector2(2148.57, 68.045)
 scale = Vector2(1, 1.48438)
@@ -1303,7 +1323,9 @@ texture = ExtResource("11_emp0b")
 [node name="Area2D" type="StaticBody2D" parent="barricade8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barricade8/Area2D"]
-shape = SubResource("RectangleShape2D_3tgfg")
+position = Vector2(0, -26.1085)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pxojs")
 
 [node name="barricade w window" type="Sprite2D" parent="."]
 texture_filter = 1

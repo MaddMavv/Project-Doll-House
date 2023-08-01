@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccqw8y8tdcxb1"
+path="res://.godot/imported/Attack Line 4.mp3-ded47cedf419c9c52daed9a48d6ba3dd.mp3str"
+
+[deps]
+
+source_file="res://assests/Barb Voice Audio Files/Attack Sounds/Attack lines/Attack Line 4.mp3"
+dest_files=["res://.godot/imported/Attack Line 4.mp3-ded47cedf419c9c52daed9a48d6ba3dd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6pb5pewo8b1q"
+path="res://.godot/imported/Attack Grunt 1.mp3-9a56723ed107ace8ec23fa9f5561d526.mp3str"
+
+[deps]
+
+source_file="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 1.mp3"
+dest_files=["res://.godot/imported/Attack Grunt 1.mp3-9a56723ed107ace8ec23fa9f5561d526.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
