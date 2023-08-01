@@ -57,9 +57,11 @@ func chase_after_player(delta):
 			velocity.x *= -1
 	if stun == true:
 		home = false
-		position = lerp(position, start, .6 * delta)
+		position = lerp(position, start, .4 * delta)
 		#move_and_collide(fall * delta)
 
+func barb_falls_off():
+	pass
 
 func _on_player_detection_body_entered(body):
 	if body.name == "BarB":
@@ -72,7 +74,6 @@ func _on_player_detection_body_exited(body):
 		chase = false
 		$Timer.stop()
 
-
 func shoot():
 	var bullet = bullet_scene.instantiate()
 	if self.scale.x == 4:
@@ -81,7 +82,6 @@ func shoot():
 		bullet.position = spawn_point.global_position + Vector2(300, 0)
 	bullet.direction = global_position.direction_to(barb.position)
 	owner.add_child(bullet)
-
 
 func _on_timer_timeout():
 	if stun == false:
@@ -98,10 +98,8 @@ func _on_stun_timer_timeout():
 	stun = false;
 	$AnimatedSprite2D.play("Flying")
 
-
 func death():
 	pass;
-
 
 func _on_platform_detection_body_entered(body):
 	if body.name == "BarB":
