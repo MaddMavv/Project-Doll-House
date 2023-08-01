@@ -129,8 +129,8 @@ scale = Vector2(331.761, 62.8516)
 texture = ExtResource("3_mrvp6")
 
 [node name="BackgroundToReplaceGodotLogoLosless" type="Sprite2D" parent="."]
-position = Vector2(43099, -166)
-scale = Vector2(23.3109, 6.86555)
+position = Vector2(46051.2, -166)
+scale = Vector2(20.4723, 6.86555)
 texture = ExtResource("3_3424e")
 
 [node name="Level" parent="." instance=ExtResource("23_gx0ag")]
@@ -296,25 +296,25 @@ position = Vector2(5783, -1115)
 range = Vector2(0, 100)
 
 [node name="redDrone2" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(66460, -835)
+position = Vector2(60226, -812)
 range = Vector2(0, 350)
 
 [node name="redDrone3" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(67658, -1244)
+position = Vector2(61424, -1221)
 v_move = Vector2(0, 100)
 add = Vector2(0, 0.009)
 
 [node name="redDrone4" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(68860, -835)
+position = Vector2(62626, -812)
 range = Vector2(0, 350)
 
 [node name="redDrone5" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(70058, -1244)
+position = Vector2(63824, -1221)
 v_move = Vector2(0, 100)
 add = Vector2(0, 0.009)
 
 [node name="redDrone6" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(71260, -835)
+position = Vector2(65026, -812)
 range = Vector2(0, 350)
 
 [node name="Blue Drones" type="Node2D" parent="Baddies/Drones"]
@@ -324,7 +324,7 @@ position = Vector2(8399, 115)
 range = Vector2(250, 0)
 
 [node name="blueDrone4" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(78465, 111)
+position = Vector2(72231, 134)
 range = Vector2(1300, 0)
 
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
@@ -347,13 +347,13 @@ position = Vector2(23750, -598)
 position = Vector2(24177, -1429)
 
 [node name="DroneB3" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(77224, -2028)
+position = Vector2(70990, -2005)
 
 [node name="DroneB4" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(75896, -2030)
+position = Vector2(69662, -2007)
 
 [node name="DroneB5" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(83083, -1482)
+position = Vector2(76849, -1459)
 
 [node name="cops" type="Node2D" parent="Baddies"]
 
@@ -386,15 +386,15 @@ position = Vector2(9178, -1140)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop8" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(78472, -319)
+position = Vector2(72238, -296)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop9" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(81943, -319)
+position = Vector2(75709, -296)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop10" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(83759, -332)
+position = Vector2(77525, -309)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop5" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -471,7 +471,7 @@ animation = &"full"
 script = ExtResource("21_wn0mh")
 
 [node name="Door" type="Sprite2D" parent="."]
-position = Vector2(84602, 643)
+position = Vector2(78368, 666)
 scale = Vector2(0.422826, 0.422826)
 texture = ExtResource("19_s7n3p")
 

@@ -32,6 +32,9 @@ size = Vector2(30, 398.483)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sesr"]
 size = Vector2(112.873, 112.823)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3mxa"]
+size = Vector2(32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gv27f"]
 atlas = ExtResource("5_lw0dq")
 region = Rect2(0, 0, 32, 32)
@@ -44,9 +47,6 @@ size = Vector2(1194.39, 1798.24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjfje"]
 size = Vector2(1791.58, 1180.1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3mxa"]
-size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3xnb"]
 size = Vector2(32, 32)
@@ -75,7 +75,7 @@ size = Vector2(29.1971, 23.614)
 [node name="Node2D" type="Node2D"]
 
 [node name="part 2" type="Node2D" parent="."]
-position = Vector2(9448, 1307)
+position = Vector2(8632, 1307)
 
 [node name="floor tile G8" type="Sprite2D" parent="part 2"]
 position = Vector2(-788, -1067)
@@ -398,45 +398,30 @@ position = Vector2(0, -167.915)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6xxwe")
 
-[node name="barricade24" type="Sprite2D" parent="part 2"]
-position = Vector2(-7841, -1208)
-rotation = 1.5708
-scale = Vector2(1, 1.48438)
+[node name="barricade24" type="Sprite2D" parent="part 2/barricade23"]
+position = Vector2(-0.000358582, -67.3682)
+scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade24"]
-
-[node name="barricade25" type="Sprite2D" parent="part 2"]
-position = Vector2(-7741, -1208)
-rotation = 1.5708
-scale = Vector2(1, 1.48438)
+[node name="barricade25" type="Sprite2D" parent="part 2/barricade23"]
+position = Vector2(-0.000724792, -134.736)
+scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade25"]
-
-[node name="barricade26" type="Sprite2D" parent="part 2"]
-position = Vector2(-7635, -1208)
-rotation = 1.5708
-scale = Vector2(1, 1.48438)
+[node name="barricade26" type="Sprite2D" parent="part 2/barricade23"]
+position = Vector2(-0.00110626, -206.147)
+scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade26"]
-
-[node name="barricade27" type="Sprite2D" parent="part 2"]
-position = Vector2(-7536, -1208)
-rotation = 1.5708
-scale = Vector2(1, 1.48438)
+[node name="barricade27" type="Sprite2D" parent="part 2/barricade23"]
+position = Vector2(-0.00146484, -272.841)
+scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade27"]
-
-[node name="barricade28" type="Sprite2D" parent="part 2"]
-position = Vector2(-7441, -1208)
-rotation = 1.5708
-scale = Vector2(1, 1.48438)
+[node name="barricade28" type="Sprite2D" parent="part 2/barricade23"]
+position = Vector2(-0.00180817, -336.841)
+scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
-
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade28"]
 
 [node name="barricade10" type="Sprite2D" parent="part 2"]
 position = Vector2(382, -1120.86)
@@ -568,6 +553,75 @@ texture = ExtResource("12_xdf66")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/moldy box3/Area2D"]
 position = Vector2(0.671875, 0.302162)
 shape = SubResource("RectangleShape2D_3sesr")
+
+[node name="Tracks26" type="Sprite2D" parent="part 2"]
+position = Vector2(119, -1067.5)
+scale = Vector2(0.099355, 0.0376344)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks27" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-764.945, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks28" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-1529.99, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks29" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-2295.01, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks30" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-3059.94, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks31" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-3825, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks32" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-4590.01, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks33" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-5355, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks34" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-6120, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks35" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-6885, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks36" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-7649.99, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks37" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-8415.01, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks38" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-9179.95, 0)
+texture = ExtResource("9_vtart")
+
+[node name="Tracks39" type="Sprite2D" parent="part 2/Tracks26"]
+position = Vector2(-9945, 0.0292969)
+rotation = -0.000105829
+texture = ExtResource("9_vtart")
+
+[node name="the funny small box2" type="Sprite2D" parent="part 2"]
+texture_filter = 1
+position = Vector2(35.001, -1208)
+scale = Vector2(1.06916, 1)
+texture = ExtResource("8_ove2k")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/the funny small box2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/the funny small box2/Area2D"]
+shape = SubResource("RectangleShape2D_d3mxa")
 
 [node name="floor tile G" type="Sprite2D" parent="."]
 position = Vector2(137.25, 240)
@@ -1309,17 +1363,6 @@ texture = ExtResource("8_ove2k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/the funny small box2/Area2D"]
 shape = SubResource("RectangleShape2D_d3mxa")
 
-[node name="the funny small box2" type="Sprite2D" parent="Node2D/the funny small box2"]
-texture_filter = 1
-position = Vector2(8861.7, 0)
-scale = Vector2(1.034, 1)
-texture = ExtResource("8_ove2k")
-
-[node name="Area2D" type="StaticBody2D" parent="Node2D/the funny small box2/the funny small box2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/the funny small box2/the funny small box2/Area2D"]
-shape = SubResource("RectangleShape2D_d3mxa")
-
 [node name="sleepy box PH" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(438, 211)
@@ -1733,16 +1776,6 @@ texture = ExtResource("10_m48jv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nfb8/Area2D"]
 shape = SubResource("RectangleShape2D_xqlwa")
 
-[node name="nfb10" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-251, 99.24)
-texture = ExtResource("10_m48jv")
-
-[node name="Area2D" type="StaticBody2D" parent="nfb10"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nfb10/Area2D"]
-shape = SubResource("RectangleShape2D_xqlwa")
-
 [node name="nfb9" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-217, 68)
@@ -1859,77 +1892,6 @@ texture = ExtResource("9_vtart")
 
 [node name="Tracks2" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-764.934, 0)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks26" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(62123.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks27" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(61359, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks28" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(60593.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks29" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(59828.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks30" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(59064, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks31" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(58298.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks32" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(57533.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks33" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(56768.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks34" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(56003.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks35" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(55238.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks36" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(54473.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks37" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(53708.9, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks38" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(52944, 0.303223)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
-
-[node name="Tracks39" type="Sprite2D" parent="Train Tracks"]
-position = Vector2(52178.9, 0.333008)
-rotation = -0.000105829
 scale = Vector2(1, 1)
 texture = ExtResource("9_vtart")
 
