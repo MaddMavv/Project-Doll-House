@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var spawn_point: Marker2D = $SpawnPoint
 @onready var player = get_tree().get_first_node_in_group("BarB")
 
-var SPEED = 900
+var SPEED = 1200
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var run = false

@@ -95,8 +95,7 @@ process_callback = 0
 wait_time = 3.0
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-visible = false
-position = Vector2(-88, -135)
+position = Vector2(-14, -101)
 
 [node name="StunTimer" type="Timer" parent="."]
 wait_time = 2.0
