@@ -57,7 +57,8 @@ func chase_after_player(delta):
 			velocity.x *= -1
 	if stun == true:
 		home = false
-		move_and_collide(fall * delta)
+		position = lerp(position, start, .4 * delta)
+		#move_and_collide(fall * delta)
 	
 
 func _on_player_detection_body_entered(body):
