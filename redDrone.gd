@@ -10,12 +10,18 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("BarB")
 @onready var barb : CharacterBody2D = get_node("../../../../BarB")
 
+
 #new drone movement
 var targetY
 @export var range = Vector2(0, 500)
 @export var v_move = Vector2(0.00, 0.00)
 @export var add = Vector2(0.00, 0.01)
 var fall = Vector2(0, 400)
+
+
+##NEW NEW movement
+@export var acceleration = Vector2(0.00, 0.00)
+@export var velo = Vector2(0, 5)
 
 #old script - track changes for now 
 #var top = 250
@@ -32,7 +38,6 @@ var on = false;
 
 
 func _ready():
-	#velocity = Vector2(0, 200)
 	start = get_global_position()
 	
 	
@@ -40,9 +45,22 @@ func _process(delta):
 	move(delta)
 	shoot_at_player()
 	
+	
 func move(delta):
 	if stun == false and home == true:
 		#moves up and down
+		#position += velo
+		#velo += acceleration
+		#velo.y = clamp(velo.y, -5, 5)
+		
+		#if position.y > start.y:
+		#	acceleration.y = -0.02
+		
+		#if position.y < start.y:
+		#	acceleration.y = 0.02
+		
+		
+		##out with the old 
 		targetY = sin(v_move.y) * range.y * delta
 		position.y += targetY
 		v_move.y += add.y
@@ -59,6 +77,7 @@ func move(delta):
 		position.y = start.y
 		home = true 
 		v_move = Vector2(0.00, 0.00)
+	
 	
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
@@ -120,6 +139,7 @@ func _on_player_move_body_entered(body):
 func _on_player_move_body_exited(body):
 	if body.name == "BarB":
 		on=false
+
 
 func death():
 	pass;
