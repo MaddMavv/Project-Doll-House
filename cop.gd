@@ -112,9 +112,9 @@ func shoot(bullet_direction : Vector2):
 
 func _on_timer_timeout():
 	if position.x > player.position.x:
-		shoot(Vector2.LEFT)
+		shoot(Vector2.LEFT * 4)
 	else:
-		shoot(Vector2.RIGHT)
+		shoot(Vector2.RIGHT * 4)
 
 
 func stunned():

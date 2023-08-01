@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnctodqe6ld27"
-path="res://.godot/imported/Tab.png-bab941a8ecc174b41b7c4856e2824512.ctex"
+uid="uid://cxakqf3f7ff2c"
+path="res://.godot/imported/Untitled_Artwork-28.png-f375e58a28acedce7954a015a945c5a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pause Menu/Tab.png"
-dest_files=["res://.godot/imported/Tab.png-bab941a8ecc174b41b7c4856e2824512.ctex"]
+source_file="res://Deconstructed Heart/Untitled_Artwork-28.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-28.png-f375e58a28acedce7954a015a945c5a9.ctex"]
 
 [params]
 
