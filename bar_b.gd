@@ -35,14 +35,14 @@ func _physics_process(delta):
 	if jumpCount > 0 and Input.is_action_just_pressed("jump"):
 		veloRealY = JUMP_VELOCITY
 		jumpCount -= 1
-		#anim.play("Jump")
+		anim.play("Jump")
 		$jumpsound.play()
 	# Handles drop through platform.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		if Input.is_action_pressed("move down"):
 			set_collision_mask_value(2, false)
 			veloRealY = JUMP_VELOCITY * -1
-		#anim.play("Jump")
+			anim.play("Fall")
 	# Handles double jump after drop through.
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		if Input.is_action_just_released("move down"):
@@ -69,11 +69,17 @@ func _physics_process(delta):
 		if veloRealY == 0:
 			if meleeing == false:
 				anim.play("Run")
+		elif veloRealY > 0:
+			if meleeing == false:
+				anim.play("Fall")
 	else:
 		veloReal = move_toward(veloReal, 0, SPEED)
 		if veloRealY == 0:
 			if meleeing == false:
 				anim.play("Idle")
+		elif veloRealY > 0:
+			if meleeing == false:
+				anim.play("Fall")
 	if veloRealY > 0:
 			if meleeing == false:
 				pass

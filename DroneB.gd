@@ -20,6 +20,7 @@ var start
 var home = true
 var chase = false
 var stun = false
+var fall = Vector2(0, 400)
 
 
 func _ready():
@@ -54,6 +55,9 @@ func chase_after_player(delta):
 			velocity.y *= -1
 		if position.x > start.x + right or position.x < start.x - left: 
 			velocity.x *= -1
+	if stun == true:
+		home = false
+		move_and_collide(fall * delta)
 	
 
 func _on_player_detection_body_entered(body):
@@ -69,7 +73,7 @@ func _on_player_detection_body_exited(body):
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
-	if self.scale.x == 6:
+	if self.scale.x == 4:
 		bullet.position = spawn_point.global_position + Vector2(-300, 0)
 	else:
 		bullet.position = spawn_point.global_position + Vector2(300, 0)
@@ -84,10 +88,12 @@ func stunned():
 	stun = true;
 	velocity.x = 0;
 	$stunTimer.start()
+	$AnimatedSprite2D.play("Stunned")
 
 
 func _on_stun_timer_timeout():
 	stun = false;
+	$AnimatedSprite2D.play("Flying")
 
 func death():
 	pass;

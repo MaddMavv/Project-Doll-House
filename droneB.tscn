@@ -20,6 +20,14 @@ animations = [{
 "loop": true,
 "name": &"Flying",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1xlo8")
+}],
+"loop": true,
+"name": &"Stunned",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcvom"]
@@ -98,7 +106,6 @@ scale = Vector2(0.098, 0.034)
 sprite_frames = SubResource("SpriteFrames_r28yn")
 animation = &"Flying"
 autoplay = "Flying"
-frame = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -125,7 +132,7 @@ libraries = {
 }
 
 [node name="stunTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
