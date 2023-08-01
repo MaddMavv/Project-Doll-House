@@ -77,7 +77,6 @@ func _physics_process(delta):
 	if veloRealY > 0:
 			if meleeing == false:
 				pass
-				#anim.play("Fall")
 	if Input.is_action_just_pressed("melee"):
 		melee()
 		

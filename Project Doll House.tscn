@@ -323,6 +323,57 @@ texture = ExtResource("11_emp0b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade9/Area2D"]
 shape = SubResource("RectangleShape2D_3tgfg")
 
+[node name="barricade13" type="Sprite2D" parent="part 2"]
+position = Vector2(428, -1240.38)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade13/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="barricade18" type="Sprite2D" parent="part 2"]
+position = Vector2(737, -1240.38)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade18"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade18/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="barricade19" type="Sprite2D" parent="part 2"]
+position = Vector2(506, -1240.38)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade19"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade19/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="barricade20" type="Sprite2D" parent="part 2"]
+position = Vector2(555, -1240.38)
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade20"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade20/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
+[node name="barricade22" type="Sprite2D" parent="part 2"]
+position = Vector2(672, -1209)
+rotation = 1.5708
+scale = Vector2(1, 1.48438)
+texture = ExtResource("11_emp0b")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/barricade22"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade22/Area2D"]
+shape = SubResource("RectangleShape2D_3tgfg")
+
 [node name="barricade10" type="Sprite2D" parent="part 2"]
 position = Vector2(382, -1120.86)
 scale = Vector2(1, 1.48438)
@@ -331,16 +382,6 @@ texture = ExtResource("11_emp0b")
 [node name="Area2D" type="StaticBody2D" parent="part 2/barricade10"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade10/Area2D"]
-shape = SubResource("RectangleShape2D_3tgfg")
-
-[node name="barricade13" type="Sprite2D" parent="part 2"]
-position = Vector2(733.79, -1240.38)
-scale = Vector2(1, 1.48438)
-texture = ExtResource("11_emp0b")
-
-[node name="Area2D" type="StaticBody2D" parent="part 2/barricade13"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade13/Area2D"]
 shape = SubResource("RectangleShape2D_3tgfg")
 
 [node name="barricade14" type="Sprite2D" parent="part 2"]
@@ -417,6 +458,28 @@ texture = ExtResource("12_xdf66")
 [node name="Area2D" type="StaticBody2D" parent="part 2/moldy box"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/moldy box/Area2D"]
+position = Vector2(0.671875, 0.302162)
+shape = SubResource("RectangleShape2D_3sesr")
+
+[node name="moldy box4" type="Sprite2D" parent="part 2"]
+position = Vector2(670, -1103)
+scale = Vector2(0.345526, 0.514078)
+texture = ExtResource("12_xdf66")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/moldy box4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/moldy box4/Area2D"]
+position = Vector2(0.671875, 0.302162)
+shape = SubResource("RectangleShape2D_3sesr")
+
+[node name="moldy box5" type="Sprite2D" parent="part 2"]
+position = Vector2(611, -1103)
+scale = Vector2(0.345526, 0.514078)
+texture = ExtResource("12_xdf66")
+
+[node name="Area2D" type="StaticBody2D" parent="part 2/moldy box5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/moldy box5/Area2D"]
 position = Vector2(0.671875, 0.302162)
 shape = SubResource("RectangleShape2D_3sesr")
 
@@ -997,6 +1060,18 @@ texture = ExtResource("9_gbuqj")
 position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/sleepy box PH7/Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_l3xnb")
+
+[node name="sleepy box PH9" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(9478, 100)
+texture = ExtResource("9_gbuqj")
+
+[node name="Area2D" type="StaticBody2D" parent="Node2D/sleepy box PH9"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/sleepy box PH9/Area2D"]
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_l3xnb")
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var cop = preload("res://cop.tscn")
+var cop = preload("res://melee cop.tscn")
 var shmovin = false
 var player
 var done = false;
@@ -18,7 +18,8 @@ func _process(delta):
 		if player.position.x <= (self.position.x-1300):
 			player.position.x+=10;
 		
-	velocity.y = 0;
+	velocity.y = 0
+	global_position.y = -552
 	move_and_slide()
 
 
@@ -37,10 +38,22 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 		$Wall2.set_deferred("disabled", true)
 		
 func spawnDude():
-	var copTemp = cop.instantiate()
-	add_child(copTemp)
-	copTemp.position = self.position
-
+	if shmovin == true:
+		var copTemp = cop.instantiate()
+		add_child(copTemp)
+		player = get_node("../BarB")
+		var dunkedOn = randi_range(1,4)
+		if player.global_position.x < self.global_position.x:
+			if dunkedOn > 1:
+				copTemp.global_position = Vector2(1300, -1300) + self.position
+			else:
+				copTemp.global_position = Vector2(-1300, -1300) + self.position
+		else:
+			if dunkedOn > 1:
+				copTemp.global_position = Vector2(-1300, -1300) + self.position
+				
+			else:
+				copTemp.global_position = Vector2(1300, -1300) + self.position
 
 func _on_spawn_timeout():
 	spawnDude()

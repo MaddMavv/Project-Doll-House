@@ -8,10 +8,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Game.playerHP == 2:
+	if Game.playerHP == 3:
 		play("ow1")
-	if Game.playerHP == 1:
+	if Game.playerHP == 2:
 		play("ow2")
-	if Game.playerHP == 0:
+	if Game.playerHP == 1:
 		play("ow3")
 	

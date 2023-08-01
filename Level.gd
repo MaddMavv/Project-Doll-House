@@ -26,12 +26,16 @@ func stunAttack():
 		stunTemp.global_position = player.position
 		
 func _physics_process(delta):
+		
 	if Input.is_action_just_pressed("attack"):
 		pain = true;
 	if pain == true:
 		howLong +=1
 		print(howLong)
+		player.anim.play("Charging")
+		player.meleeing = true
 	if Input.is_action_just_released("attack"):
+		player.meleeing = false;
 		if howLong < 30:
 			pass
 			#attack();

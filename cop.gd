@@ -16,6 +16,9 @@ var stun = false
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
+	player = get_node("../../../BarB")
+	if !player:
+		player = get_node("../../BarB")
 
 
 func _physics_process(delta):
@@ -32,6 +35,8 @@ func chase_after_player():
 		#get_node("AnimatedSprite2D").play("Jump")
 		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../../BarB")
+		if !player:
+			player = get_node("../../BarB")
 		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
 			velocity.x = 0
 		else:
@@ -54,7 +59,6 @@ func stop_and_attack():
 func run_from_player(delta):
 	if run == true:
 		#get_node("AnimatedSprite2D").play("Jump")
-		player = get_node("../../../BarB")
 		if not $LeftEdge.is_colliding() or not $RightEdge.is_colliding():
 			velocity.x = 0
 		else:

@@ -55,10 +55,10 @@ size = Vector2(18474.7, 78.2557)
 size = Vector2(17.9557, 6.55402)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4abwr"]
-size = Vector2(1.02412, 27.9868)
+size = Vector2(1.02412, 18.0948)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b1q6"]
-size = Vector2(1.72108, 32.595)
+size = Vector2(1.72108, 23.5003)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_71xnc"]
 animations = [{
@@ -117,6 +117,11 @@ size = Vector2(941.281, 1400.1)
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(43044, 432)
+scale = Vector2(331.761, 62.8516)
+texture = ExtResource("3_mrvp6")
 
 [node name="Level" parent="." instance=ExtResource("23_gx0ag")]
 position = Vector2(2021, -791)
@@ -259,14 +264,14 @@ scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_cl11q")
 
 [node name="Wall1" type="CollisionShape2D" parent="GREEN DRONE"]
-position = Vector2(-562.332, -90.545)
+position = Vector2(-562.332, 38.6535)
 rotation = 3.14159
 scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_4abwr")
 disabled = true
 
 [node name="Wall2" type="CollisionShape2D" parent="GREEN DRONE"]
-position = Vector2(554.562, -26.4751)
+position = Vector2(554.562, 92.3101)
 rotation = 3.14159
 scale = Vector2(56.5286, -26.1218)
 shape = SubResource("RectangleShape2D_0b1q6")
@@ -291,7 +296,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(18857, -1199)
+position = Vector2(195, -1097)
 
 [node name="Baddies" type="Node2D" parent="."]
 
@@ -301,33 +306,35 @@ position = Vector2(18857, -1199)
 
 [node name="redDrone" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(5783, -1115)
-range = Vector2(0, 300)
+range = Vector2(0, 100)
 
 [node name="redDrone2" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(66460, -835)
-range = Vector2(0, 400)
+range = Vector2(0, 350)
 
 [node name="redDrone3" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(67658, -1244)
-range = Vector2(0, 400)
+v_move = Vector2(0, 100)
+add = Vector2(0, 0.009)
 
 [node name="redDrone4" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(68860, -835)
-range = Vector2(0, 400)
+range = Vector2(0, 350)
 
 [node name="redDrone5" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(70058, -1244)
-range = Vector2(0, 400)
+v_move = Vector2(0, 100)
+add = Vector2(0, 0.009)
 
 [node name="redDrone6" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(71260, -835)
-range = Vector2(0, 400)
+range = Vector2(0, 350)
 
 [node name="Blue Drones" type="Node2D" parent="Baddies/Drones"]
 
 [node name="blueDrone2" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
 position = Vector2(8399, 115)
-range = Vector2(550, 0)
+range = Vector2(250, 0)
 
 [node name="blueDrone4" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
 position = Vector2(78465, 111)
@@ -335,13 +342,19 @@ range = Vector2(1300, 0)
 
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
 position = Vector2(10290, 115)
-range = Vector2(550, 0)
+range = Vector2(250, 0)
 
 [node name="DroneB" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(3406, -1488)
 
+[node name="DroneB7" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
+position = Vector2(4872, -1488)
+
 [node name="DroneB2" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(11318, -917)
+
+[node name="DroneB6" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
+position = Vector2(15242, -807)
 
 [node name="DroneB3" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(77244, -2262)
@@ -393,11 +406,6 @@ scale = Vector2(2.5, 2.5)
 [node name="cop5" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
 position = Vector2(10302, -297)
 scale = Vector2(2.5, 2.5)
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(43112.3, -836)
-scale = Vector2(331.761, 2.78125)
-texture = ExtResource("3_mrvp6")
 
 [node name="Warning" type="Timer" parent="."]
 wait_time = 2.0
