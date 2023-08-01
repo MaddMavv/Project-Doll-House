@@ -67,7 +67,6 @@ autoplay = "Idle"
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-visible = false
 position = Vector2(21, 11.5)
 shape = SubResource("RectangleShape2D_yc4g5")
 debug_color = Color(1, 0.856667, 0.14, 0.027451)

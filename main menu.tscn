@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsxphgta50vjo"]
+[gd_scene load_steps=10 format=3 uid="uid://bsxphgta50vjo"]
 
 [ext_resource type="Texture2D" uid="uid://f4ufiwl1higg" path="res://assests/BarB_Demo_Img.png" id="1_byej3"]
 [ext_resource type="Script" path="res://main menu.gd" id="1_i2nf6"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="2_6pn6y"]
 [ext_resource type="Texture2D" uid="uid://dcyqr5fy67wmn" path="res://assests/Background.png" id="2_rrvbv"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_c3opd"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_sjp1g"]
+events = [SubResource("InputEventKey_c3opd")]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_pyjqi"]
 pressed = true
@@ -47,6 +54,7 @@ offset_right = 2959.0
 offset_bottom = 171.0
 scale = Vector2(0.302411, 0.667589)
 theme_override_font_sizes/font_size = 101
+shortcut = SubResource("Shortcut_sjp1g")
 text = "
 "
 

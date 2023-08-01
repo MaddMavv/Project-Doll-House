@@ -1,13 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=43 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
+[ext_resource type="Texture2D" uid="uid://badve8qtyt1h1" path="res://assests/Background to replace Godot logo losless.png" id="3_3424e"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
 [ext_resource type="Texture2D" uid="uid://0q6b1re8qmb7" path="res://assests/Green Drone F2.png" id="7_ftw72"]
 [ext_resource type="Texture2D" uid="uid://ror3virm5ave" path="res://assests/s1 .png" id="8_bcoma"]
-[ext_resource type="Texture2D" uid="uid://h10v34vfnysc" path="res://assests/Cop._Demo.png" id="9_13sgr"]
 [ext_resource type="PackedScene" uid="uid://db07m7ctkl7x1" path="res://redDrone.tscn" id="10_lhnsx"]
 [ext_resource type="Script" path="res://Pause Menu/Pause_Menu.gd" id="12_boi7y"]
 [ext_resource type="Texture2D" uid="uid://cnctodqe6ld27" path="res://Pause Menu/Tab.png" id="13_a5dxs"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
+[ext_resource type="Texture2D" uid="uid://bc8sjcxi7if0k" path="res://assests/A.png" id="23_l2sa4"]
+[ext_resource type="Texture2D" uid="uid://co0afbdojncp2" path="res://assests/B.png" id="24_7lpgy"]
+[ext_resource type="Texture2D" uid="uid://4t238rgogclt" path="res://assests/X.png" id="25_tfmxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
 size = Vector2(12579.8, 825.369)
@@ -29,11 +32,11 @@ size = Vector2(12579.8, 825.369)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ues"]
 size = Vector2(42.3489, 179.396)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
-size = Vector2(12182.2, 2190.08)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dk56p"]
 size = Vector2(721.247, 3722.27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
+size = Vector2(17298.2, 2190.08)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -125,6 +128,11 @@ position = Vector2(43044, 432)
 scale = Vector2(331.761, 62.8516)
 texture = ExtResource("3_mrvp6")
 
+[node name="BackgroundToReplaceGodotLogoLosless" type="Sprite2D" parent="."]
+position = Vector2(43099, -166)
+scale = Vector2(23.3109, 6.86555)
+texture = ExtResource("3_3424e")
+
 [node name="Level" parent="." instance=ExtResource("23_gx0ag")]
 position = Vector2(2021, -791)
 scale = Vector2(7.45, 7.45)
@@ -145,28 +153,12 @@ shape = SubResource("RectangleShape2D_y5ues")
 position = Vector2(631.678, -423.356)
 scale = Vector2(0.134228, 0.134228)
 
-[node name="Cop_Demo" type="Sprite2D" parent="Level/Radio Cop"]
-position = Vector2(10030, 2091)
-scale = Vector2(0.359684, 0.359684)
-texture = ExtResource("9_13sgr")
-
-[node name="Icon9" type="Sprite2D" parent="Level/Radio Cop"]
-position = Vector2(9878, 2042)
-scale = Vector2(0.671861, 1.5625)
-texture = ExtResource("3_mrvp6")
-
-[node name="Area2D" type="Area2D" parent="Level/Radio Cop/Icon9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Icon9/Area2D"]
-position = Vector2(-2420.69, 728.959)
-shape = SubResource("RectangleShape2D_8ga1s")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Level/Radio Cop"]
 position = Vector2(-11147, 608)
 collision_mask = 4
 
 [node name="byeTrain" type="CollisionShape2D" parent="Level/Radio Cop/StaticBody2D"]
-position = Vector2(3569.99, 2726.01)
+position = Vector2(-6631.03, 2847.01)
 shape = SubResource("RectangleShape2D_dk56p")
 
 [node name="Icon10" type="Sprite2D" parent="Level/Radio Cop"]
@@ -174,30 +166,25 @@ position = Vector2(2548, -1213)
 scale = Vector2(0.109366, 0.781251)
 texture = ExtResource("3_mrvp6")
 
+[node name="Area2D" type="Area2D" parent="Level/Radio Cop"]
+position = Vector2(9878, 2042)
+scale = Vector2(0.671861, 1.5625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Area2D"]
+position = Vector2(5749.45, 728.964)
+shape = SubResource("RectangleShape2D_8ga1s")
+
 [node name="Radio Cop2" type="Node2D" parent="Level"]
 position = Vector2(8042.14, -426.174)
 scale = Vector2(0.134228, 0.134228)
 
-[node name="Cop_Demo" type="Sprite2D" parent="Level/Radio Cop2"]
-position = Vector2(10030, 2091)
-scale = Vector2(0.359684, 0.359684)
-texture = ExtResource("9_13sgr")
-
-[node name="Icon9" type="Sprite2D" parent="Level/Radio Cop2"]
+[node name="Area2D" type="Area2D" parent="Level/Radio Cop2"]
 position = Vector2(9878, 2042)
 scale = Vector2(0.671861, 1.5625)
-texture = ExtResource("3_mrvp6")
 
-[node name="Area2D" type="Area2D" parent="Level/Radio Cop2/Icon9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop2/Icon9/Area2D"]
-position = Vector2(-3921.52, 748.162)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop2/Area2D"]
+position = Vector2(-5849.3, 748.162)
 shape = SubResource("RectangleShape2D_8ga1s")
-
-[node name="Icon10" type="Sprite2D" parent="Level/Radio Cop2"]
-position = Vector2(2548, -1213)
-scale = Vector2(0.109366, 0.781251)
-texture = ExtResource("3_mrvp6")
 
 [node name="Stuff to delete" type="Node2D" parent="."]
 
@@ -252,7 +239,7 @@ position = Vector2(952.588, 610.984)
 shape = SubResource("RectangleShape2D_renqu")
 
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
-position = Vector2(20008, -552)
+position = Vector2(28518, -552)
 scale = Vector2(2.83285, 2.83285)
 collision_layer = 2
 script = ExtResource("4_54ugp")
@@ -296,7 +283,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(590, -1351)
+position = Vector2(-9836, 576)
 
 [node name="Baddies" type="Node2D" parent="."]
 
@@ -354,13 +341,16 @@ position = Vector2(4872, -1488)
 position = Vector2(11318, -917)
 
 [node name="DroneB6" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(15242, -807)
+position = Vector2(23750, -598)
+
+[node name="DroneB8" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
+position = Vector2(24177, -1429)
 
 [node name="DroneB3" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(77244, -2262)
+position = Vector2(77224, -2028)
 
 [node name="DroneB4" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(75966, -2262)
+position = Vector2(75896, -2030)
 
 [node name="DroneB5" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(83083, -1482)
@@ -377,6 +367,10 @@ scale = Vector2(2.5, 2.5)
 
 [node name="cop7" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
 position = Vector2(2913, -317)
+scale = Vector2(2.5, 2.5)
+
+[node name="cop12" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
+position = Vector2(-1675, -289)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop2" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -471,7 +465,7 @@ text = "hehe"
 script = ExtResource("16_y8jng")
 
 [node name="health" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(1357, -642)
+position = Vector2(1357, -635)
 sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
@@ -487,11 +481,86 @@ texture = ExtResource("19_s7n3p")
 position = Vector2(14.1875, 0)
 shape = SubResource("RectangleShape2D_it2v0")
 
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="A" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-6768, 370)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("23_l2sa4")
+
+[node name="A2" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-5278, -80)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("23_l2sa4")
+
+[node name="A3" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-3088, 361)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("23_l2sa4")
+
+[node name="B" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-2705, -588)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("24_7lpgy")
+
+[node name="X" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-1217, -439)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("25_tfmxt")
+
+[node name="Label" type="Label" parent="Tutorial"]
+offset_left = -9414.0
+offset_top = 381.0
+offset_right = -8277.0
+offset_bottom = 495.0
+theme_override_font_sizes/font_size = 81
+text = "Use A and D/Joystick to move"
+
+[node name="Label2" type="Label" parent="Tutorial"]
+offset_left = -7307.0
+offset_top = 309.0
+offset_right = -6170.0
+offset_bottom = 423.0
+theme_override_font_sizes/font_size = 81
+text = "Press Space/ A to jump"
+
+[node name="Label4" type="Label" parent="Tutorial"]
+offset_left = -4317.0
+offset_top = 300.0
+offset_right = -2753.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 81
+text = "Hold S/Down and press space/ A to drop"
+
+[node name="Label3" type="Label" parent="Tutorial"]
+offset_left = -5817.0
+offset_top = -141.0
+offset_right = -4263.0
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 81
+text = "Press Space/ A in the air to double jump"
+
+[node name="Label5" type="Label" parent="Tutorial"]
+offset_left = -3040.0
+offset_top = -647.0
+offset_right = -1486.0
+offset_bottom = -533.0
+theme_override_font_sizes/font_size = 81
+text = "Hold K/ B to charge a stun attack"
+
+[node name="Label6" type="Label" parent="Tutorial"]
+offset_left = -1693.0
+offset_top = -497.0
+offset_right = -139.0
+offset_bottom = -383.0
+theme_override_font_sizes/font_size = 81
+text = "Then use J/ X for a melee attack"
+
 [connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
-[connection signal="body_exited" from="Level/Radio Cop/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_shape_entered" from="Level/Radio Cop/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
-[connection signal="body_exited" from="Level/Radio Cop2/Icon9/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_shape_entered" from="Level/Radio Cop2/Icon9/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_exited" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_exited" from="Level/Radio Cop2/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Level/Radio Cop2/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="area_shape_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="GREEN DRONE/Area2D" to="GREEN DRONE" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="GREEN DRONE/spawn" to="GREEN DRONE" method="_on_spawn_timeout"]
