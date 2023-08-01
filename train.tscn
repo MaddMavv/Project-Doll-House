@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj6b2lg5ei1s2"]
+[gd_scene load_steps=6 format=3 uid="uid://cj6b2lg5ei1s2"]
 
-[ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="1_wgj01"]
 [ext_resource type="Script" path="res://train.gd" id="1_wyhpn"]
+[ext_resource type="Texture2D" uid="uid://btan2sqpfho4l" path="res://assests/Train_Front.png" id="3_dkwvs"]
+[ext_resource type="Texture2D" uid="uid://x0gu7j1ygycp" path="res://assests/Train_Car.png" id="4_fycca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljw84"]
-size = Vector2(1024, 326)
+size = Vector2(4832, 326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwopu"]
 size = Vector2(904, 328)
@@ -22,6 +23,7 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1904, 0)
 shape = SubResource("RectangleShape2D_ljw84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,16 +31,46 @@ position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_mwopu")
 disabled = true
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(7.04688, 2.23438)
-texture = ExtResource("1_wgj01")
+[node name="TrainCar4" type="Sprite2D" parent="."]
+position = Vector2(3964.54, 38.667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(-318, 124)
-texture = ExtResource("1_wgj01")
+[node name="TrainCar5" type="Sprite2D" parent="."]
+position = Vector2(3272.54, 38.667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
 
-[node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(305, 124)
-texture = ExtResource("1_wgj01")
+[node name="TrainCar6" type="Sprite2D" parent="."]
+position = Vector2(2583.21, 38.667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
+
+[node name="TrainCar3" type="Sprite2D" parent="."]
+position = Vector2(1902, 38.6667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
+
+[node name="TrainCar2" type="Sprite2D" parent="."]
+position = Vector2(1210, 38.6667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
+
+[node name="TrainCar" type="Sprite2D" parent="."]
+position = Vector2(520.667, 38.6667)
+rotation = 0.00732197
+scale = Vector2(1, 1)
+texture = ExtResource("4_fycca")
+
+[node name="TrainFront" type="Sprite2D" parent="."]
+position = Vector2(-195.333, 25)
+rotation = 0.0324659
+scale = Vector2(1.0502, 1.0502)
+texture = ExtResource("3_dkwvs")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
