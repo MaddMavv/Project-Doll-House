@@ -1229,7 +1229,7 @@ one_way_collision = true
 
 [node name="cop box test" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(2646.59, 84.0262)
+position = Vector2(2661.09, 84.0313)
 scale = Vector2(0.0334898, 0.0355903)
 texture = ExtResource("6_ns42d")
 
@@ -1241,7 +1241,7 @@ shape = SubResource("RectangleShape2D_h2oem")
 
 [node name="cop box test2" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(2686.5, 84.0262)
+position = Vector2(2701, 84.0313)
 scale = Vector2(0.0334898, 0.0355903)
 texture = ExtResource("6_ns42d")
 
