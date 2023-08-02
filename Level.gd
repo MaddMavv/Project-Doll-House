@@ -27,6 +27,12 @@ func stunAttack():
 		
 func _physics_process(delta):
 		
+	if Game.dead == true:
+		player.anim.play("Death")
+		await player.anim.animation_finished
+		Game.dead = false;
+		get_tree().change_scene_to_file("res://main menu.tscn")
+	
 	if Input.is_action_just_pressed("attack"):
 		if player.meleeing == false:
 			pain = true;
