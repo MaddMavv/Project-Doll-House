@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	if Game.boss == true:
 		direction = 1;
+	$"Train horn".play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

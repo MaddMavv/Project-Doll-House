@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj6b2lg5ei1s2"]
+[gd_scene load_steps=8 format=3 uid="uid://cj6b2lg5ei1s2"]
 
 [ext_resource type="Script" path="res://train.gd" id="1_wyhpn"]
 [ext_resource type="Texture2D" uid="uid://btan2sqpfho4l" path="res://assests/Train_Front.png" id="3_dkwvs"]
+[ext_resource type="AudioStream" uid="uid://dksl6qfwm2pov" path="res://assests/Barb Voice Audio Files/Train horn.mp3" id="4_87sr5"]
 [ext_resource type="Texture2D" uid="uid://x0gu7j1ygycp" path="res://assests/Train_Car.png" id="4_fycca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljw84"]
@@ -9,6 +10,11 @@ size = Vector2(4832, 326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwopu"]
 size = Vector2(904, 328)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xnths"]
+streams_count = 1
+stream_0/stream = ExtResource("4_87sr5")
+stream_0/weight = 1.0
 
 [node name="Train" type="CharacterBody2D"]
 position = Vector2(0, -29)
@@ -66,5 +72,8 @@ position = Vector2(-195.333, 25)
 rotation = 0.0324659
 scale = Vector2(1.0502, 1.0502)
 texture = ExtResource("3_dkwvs")
+
+[node name="Train horn" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_xnths")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

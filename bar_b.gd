@@ -29,6 +29,7 @@ func _physics_process(delta):
 	if hitPoints != Game.playerHP:
 		print("FUCK")
 		hitPoints = Game.playerHP;
+		$"Hurt sounds".play()
 	
 	if is_on_floor():
 		jumpCount = 0
@@ -44,7 +45,7 @@ func _physics_process(delta):
 		veloRealY = JUMP_VELOCITY
 		jumpCount -= 1
 		anim.play("Jump")
-		$jumpsound.play()
+		$"Jump sounds".play()
 	# Handles drop through platform.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		if Input.is_action_pressed("move down"):
@@ -93,10 +94,12 @@ func _physics_process(delta):
 				pass
 	if Input.is_action_just_pressed("melee"):
 		melee()
-		
+		$"Melee grunts".play()
 	if Input.is_action_just_pressed("shout"):
 		#shout()
 		pass
+	if Input.is_action_just_released("attack"):
+		$"Stun lines".play()
 	
 	move_and_slide()
 	

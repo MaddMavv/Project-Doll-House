@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://djobdn0kpo3iw"]
+[gd_scene load_steps=42 format=3 uid="uid://djobdn0kpo3iw"]
 
 [ext_resource type="Texture2D" uid="uid://fhr87rg7652t" path="res://assests/BarB.png" id="1_5uvhq"]
 [ext_resource type="Script" path="res://bar_b.gd" id="1_w7i21"]
@@ -8,7 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://b7fvn2r3nnsex" path="res://assests/BarB_Jump_Demo.png" id="4_kwfik"]
 [ext_resource type="Texture2D" uid="uid://ef3tggspj76a" path="res://assests/Barb Walk 2.png" id="4_qyi1p"]
 [ext_resource type="Texture2D" uid="uid://cfhdcvv5w5d1j" path="res://assests/Megaphone.png" id="5_k33kl"]
-[ext_resource type="AudioStream" uid="uid://b05vt1suxenl1" path="res://assests/jump sound.mp3" id="6_vv0to"]
+[ext_resource type="AudioStream" uid="uid://dotbn8rgdl0hc" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B Hurt sound 1.mp3" id="9_mqhl7"]
+[ext_resource type="AudioStream" uid="uid://cjcnkhslpyb1a" path="res://assests/Barb Voice Audio Files/Jump Sounds/Jump Up Sound 1.mp3" id="9_o04ax"]
+[ext_resource type="AudioStream" uid="uid://dd2fetevwsv1q" path="res://assests/Barb Voice Audio Files/Jump Sounds/Jump Up Sound 2.mp3" id="10_dp8ry"]
+[ext_resource type="AudioStream" uid="uid://baujn4k7xar1u" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B Hurt sound 2.mp3" id="10_qtk11"]
+[ext_resource type="AudioStream" uid="uid://c36i7wy4ug3l" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B Hurt sound 3.mp3" id="11_qv5u3"]
+[ext_resource type="AudioStream" uid="uid://c3jeqi0vbwcfy" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B Hurt sound 4.mp3" id="12_425jx"]
+[ext_resource type="AudioStream" uid="uid://cx345nvmy1lnl" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B hurt sound 5.mp3" id="13_drrbb"]
+[ext_resource type="AudioStream" uid="uid://e7rnl734v6jt" path="res://assests/Barb Voice Audio Files/Attack Sounds/Stun lines/Stun Attack Line1.mp3" id="16_luwv5"]
+[ext_resource type="AudioStream" uid="uid://ey5b8bbey22f" path="res://assests/Barb Voice Audio Files/Attack Sounds/Stun lines/Stun Attack Line 2.mp3" id="17_8e2j7"]
+[ext_resource type="AudioStream" uid="uid://dkn84brxs0agd" path="res://assests/Barb Voice Audio Files/Attack Sounds/Stun lines/Stun Attack Line 3.mp3" id="18_nyrnn"]
+[ext_resource type="AudioStream" uid="uid://c6pb5pewo8b1q" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 1.mp3" id="19_cibo7"]
+[ext_resource type="AudioStream" uid="uid://d2msr02ae6jkc" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 2.mp3" id="20_jsvxe"]
+[ext_resource type="AudioStream" uid="uid://bgmxpl40s6h1i" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 3.mp3" id="21_55maw"]
+[ext_resource type="AudioStream" uid="uid://dxfmb3qxlwly3" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 4.mp3" id="22_taodw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5fqr"]
 radius = 57.0
@@ -552,6 +565,50 @@ radius = 1577.88
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjfok"]
 size = Vector2(88, 5)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6nk6p"]
+streams_count = 2
+random_pitch = 1.05
+stream_0/stream = ExtResource("9_o04ax")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_dp8ry")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t74pb"]
+streams_count = 5
+random_pitch = 1.05
+stream_0/stream = ExtResource("9_mqhl7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_qtk11")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("11_qv5u3")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("12_425jx")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("13_drrbb")
+stream_4/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_51wcs"]
+streams_count = 3
+random_pitch = 1.05
+stream_0/stream = ExtResource("16_luwv5")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("17_8e2j7")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("18_nyrnn")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_75j5c"]
+streams_count = 4
+random_pitch = 1.05
+stream_0/stream = ExtResource("19_cibo7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("20_jsvxe")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("21_55maw")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("22_taodw")
+stream_3/weight = 1.0
+
 [node name="BarB" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
 collision_mask = 11
@@ -607,8 +664,17 @@ collision_mask = 2
 position = Vector2(0, 142)
 shape = SubResource("RectangleShape2D_xjfok")
 
-[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_vv0to")
+[node name="Jump sounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_6nk6p")
+
+[node name="Hurt sounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_t74pb")
+
+[node name="Stun lines" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_51wcs")
+
+[node name="Melee grunts" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_75j5c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

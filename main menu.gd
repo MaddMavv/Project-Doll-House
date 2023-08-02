@@ -1,7 +1,8 @@
 extends Node
 
 
-
+func _ready():
+	$"Menu music".play()
 
 func _on_quit_pressed():
 	get_tree().quit()
