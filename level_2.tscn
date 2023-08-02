@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=43 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://7ue7kdbpu0t3" path="res://blueDrone.tscn" id="14_r1v73"]
 [ext_resource type="Texture2D" uid="uid://lxeoy0wsrotu" path="res://Pause Menu/Tabs2.png" id="14_s1830"]
 [ext_resource type="PackedScene" uid="uid://iepj63r3yt31" path="res://cop.tscn" id="15_xdgsa"]
+[ext_resource type="PackedScene" uid="uid://br4xoxv2yv0ip" path="res://heart_scene.tscn" id="16_lvqfb"]
 [ext_resource type="Script" path="res://HP.gd" id="16_y8jng"]
 [ext_resource type="Texture2D" uid="uid://dcgkp6rrej3ny" path="res://assests/full.png" id="17_bi7oo"]
 [ext_resource type="Texture2D" uid="uid://b7jqjio4ewe7h" path="res://assests/ow1.png" id="18_wvwyg"]
@@ -452,7 +453,10 @@ theme_override_font_sizes/font_size = 81
 text = "hehe"
 script = ExtResource("16_y8jng")
 
+[node name="Heart Scene" parent="UI" instance=ExtResource("16_lvqfb")]
+
 [node name="health" type="AnimatedSprite2D" parent="UI"]
+visible = false
 position = Vector2(1357, -635)
 sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
