@@ -342,7 +342,7 @@ position = Vector2(76849, -1459)
 [node name="cops" type="Node2D" parent="Baddies"]
 
 [node name="cop3" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(5348, 587)
+position = Vector2(6083, 587)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop6" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
