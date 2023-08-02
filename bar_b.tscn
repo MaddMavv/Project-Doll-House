@@ -1,12 +1,14 @@
-[gd_scene load_steps=42 format=3 uid="uid://djobdn0kpo3iw"]
+[gd_scene load_steps=45 format=3 uid="uid://djobdn0kpo3iw"]
 
 [ext_resource type="Texture2D" uid="uid://fhr87rg7652t" path="res://assests/BarB.png" id="1_5uvhq"]
 [ext_resource type="Script" path="res://bar_b.gd" id="1_w7i21"]
 [ext_resource type="Texture2D" uid="uid://dn0j5r482s4tr" path="res://assests/Barb_Charge_Demo.PNG" id="2_6oono"]
+[ext_resource type="Texture2D" uid="uid://c7g0rjjti4tdx" path="res://assests/Barb_Dmg_Demo1.png" id="3_0701s"]
 [ext_resource type="Texture2D" uid="uid://b07s7bal158hu" path="res://assests/BarB_Jump_Demo (1).png" id="3_gjaty"]
 [ext_resource type="Texture2D" uid="uid://cn0s754rgf82y" path="res://assests/BarB Walk 1.png" id="3_n4gvm"]
 [ext_resource type="Texture2D" uid="uid://b7fvn2r3nnsex" path="res://assests/BarB_Jump_Demo.png" id="4_kwfik"]
 [ext_resource type="Texture2D" uid="uid://ef3tggspj76a" path="res://assests/Barb Walk 2.png" id="4_qyi1p"]
+[ext_resource type="Texture2D" uid="uid://c6hobin3smo7k" path="res://assests/Barb_Dmg_Demo2.png" id="4_vnm83"]
 [ext_resource type="Texture2D" uid="uid://cfhdcvv5w5d1j" path="res://assests/Megaphone.png" id="5_k33kl"]
 [ext_resource type="AudioStream" uid="uid://dotbn8rgdl0hc" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Taken Damage/B Hurt sound 1.mp3" id="9_mqhl7"]
 [ext_resource type="AudioStream" uid="uid://cjcnkhslpyb1a" path="res://assests/Barb Voice Audio Files/Jump Sounds/Jump Up Sound 1.mp3" id="9_o04ax"]
@@ -35,6 +37,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"Charging",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0701s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vnm83")
+}],
+"loop": true,
+"name": &"Damaged",
 "speed": 5.0
 }, {
 "frames": [{
@@ -543,10 +556,40 @@ tracks/4/keys = {
 "values": [true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_l8mmh"]
+resource_name = "Damaged"
+length = 1.40002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Damaged"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_plkx7"]
 _data = {
 "Charged": SubResource("Animation_46slq"),
 "Charging": SubResource("Animation_t7e4u"),
+"Damaged": SubResource("Animation_l8mmh"),
 "Fall": SubResource("Animation_64o1y"),
 "Idle": SubResource("Animation_qmvpd"),
 "Jump": SubResource("Animation_4whab"),
