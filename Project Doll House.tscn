@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dnhrj8gok2sb0"]
+[gd_scene load_steps=29 format=3 uid="uid://dnhrj8gok2sb0"]
 
 [ext_resource type="Texture2D" uid="uid://cpchwot4mg1s5" path="res://art shit/The actual floor stuff/New tile test-1.png.png" id="5_lw0dq"]
 [ext_resource type="Texture2D" uid="uid://bwa08p2ovb13v" path="res://art shit/box designs/cop box long.png" id="6_ns42d"]
 [ext_resource type="Texture2D" uid="uid://dnqtg8wb641gl" path="res://art shit/box designs/cop box.png" id="7_7nog0"]
 [ext_resource type="Texture2D" uid="uid://ru70ovmrpsuo" path="res://art shit/box designs/ACB box diff color-1.png.png" id="8_ove2k"]
 [ext_resource type="Texture2D" uid="uid://cgmi00frp25i2" path="res://art shit/box designs/sleepy box.png" id="9_gbuqj"]
-[ext_resource type="Texture2D" uid="uid://c5cucqp14skiu" path="res://assests/tracks.png" id="9_vtart"]
 [ext_resource type="Texture2D" uid="uid://cjs6bpwf342je" path="res://art shit/box designs/no face box.png" id="10_m48jv"]
 [ext_resource type="Texture2D" uid="uid://ba1adp336t4b2" path="res://art shit/box designs/barricade.png" id="11_emp0b"]
 [ext_resource type="Texture2D" uid="uid://c4fb2i7nkd3ia" path="res://art shit/box designs/moldy box.png" id="12_xdf66"]
@@ -395,32 +394,26 @@ texture = ExtResource("11_emp0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part 2/barricade23/Area2D"]
 position = Vector2(0, -167.915)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6xxwe")
 
 [node name="barricade24" type="Sprite2D" parent="part 2/barricade23"]
 position = Vector2(-0.000358582, -67.3682)
-scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
 [node name="barricade25" type="Sprite2D" parent="part 2/barricade23"]
 position = Vector2(-0.000724792, -134.736)
-scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
 [node name="barricade26" type="Sprite2D" parent="part 2/barricade23"]
 position = Vector2(-0.00110626, -206.147)
-scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
 [node name="barricade27" type="Sprite2D" parent="part 2/barricade23"]
 position = Vector2(-0.00146484, -272.841)
-scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
 [node name="barricade28" type="Sprite2D" parent="part 2/barricade23"]
 position = Vector2(-0.00180817, -336.841)
-scale = Vector2(1, 1)
 texture = ExtResource("11_emp0b")
 
 [node name="barricade10" type="Sprite2D" parent="part 2"]
@@ -557,60 +550,46 @@ shape = SubResource("RectangleShape2D_3sesr")
 [node name="Tracks26" type="Sprite2D" parent="part 2"]
 position = Vector2(119, -1067.5)
 scale = Vector2(0.099355, 0.0376344)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks27" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-764.945, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks28" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-1529.99, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks29" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-2295.01, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks30" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-3059.94, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks31" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-3825, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks32" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-4590.01, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks33" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-5355, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks34" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-6120, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks35" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-6885, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks36" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-7649.99, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks37" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-8415.01, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks38" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-9179.95, 0)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks39" type="Sprite2D" parent="part 2/Tracks26"]
 position = Vector2(-9945, 0.0292969)
 rotation = -0.000105829
-texture = ExtResource("9_vtart")
 
 [node name="the funny small box2" type="Sprite2D" parent="part 2"]
 texture_filter = 1
@@ -1175,7 +1154,6 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFT T5/Area2D"]
 position = Vector2(-0.0022583, 3.31125)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7l8jc")
 one_way_collision = true
 
@@ -1189,7 +1167,6 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFT T6/Area2D"]
 position = Vector2(-0.0022583, 3.31125)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7l8jc")
 one_way_collision = true
 
@@ -1888,124 +1865,75 @@ shape = SubResource("RectangleShape2D_dq57n")
 [node name="Train Tracks" type="Sprite2D" parent="."]
 position = Vector2(3390.5, 239.49)
 scale = Vector2(0.099355, 0.0376344)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks2" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-764.934, 0)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks3" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-1529.87, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks4" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-2294.81, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks5" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-3059.74, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks6" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-3824.68, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks7" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-4589.61, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks8" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-5354.54, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks9" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-6119.48, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks10" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-6884.41, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks11" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-7649.34, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks12" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-8414.28, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks13" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-9179.21, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks14" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-9944.14, -0.000488281)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks15" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-10709.1, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks16" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-11474, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks17" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-12238.9, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks18" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-12993.8, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks19" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-13758.7, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks20" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-14523.7, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks21" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-15288.6, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks22" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-16053.6, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks23" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-16818.5, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks24" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-17583.4, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")
 
 [node name="Tracks25" type="Sprite2D" parent="Train Tracks"]
 position = Vector2(-18348.4, -0.00439453)
-scale = Vector2(1, 1)
-texture = ExtResource("9_vtart")

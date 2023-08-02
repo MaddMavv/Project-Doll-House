@@ -34,37 +34,31 @@ disabled = true
 [node name="TrainCar4" type="Sprite2D" parent="."]
 position = Vector2(3964.54, 38.667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainCar5" type="Sprite2D" parent="."]
 position = Vector2(3272.54, 38.667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainCar6" type="Sprite2D" parent="."]
 position = Vector2(2583.21, 38.667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainCar3" type="Sprite2D" parent="."]
 position = Vector2(1902, 38.6667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainCar2" type="Sprite2D" parent="."]
 position = Vector2(1210, 38.6667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainCar" type="Sprite2D" parent="."]
 position = Vector2(520.667, 38.6667)
 rotation = 0.00732197
-scale = Vector2(1, 1)
 texture = ExtResource("4_fycca")
 
 [node name="TrainFront" type="Sprite2D" parent="."]
