@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df055wucjtmhg"
-path="res://.godot/imported/Untitled_Artwork-9.png-dd3d23e8a5668501927985243739812b.ctex"
+uid="uid://crys0nmrupbm3"
+path="res://.godot/imported/MyLeft11.png-ce9ca477cd290ee0ad68328fe0363011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Deconstructed Heart/Untitled_Artwork-9.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-9.png-dd3d23e8a5668501927985243739812b.ctex"]
+source_file="res://Deconstructed Heart/MyLeft11.png"
+dest_files=["res://.godot/imported/MyLeft11.png-ce9ca477cd290ee0ad68328fe0363011.ctex"]
 
 [params]
 
