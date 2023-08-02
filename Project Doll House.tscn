@@ -385,7 +385,7 @@ texture = ExtResource("11_emp0b")
 shape = SubResource("RectangleShape2D_3tgfg")
 
 [node name="barricade23" type="Sprite2D" parent="part 2"]
-position = Vector2(-7941, -1208)
+position = Vector2(-7188, -1208)
 rotation = 1.5708
 scale = Vector2(1, 1.48438)
 texture = ExtResource("11_emp0b")
