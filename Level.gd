@@ -28,7 +28,8 @@ func stunAttack():
 func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("attack"):
-		pain = true;
+		if player.meleeing == false:
+			pain = true;
 	if pain == true:
 		howLong +=1
 		print(howLong)

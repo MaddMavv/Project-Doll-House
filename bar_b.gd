@@ -21,6 +21,8 @@ var veloOwY = 0;
 
 var hitPoints;
 
+var inPain = false
+
 func _ready():
 	hitPoints = Game.playerHP;
 
@@ -30,6 +32,12 @@ func _physics_process(delta):
 		print("FUCK")
 		hitPoints = Game.playerHP;
 		$"Hurt sounds".play()
+		anim.play("Damaged")
+		meleeing = true
+		inPain = true
+		await anim.animation_finished
+		meleeing = false;
+		inPain = false;
 	
 	if is_on_floor():
 		jumpCount = 0
@@ -44,14 +52,16 @@ func _physics_process(delta):
 	if jumpCount > 0 and Input.is_action_just_pressed("jump"):
 		veloRealY = JUMP_VELOCITY
 		jumpCount -= 1
-		anim.play("Jump")
+		if meleeing == false:
+			anim.play("Jump")
 		$"Jump sounds".play()
 	# Handles drop through platform.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		if Input.is_action_pressed("move down"):
 			set_collision_mask_value(2, false)
 			veloRealY = JUMP_VELOCITY * -1
-			anim.play("Fall")
+			if meleeing == false:
+				anim.play("Fall")
 	# Handles double jump after drop through.
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		if Input.is_action_just_released("move down"):
@@ -118,7 +128,8 @@ func shout():
 		meleeing = false;
 		
 func TRAIN():
-	Game.playerHP -= 1;
+	if inPain == false:
+		Game.playerHP -= 1;
 	veloOw = -3000;
 	veloOwY = -1500;
 	
