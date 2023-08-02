@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=42 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -20,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://cnqsuyouetc2o" path="res://droneB.tscn" id="20_256xk"]
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
+[ext_resource type="Texture2D" uid="uid://d3cqxslaxd6k4" path="res://assests/A.png" id="22_w6vn1"]
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
+[ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="23_vcu7d"]
+[ext_resource type="Texture2D" uid="uid://b0fm6hxuek3kq" path="res://assests/X.png" id="24_3xjqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
 size = Vector2(13833, 825.369)
@@ -470,22 +473,27 @@ shape = SubResource("RectangleShape2D_it2v0")
 [node name="A" type="Sprite2D" parent="Tutorial"]
 position = Vector2(-6768, 370)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("22_w6vn1")
 
 [node name="A2" type="Sprite2D" parent="Tutorial"]
 position = Vector2(-5278, -80)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("22_w6vn1")
 
 [node name="A3" type="Sprite2D" parent="Tutorial"]
 position = Vector2(-3088, 361)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("22_w6vn1")
 
 [node name="B" type="Sprite2D" parent="Tutorial"]
 position = Vector2(-2705, -588)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("23_vcu7d")
 
 [node name="X" type="Sprite2D" parent="Tutorial"]
 position = Vector2(-1217, -439)
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("24_3xjqv")
 
 [node name="Label" type="Label" parent="Tutorial"]
 offset_left = -9414.0
