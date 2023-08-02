@@ -142,6 +142,7 @@ position = Vector2(4618.26, 972.752)
 shape = SubResource("RectangleShape2D_s2lqf")
 
 [node name="DroneStop" type="Area2D" parent="Level"]
+position = Vector2(-814.765, 3.75838)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DroneStop"]
 position = Vector2(8510.87, 186.846)
