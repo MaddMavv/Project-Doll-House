@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs6ewwuc81mrb"]
+[gd_scene load_steps=2 format=3 uid="uid://bs6ewwuc81mrb"]
 
 [ext_resource type="Script" path="res://Pause Menu/Pause_Menu.gd" id="1_a1n05"]
-[ext_resource type="Texture2D" uid="uid://ddor506su82ot" path="res://Pause Menu/Tab.png" id="2_c5wne"]
 
 [node name="Pause_Menu" type="Control"]
 process_mode = 3
@@ -43,7 +42,6 @@ offset_bottom = 1495.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.239999, 0.239999)
-texture = ExtResource("2_c5wne")
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
