@@ -27,9 +27,6 @@ func _ready():
 	hitPoints = Game.playerHP;
 
 func _physics_process(delta):
-	if Input.is_key_pressed(KEY_1):
-		position = $"../Big_Drone_Spawn".global_position
-	
 	# Add the gravity.
 	if hitPoints != Game.playerHP:
 		print("FUCK")
