@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct72qn8j1dfaf"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_5c0cf"]
+[ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="2_fe12j"]
+[ext_resource type="Texture2D" uid="uid://d3cqxslaxd6k4" path="res://assests/A.png" id="3_gu8mg"]
+[ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="4_l16hy"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_omffc"]
+
+[sub_resource type="Shortcut" id="Shortcut_amjxv"]
+events = [SubResource("InputEventJoypadButton_omffc")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_8t12p"]
+button_index = 1
+
+[sub_resource type="Shortcut" id="Shortcut_aendd"]
+events = [SubResource("InputEventJoypadButton_8t12p")]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_5c0cf")
+
+[node name="BlackScreen" type="Sprite2D" parent="."]
+position = Vector2(1441.5, 813.5)
+scale = Vector2(1.52135, 1.54167)
+texture = ExtResource("2_fe12j")
+
+[node name="GameOver" type="Label" parent="BlackScreen"]
+offset_left = -948.0
+offset_top = -528.0
+offset_right = 943.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BlackScreen"]
+layer = 0
+
+[node name="Retry" type="Button" parent="BlackScreen/ParallaxBackground"]
+offset_left = 593.0
+offset_top = 1060.0
+offset_right = 1165.0
+offset_bottom = 1294.0
+theme_override_font_sizes/font_size = 50
+shortcut = SubResource("Shortcut_amjxv")
+text = "           Retry"
+alignment = 0
+
+[node name="A" type="Sprite2D" parent="BlackScreen/ParallaxBackground/Retry"]
+position = Vector2(366, 121)
+texture = ExtResource("3_gu8mg")
+
+[node name="A Button" type="Label" parent="BlackScreen/ParallaxBackground/Retry/A"]
+offset_left = -40.0
+offset_top = -31.0
+offset_right = 40.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 40
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="BlackScreen/ParallaxBackground"]
+offset_left = 1760.0
+offset_top = 1063.0
+offset_right = 2332.0
+offset_bottom = 1297.0
+theme_override_font_sizes/font_size = 50
+shortcut = SubResource("Shortcut_aendd")
+text = "             Quit"
+alignment = 0
+
+[node name="B" type="Sprite2D" parent="BlackScreen/ParallaxBackground/Quit"]
+position = Vector2(356, 120)
+texture = ExtResource("4_l16hy")
+
+[node name="B Button" type="Label" parent="BlackScreen/ParallaxBackground/Quit/B"]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 40
+text = "B
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BlackScreen/ParallaxBackground/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="BlackScreen/ParallaxBackground/Quit" to="." method="_on_quit_pressed"]

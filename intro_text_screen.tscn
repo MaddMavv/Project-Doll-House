@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cwi6jn168pvk4"]
 
 [ext_resource type="Script" path="res://intro_text_screen.gd" id="1_52b2a"]
-[ext_resource type="Texture2D" uid="uid://dylvwj1d06l2k" path="res://assests/black_screen.png" id="1_y56h2"]
+[ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="1_y56h2"]
 [ext_resource type="PackedScene" uid="uid://7wai0ydce74r" path="res://opening_text.tscn" id="2_l6yxq"]
 [ext_resource type="Texture2D" uid="uid://d3cqxslaxd6k4" path="res://assests/A.png" id="4_c222i"]
 [ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="5_g2ckt"]
@@ -105,11 +105,11 @@ text = "Skip / Press       "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StorySoFar" type="Label" parent="."]
-offset_left = 1047.21
-offset_top = 69.5333
-offset_right = 1737.21
-offset_bottom = 217.533
+[node name="StorySoFar" type="Label" parent="BlackScreen"]
+offset_left = -339.189
+offset_top = -492.0
+offset_right = 350.811
+offset_bottom = -344.001
 theme_override_font_sizes/font_size = 40
 text = "The story so far:"
 horizontal_alignment = 1

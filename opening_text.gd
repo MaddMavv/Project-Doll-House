@@ -42,7 +42,6 @@ func _process(_delta):
 			if !text_queue.is_empty() and endText < 10:
 				display_text()
 			else:
-				!$Textbox
 				done = true
 		State.READING:
 			if Input.is_action_just_pressed("jump"):
@@ -73,7 +72,6 @@ func display_text():
 	text_animation()
 	change_state(State.READING)
 	#show_textbox()
-	
 	
 	
 func text_animation():
