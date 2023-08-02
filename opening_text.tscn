@@ -7,14 +7,14 @@ script = ExtResource("1_kytq2")
 
 [node name="Container" type="MarginContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.936
-anchor_top = 0.154
-anchor_right = 0.936
-anchor_bottom = 0.154
-offset_left = -1101.68
-offset_top = -76.48
-offset_right = -0.680176
-offset_bottom = 321.52
+anchor_left = 0.294
+anchor_top = 0.352
+anchor_right = 0.294
+anchor_bottom = 0.352
+offset_left = -331.72
+offset_top = -101.24
+offset_right = 1517.28
+offset_bottom = 443.76
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -34,7 +34,8 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 50
 text = ";falkj;lfkasjdfljasd;lfknasd.,/fjdsawlkfj;asldkfj;laskdj"
 autowrap_mode = 2
-visible_ratio = -0.0178571
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="End" type="Label" parent="Container/HBoxContainer"]
 visible = false
