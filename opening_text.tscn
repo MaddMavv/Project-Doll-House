@@ -7,14 +7,14 @@ script = ExtResource("1_kytq2")
 
 [node name="Container" type="MarginContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.959
-anchor_top = 0.15
-anchor_right = 0.959
-anchor_bottom = 0.15
-offset_left = -959.92
-offset_top = -72.0
-offset_right = 1.08008
-offset_bottom = 293.0
+anchor_left = 0.936
+anchor_top = 0.154
+anchor_right = 0.936
+anchor_bottom = 0.154
+offset_left = -1101.68
+offset_top = -76.48
+offset_right = -0.680176
+offset_bottom = 321.52
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -22,6 +22,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Start" type="Label" parent="Container/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "*"
@@ -31,11 +32,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 50
+text = ";falkj;lfkasjdfljasd;lfknasd.,/fjdsawlkfj;asldkfj;laskdj"
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
+visible_ratio = -0.0178571
 
 [node name="End" type="Label" parent="Container/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "v"
