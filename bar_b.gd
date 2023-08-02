@@ -19,9 +19,17 @@ var veloOw = 0;
 var veloRealY = 0;
 var veloOwY = 0;
 
+var hitPoints;
+
+func _ready():
+	hitPoints = Game.playerHP;
 
 func _physics_process(delta):
 	# Add the gravity.
+	if hitPoints != Game.playerHP:
+		print("FUCK")
+		hitPoints = Game.playerHP;
+	
 	if is_on_floor():
 		jumpCount = 0
 		veloRealY = 0
