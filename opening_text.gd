@@ -30,9 +30,9 @@ func _ready():
 	queue_text("She's actually a rare and valuable doll, and even with an impaired arm she knows she is worth enough to save the store.")
 	queue_text("But the others don’t believe her. Acting on the orders of Gillian, a toy robot and apparent leader of the shelves, they imprison Barb in her packaging.")
 	queue_text("The determined and pissed off doll severs her arm to escape confinement. She's spotted by a sentinel who alerts the store.")
-	queue_text("She quickly knocks him out and takes his megaphone.")
+	queue_text("Barb knocks him out and takes his megaphone.")
 	queue_text("Time to go loud.")
-	queue_text("Barb jams the megaphone into her shoulder in place of her second arm. A single sound burst is enough to launch her to greater heights and stun enemies.")
+	queue_text("She jams the megaphone into her shoulder in place of her second arm.   One sound burst can launch her to greater heights and stun enemies.")
 	queue_text("If they won’t listen to her, she’ll just have to make them.")
 	
 	
