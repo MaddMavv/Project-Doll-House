@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnctodqe6ld27"
-path="res://.godot/imported/Tab.png-bab941a8ecc174b41b7c4856e2824512.ctex"
+uid="uid://lxeoy0wsrotu"
+path="res://.godot/imported/Tabs2.png-1b6530f2434cf7f93ea3e34bb02f5dbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pause Menu/Tab.png"
-dest_files=["res://.godot/imported/Tab.png-bab941a8ecc174b41b7c4856e2824512.ctex"]
+source_file="res://Pause Menu/Tabs2.png"
+dest_files=["res://.godot/imported/Tabs2.png-1b6530f2434cf7f93ea3e34bb02f5dbc.ctex"]
 
 [params]
 

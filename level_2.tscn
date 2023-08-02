@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ror3virm5ave" path="res://assests/s1 .png" id="8_bcoma"]
 [ext_resource type="PackedScene" uid="uid://db07m7ctkl7x1" path="res://redDrone.tscn" id="10_lhnsx"]
 [ext_resource type="Script" path="res://Pause Menu/Pause_Menu.gd" id="12_boi7y"]
-[ext_resource type="Texture2D" uid="uid://cnctodqe6ld27" path="res://Pause Menu/Tab.png" id="13_a5dxs"]
 [ext_resource type="PackedScene" uid="uid://7ue7kdbpu0t3" path="res://blueDrone.tscn" id="14_r1v73"]
+[ext_resource type="Texture2D" uid="uid://lxeoy0wsrotu" path="res://Pause Menu/Tabs2.png" id="14_s1830"]
 [ext_resource type="PackedScene" uid="uid://iepj63r3yt31" path="res://cop.tscn" id="15_xdgsa"]
 [ext_resource type="Script" path="res://HP.gd" id="16_y8jng"]
 [ext_resource type="Texture2D" uid="uid://dcgkp6rrej3ny" path="res://assests/full.png" id="17_bi7oo"]
@@ -402,7 +402,6 @@ one_shot = true
 
 [node name="Pause Menu" type="Control" parent="UI"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -441,9 +440,9 @@ text = "Quit
 "
 
 [node name="Tab" type="Sprite2D" parent="UI/Pause Menu/ColorRect"]
-position = Vector2(2266, 893)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("13_a5dxs")
+position = Vector2(2254, 919)
+scale = Vector2(0.640002, 0.640002)
+texture = ExtResource("14_s1830")
 
 [node name="HP" type="Label" parent="UI"]
 visible = false
