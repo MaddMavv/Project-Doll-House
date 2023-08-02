@@ -10,12 +10,21 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("BarB")
 @onready var barb : CharacterBody2D = get_node("../../../../BarB")
 
+
+##NEW NEW movement
+@export var acceleration = Vector2(0.00, 0.00)
+@export var velo = Vector2(0, 5)
+##this changes the drone distance 
+@export var accNum = Vector2(0.00, 0.015)
+@export var moveSpeed = 5
+var fall = Vector2(0, 600)
+
 #new drone movement
-var targetY
-@export var range = Vector2(0, 500)
-@export var v_move = Vector2(0.00, 0.00)
-@export var add = Vector2(0.00, 0.01)
-var fall = Vector2(0, 400)
+#var targetY
+#@export var range = Vector2(0, 500)
+#@export var v_move = Vector2(0.00, 0.00)
+#@export var add = Vector2(0.00, 0.01)
+
 
 #old script - track changes for now 
 #var top = 250
@@ -26,7 +35,6 @@ var chase = false
 var stun = false
 var home = true
 var direction = -1
-#for when stunned
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var on = false;
 
@@ -41,24 +49,43 @@ func _process(delta):
 	shoot_at_player()
 	
 func move(delta):
-	if stun == false and home == true:
-		#moves up and down
-		targetY = sin(v_move.y) * range.y * delta
-		position.y += targetY
-		v_move.y += add.y
+		##out with the old 
+		#targetY = sin(v_move.y) * range.y * delta
+		#position.y += targetY
+		#v_move.y += add.y
 		#print(position.y)
 			
 	if stun == true:
 		home = false
 		#falls to the ground
 		move_and_collide(fall * delta)
-	elif home == false and position.y > start.y:
-		position.y -= 225 * delta
+	elif stun == false and home == false:
+		velo.y = -5
+		position += velo
+	else:
+		#moves up and down
+		position += velo
+		velo += acceleration
+		velo.y = clamp(velo.y, -moveSpeed, moveSpeed)
+		
+		if position.y > start.y:
+			acceleration.y = -accNum.y
+		
+		if position.y < start.y:
+			acceleration.y = accNum.y
 	
-	if stun == false and position.y < start.y and home == false:
-		position.y = start.y
-		home = true 
-		v_move = Vector2(0.00, 0.00)
+	#resets motion after stun 
+	if stun == false and home == false and position.y < start.y:
+		home = true
+	
+	#more old code -- will get rid of it once I'm confident this fix works on other computers
+	#elif home == false and position.y > start.y:
+	#	position.y -= 225 * delta
+	
+	#if stun == false and position.y < start.y:
+		#position.y = start.y
+	#	home = true 
+		#v_move = Vector2(0.00, 0.00)
 	
 func shoot_at_player():
 	#shoot function (below) calls bullet using this node
@@ -78,8 +105,6 @@ func _on_timer_timeout():
 	
 	
 func stunned():
-	#press TAB to stun drone
-	####will be replaced with actual stun####
 	if chase == true:
 		stun = true
 		$StunTimer.start()

@@ -306,43 +306,48 @@ position = Vector2(590, -1351)
 
 [node name="redDrone" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(5783, -1115)
-range = Vector2(0, 100)
+accNum = Vector2(0, 0.023)
 
 [node name="redDrone2" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(66460, -835)
-range = Vector2(0, 350)
+position = Vector2(66532, -332)
+accNum = Vector2(0, 0.03)
 
 [node name="redDrone3" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(67658, -1244)
-v_move = Vector2(0, 100)
-add = Vector2(0, 0.009)
+position = Vector2(67646, -584)
+velo = Vector2(0, -5)
+accNum = Vector2(0, 0.02)
+moveSpeed = 6
 
 [node name="redDrone4" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(68860, -835)
-range = Vector2(0, 350)
+position = Vector2(68884, -595)
+accNum = Vector2(0, 0.02)
+moveSpeed = 6
 
 [node name="redDrone5" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(70058, -1244)
-v_move = Vector2(0, 100)
-add = Vector2(0, 0.009)
+position = Vector2(70034, -429)
+accNum = Vector2(0, 0.03)
+moveSpeed = 8
 
 [node name="redDrone6" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(71260, -835)
-range = Vector2(0, 350)
+position = Vector2(71176, -296)
+velo = Vector2(0, -5)
+accNum = Vector2(0, 0.027)
+moveSpeed = 6
 
 [node name="Blue Drones" type="Node2D" parent="Baddies/Drones"]
 
 [node name="blueDrone2" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(8399, 115)
-range = Vector2(250, 0)
+position = Vector2(8826, 96)
+accNum = Vector2(0.04, 0)
+moveSpeed = 4
 
 [node name="blueDrone4" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(78465, 111)
-range = Vector2(1300, 0)
+position = Vector2(79639, 130)
+accNum = Vector2(0.015, 0)
 
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(10290, 115)
-range = Vector2(250, 0)
+position = Vector2(10823, 96)
+accNum = Vector2(0.035, 0)
 
 [node name="DroneB" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(3406, -1488)
@@ -384,7 +389,7 @@ position = Vector2(2962, 583)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop4" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(8411, -313)
+position = Vector2(8849, -324)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop11" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -392,7 +397,7 @@ position = Vector2(9178, -1140)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop8" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(78472, -319)
+position = Vector2(79654, -289)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop9" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -404,7 +409,7 @@ position = Vector2(83759, -332)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop5" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(10302, -297)
+position = Vector2(10830, -327)
 scale = Vector2(2.5, 2.5)
 
 [node name="Warning" type="Timer" parent="."]

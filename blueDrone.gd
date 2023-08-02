@@ -11,13 +11,20 @@ extends CharacterBody2D
 var barb
 
 #new code for drone movement
-var targetX
-@export var range = Vector2(500, 0)
-@export var h_move = Vector2(0.00, 0.00)
-@export var add = Vector2(0.01, 0.00)
+#var targetX
+#@export var range = Vector2(500, 0)
+#@export var h_move = Vector2(0.00, 0.00)
+#@export var add = Vector2(0.01, 0.00)
 #old movement code but leaving it in for now
 #var left = 210
 #var right = 200
+
+#NEW NEW code for drone movement
+@export var acceleration = Vector2(0.00, 0.00)
+@export var velo = Vector2(5, 0)
+##this changes the drone distance 
+@export var accNum = Vector2(0.05, 0.00)
+@export var moveSpeed = 5
 
 var start
 var chase = false
@@ -41,10 +48,21 @@ func _process(delta):
 func move(delta):
 	
 	if stun == false and home == true:
-		#moves up and down
-		targetX = sin(h_move.x) * range.x * delta
-		position.x += targetX
-		h_move.x += add.x
+		#moves left and right
+		position += velo
+		velo += acceleration
+		velo.x = clamp(velo.x, -moveSpeed, moveSpeed)
+		
+		if position.x > start.x:
+			acceleration.x = -accNum.x
+		
+		if position.x < start.x:
+			acceleration.x = accNum.x
+		
+		#out with the old
+		#targetX = sin(h_move.x) * range.x * delta
+		#position.x += targetX
+		#h_move.x += add.x
 		
 		#old movement
 		#position += velocity * delta
@@ -59,14 +77,14 @@ func move(delta):
 		position.y -= 225 * delta
 	elif position.y < start.y:
 		position.y = start.y
+		home = true
+	#if home == false and position.y == start.y and position.x > start.x:
+	#	position.x -= 225 * delta
 	
-	if home == false and position.y == start.y and position.x > start.x:
-		position.x -= 225 * delta
-	
-	if stun == false and home == false and position.y == start.y and position.x < start.x:
-		position.x = start.x
-		home = true 
-		h_move = Vector2(0.00, 0.00)
+	#if stun == false and home == false and position.y == start.y and position.x < start.x:
+	#	position.x = start.x
+	#	home = true 
+		#h_move = Vector2(0.00, 0.00)
 	
 	
 func shoot_at_player():

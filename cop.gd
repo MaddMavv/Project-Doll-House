@@ -131,3 +131,8 @@ func _on_stun_timer_timeout():
 
 func death():
 	self.queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "BarB":
+		body.TRAIN() # Replace with function body.

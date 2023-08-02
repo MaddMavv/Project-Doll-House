@@ -57,7 +57,7 @@ func chase_after_player(delta):
 			velocity.x *= -1
 	if stun == true:
 		home = false
-		position = lerp(position, start, .4 * delta)
+		position = lerp(position, start, .7 * delta)
 		#move_and_collide(fall * delta)
 
 func barb_falls_off():
