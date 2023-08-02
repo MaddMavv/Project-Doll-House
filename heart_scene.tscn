@@ -1,18 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://br4xoxv2yv0ip"]
+[gd_scene load_steps=28 format=3 uid="uid://br4xoxv2yv0ip"]
 
+[ext_resource type="Script" path="res://heart_scene.gd" id="1_aaog3"]
 [ext_resource type="Texture2D" uid="uid://dp0cekvf74b3l" path="res://Deconstructed Heart/EmptyHeart.png" id="1_y2key"]
 [ext_resource type="Texture2D" uid="uid://cpaf7bcq2ee6l" path="res://Deconstructed Heart/Broken Heart.png" id="2_5rhhh"]
 [ext_resource type="Texture2D" uid="uid://dpfshyr4x3hpx" path="res://Deconstructed Heart/Full Heart.png" id="3_4ea67"]
-[ext_resource type="Script" path="res://BottomHeart.gd" id="4_7jmxy"]
 [ext_resource type="Texture2D" uid="uid://brmqloqq1ebdp" path="res://Deconstructed Heart/Bottom1.png" id="5_t0ev1"]
 [ext_resource type="Texture2D" uid="uid://dkhpkf8k8ynb3" path="res://Deconstructed Heart/Bottom3.png" id="6_c331y"]
 [ext_resource type="Texture2D" uid="uid://dnjebrx04oquf" path="res://Deconstructed Heart/Bottom4.png" id="7_oxa5b"]
 [ext_resource type="Texture2D" uid="uid://m5ye4my0suuv" path="res://Deconstructed Heart/Bottom5.png" id="8_n31wf"]
 [ext_resource type="Texture2D" uid="uid://20kv8mlfbv6n" path="res://Deconstructed Heart/Bottom6.png" id="9_mkrwe"]
 [ext_resource type="Texture2D" uid="uid://cotllff4nqt5q" path="res://Deconstructed Heart/Bottom7.png" id="10_g8ltb"]
+[ext_resource type="Texture2D" uid="uid://5o3fshp83am5" path="res://Deconstructed Heart/MyLeft8.png" id="12_ej4l4"]
 [ext_resource type="Texture2D" uid="uid://co6xyveriprvs" path="res://Deconstructed Heart/Bottom2.png" id="12_t7j02"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_py03p"]
+[ext_resource type="Texture2D" uid="uid://df055wucjtmhg" path="res://Deconstructed Heart/MyLeft9.png" id="13_v1w3o"]
+[ext_resource type="Texture2D" uid="uid://bdi8woaqmydj6" path="res://Deconstructed Heart/MyLeft10.png" id="14_a2weg"]
+[ext_resource type="Texture2D" uid="uid://crys0nmrupbm3" path="res://Deconstructed Heart/MyLeft11.png" id="15_fdu7o"]
+[ext_resource type="Texture2D" uid="uid://kd5trephugyj" path="res://Deconstructed Heart/MyLeft12.png" id="16_lhogx"]
+[ext_resource type="Texture2D" uid="uid://cy5dpd3xwfoek" path="res://Deconstructed Heart/MyLeft13.png" id="17_4v5q0"]
+[ext_resource type="Texture2D" uid="uid://dmxjpr6sg7gk2" path="res://Deconstructed Heart/MyLeft14.png" id="18_vb6ck"]
+[ext_resource type="Texture2D" uid="uid://cd70d5lris2lc" path="res://Deconstructed Heart/MyLeft15.png" id="19_elgwx"]
+[ext_resource type="Texture2D" uid="uid://wbguk48mvvrm" path="res://Deconstructed Heart/MyLeft16.png" id="20_2hfnb"]
+[ext_resource type="Texture2D" uid="uid://d1ixc5r2ktk2b" path="res://Deconstructed Heart/MyRight17.png" id="21_1awtb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axi6u"]
 radius = 24.5153
@@ -21,6 +29,13 @@ radius = 24.5153
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j05oj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_py03p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_saaso"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ycmit"]
+radius = 5.54703
+
 [node name="Heart Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aaog3")
 
 [node name="EmptyHeart" type="Sprite2D" parent="."]
 visible = false
@@ -55,90 +71,234 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_7jmxy")
 
-[node name="Bottom1F" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomA" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom6" type="Sprite2D" parent="BottomHeart/Bottom1F"]
-position = Vector2(179, 218)
-texture = ExtResource("9_mkrwe")
-region_enabled = true
-region_rect = Rect2(150.521, 1822.61, 73.8902, 83.4686)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1F"]
-shape = SubResource("CircleShape2D_py03p")
-
-[node name="Bottom1A" type="RigidBody2D" parent="BottomHeart"]
-
-[node name="Bottom1" type="Sprite2D" parent="BottomHeart/Bottom1A"]
+[node name="Bottom1" type="Sprite2D" parent="BottomHeart/BottomA"]
 position = Vector2(202, 312)
 texture = ExtResource("5_t0ev1")
 region_enabled = true
 region_rect = Rect2(164.402, 1901.42, 93.2659, 114.564)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1A"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomA"]
 position = Vector2(201, 308)
 shape = SubResource("CircleShape2D_axi6u")
 
-[node name="Bottom1B" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomB" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom2" type="Sprite2D" parent="BottomHeart/Bottom1B"]
+[node name="Bottom2" type="Sprite2D" parent="BottomHeart/BottomB"]
 position = Vector2(250, 292)
 texture = ExtResource("12_t7j02")
 region_enabled = true
 region_rect = Rect2(207.838, 1888.91, 101.113, 101.113)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1B"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomB"]
 position = Vector2(244, 279)
 scale = Vector2(2.04, 2.04)
 shape = SubResource("CircleShape2D_cibx8")
 
-[node name="Bottom1C" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomC" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom3" type="Sprite2D" parent="BottomHeart/Bottom1C"]
+[node name="Bottom3" type="Sprite2D" parent="BottomHeart/BottomC"]
 position = Vector2(271, 254)
 texture = ExtResource("6_c331y")
 region_enabled = true
 region_rect = Rect2(234.888, 1871.02, 87.9325, 61.8888)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1C"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomC"]
 position = Vector2(272, 250)
 scale = Vector2(1.32, 1.32)
 shape = SubResource("CircleShape2D_j05oj")
 
-[node name="Bottom1D" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomD" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom4" type="Sprite2D" parent="BottomHeart/Bottom1D"]
+[node name="Bottom4" type="Sprite2D" parent="BottomHeart/BottomD"]
 position = Vector2(171, 281)
 texture = ExtResource("7_oxa5b")
 region_enabled = true
 region_rect = Rect2(148.803, 1876.88, 61.9051, 100.674)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomD"]
+position = Vector2(173, 265)
+scale = Vector2(1.56, 1.56)
 shape = SubResource("CircleShape2D_py03p")
 
-[node name="Bottom1E" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomE" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom5" type="Sprite2D" parent="BottomHeart/Bottom1E"]
+[node name="Bottom5" type="Sprite2D" parent="BottomHeart/BottomE"]
 position = Vector2(225, 226)
 texture = ExtResource("8_n31wf")
 region_enabled = true
 region_rect = Rect2(193.315, 1830.19, 80.6252, 88.2188)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1E"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomE"]
+position = Vector2(233, 215)
+scale = Vector2(2.24, 2.24)
 shape = SubResource("CircleShape2D_py03p")
 
-[node name="Bottom1G" type="RigidBody2D" parent="BottomHeart"]
+[node name="BottomF" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
 
-[node name="Bottom7" type="Sprite2D" parent="BottomHeart/Bottom1G"]
+[node name="Bottom6" type="Sprite2D" parent="BottomHeart/BottomF"]
+position = Vector2(179, 218)
+texture = ExtResource("9_mkrwe")
+region_enabled = true
+region_rect = Rect2(150.521, 1822.61, 73.8902, 83.4686)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomF"]
+position = Vector2(182, 221)
+scale = Vector2(2.32, 2.32)
+shape = SubResource("CircleShape2D_py03p")
+
+[node name="BottomG" type="RigidBody2D" parent="BottomHeart"]
+freeze = true
+
+[node name="Bottom7" type="Sprite2D" parent="BottomHeart/BottomG"]
 position = Vector2(112, 255)
 texture = ExtResource("10_g8ltb")
 region_enabled = true
 region_rect = Rect2(65.8454, 1824.34, 110.035, 152.614)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/Bottom1G"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomHeart/BottomG"]
+position = Vector2(120, 244)
+scale = Vector2(2.64, 2.64)
 shape = SubResource("CircleShape2D_py03p")
 
-[node name="Leftside" type="Node2D" parent="."]
+[node name="Leftside" type="Control" parent="."]
+anchors_preset = 0
 
-[node name="Rightside" type="Node2D" parent="."]
+[node name="MyLeftA" type="RigidBody2D" parent="Leftside"]
+position = Vector2(-32, -49)
+
+[node name="MyLeft8" type="Sprite2D" parent="Leftside/MyLeftA"]
+position = Vector2(102, 147)
+texture = ExtResource("12_ej4l4")
+region_enabled = true
+region_rect = Rect2(40.7735, 1683.41, 77.4375, 119.977)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftA"]
+position = Vector2(98, 149)
+scale = Vector2(2.68, 2.68)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftB" type="RigidBody2D" parent="Leftside"]
+position = Vector2(-30, -17)
+
+[node name="MyLeft9" type="Sprite2D" parent="Leftside/MyLeftB"]
+position = Vector2(135, 144)
+texture = ExtResource("13_v1w3o")
+region_enabled = true
+region_rect = Rect2(68.2664, 1750.93, 87.7871, 45.3337)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftB"]
+position = Vector2(136, 143)
+scale = Vector2(2.68, 2.68)
+shape = SubResource("CircleShape2D_ycmit")
+
+[node name="MyLeftC" type="RigidBody2D" parent="Leftside"]
+position = Vector2(-19, -15)
+
+[node name="MyLeft10" type="Sprite2D" parent="Leftside/MyLeftC"]
+position = Vector2(139, 93)
+texture = ExtResource("14_a2weg")
+region_enabled = true
+region_rect = Rect2(92.3182, 1683.19, 71.5849, 83.2679)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftC"]
+position = Vector2(145, 94)
+scale = Vector2(2.36, 2.36)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftD" type="RigidBody2D" parent="Leftside"]
+position = Vector2(-28, -30)
+
+[node name="MyLeft11" type="Sprite2D" parent="Leftside/MyLeftD"]
+position = Vector2(198, 113)
+texture = ExtResource("15_fdu7o")
+region_enabled = true
+region_rect = Rect2(151.43, 1695.97, 49.4106, 65.0062)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftD"]
+position = Vector2(193, 112)
+scale = Vector2(0.959995, 0.959995)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftE" type="RigidBody2D" parent="Leftside"]
+position = Vector2(-172, 34)
+
+[node name="MyLeft12" type="Sprite2D" parent="Leftside/MyLeftE"]
+position = Vector2(252, 142)
+texture = ExtResource("16_lhogx")
+region_enabled = true
+region_rect = Rect2(44.8243, 1785.36, 89.5836, 73.4988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftE"]
+position = Vector2(250, 140)
+scale = Vector2(2.68, 2.68)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftF" type="RigidBody2D" parent="Leftside"]
+
+[node name="MyLeft13" type="Sprite2D" parent="Leftside/MyLeftF"]
+position = Vector2(159, 113)
+texture = ExtResource("17_4v5q0")
+region_enabled = true
+region_rect = Rect2(114.214, 1724.52, 101.957, 69.1519)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftF"]
+position = Vector2(164, 120)
+scale = Vector2(1.56, 1.56)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftG" type="RigidBody2D" parent="Leftside"]
+
+[node name="MyLeft14" type="Sprite2D" parent="Leftside/MyLeftG"]
+position = Vector2(125, 169)
+texture = ExtResource("18_vb6ck")
+region_enabled = true
+region_rect = Rect2(102.555, 1780.44, 61.4892, 67.6876)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftG"]
+position = Vector2(131, 167)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftH" type="RigidBody2D" parent="Leftside"]
+
+[node name="MyLeft15" type="Sprite2D" parent="Leftside/MyLeftH"]
+position = Vector2(158, 178)
+texture = ExtResource("19_elgwx")
+region_enabled = true
+region_rect = Rect2(141.025, 1777.08, 48.5746, 92.2916)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftH"]
+position = Vector2(161, 171)
+scale = Vector2(0.959998, 0.959998)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="MyLeftI" type="RigidBody2D" parent="Leftside"]
+
+[node name="MyLeft16" type="Sprite2D" parent="Leftside/MyLeftI"]
+position = Vector2(197, 170)
+texture = ExtResource("20_2hfnb")
+region_enabled = true
+region_rect = Rect2(167.805, 1786.8, 73.0231, 59.684)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leftside/MyLeftI"]
+position = Vector2(191, 161)
+scale = Vector2(1.27424, 1.27424)
+shape = SubResource("CircleShape2D_saaso")
+
+[node name="Rightside" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="MyRight17" type="Sprite2D" parent="."]
+position = Vector2(225, 170)
+texture = ExtResource("21_1awtb")
+region_enabled = true
+region_rect = Rect2(197.719, 1791.48, 67.2217, 50.6553)
