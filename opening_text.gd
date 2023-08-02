@@ -18,11 +18,12 @@ var text_queue = []
 
 func _ready():
 	print("Starting state is ready")
-	hide_textbox()
+	#hide_textbox()
 	queue_text("Damaged vintage doll Barbara Scarlett is the newest addition to an indie shop that fixes and sells used toys.")
 	queue_text("While undergoing repairs, Barb overhears the manager arguing over the store’s debt and imminent closure.")
 	queue_text("The fate of the toys is uncertain.")
-	queue_text("That night, Barb makes for the main display. She's actually a rare and valuable doll, and even with an impaired arm she knows she is worth enough to save the store.")
+	queue_text("That night, Barb makes for the main display.")
+	queue_text("She's actually a rare and valuable doll, and even with an impaired arm she knows she is worth enough to save the store.")
 	queue_text("But the other toys don’t believe her. Acting on the orders of Gillian, a robot figure and apparent leader of the shelves, they imprison Barb in her packaging.")
 	queue_text("The determined and pissed off doll severs her arm to escape confinement. She's spotted by a sentinel who alerts the store.")
 	queue_text("She quickly knocks him out and takes his megaphone.")
@@ -47,14 +48,14 @@ func queue_text(next_text):
 	text_queue.push_back(next_text)
 
 
-func hide_textbox():
+#func hide_textbox():
 	start_symbol.text = ""
 	end_symbol.text = ""
 	theText.text = ""
 	textbox_container.hide()
 
 
-func show_textbox():
+#func show_textbox():
 	start_symbol.text = ""
 	textbox_container.show()
 	
@@ -64,7 +65,7 @@ func display_text():
 	theText.text = next_text
 	text_animation()
 	change_state(State.READING)
-	show_textbox()
+	#show_textbox()
 	
 	
 	
