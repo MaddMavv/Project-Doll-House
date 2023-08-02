@@ -142,6 +142,7 @@ position = Vector2(4618.26, 972.752)
 shape = SubResource("RectangleShape2D_s2lqf")
 
 [node name="DroneStop" type="Area2D" parent="Level"]
+position = Vector2(-816.644, 3.75839)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DroneStop"]
 position = Vector2(8510.87, 186.846)
@@ -169,6 +170,7 @@ position = Vector2(9878, 2042)
 scale = Vector2(0.671861, 1.5625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Area2D"]
+visible = false
 position = Vector2(5749.45, 728.964)
 shape = SubResource("RectangleShape2D_8ga1s")
 
