@@ -5,22 +5,22 @@ var cop = preload("res://melee cop.tscn")
 var shmovin = false
 var player
 var done = false;
-# Called when the node enters the scene tree for the first time.
+
+
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if shmovin == true:
-		position.x += 10;
-		player = get_node("../BarB")
-		if player.position.x <= (self.position.x-1300):
-			player.position.x+=10;
-		
+	player = get_node("../BarB")
 	velocity.y = 0
 	global_position.y = -552
-	move_and_slide()
+
+
+func _physics_process(delta):
+	if shmovin == true:
+		position.x += 10;
+#		if player.position.x <= (self.position.x-1300):
+#			player.position.x+=10;
+		
+		move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
@@ -40,6 +40,7 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 func spawnDude():
 	if shmovin == true:
 		var copTemp = cop.instantiate()
+		copTemp.global_position = Vector2(0, -5000)
 		add_child(copTemp)
 		player = get_node("../BarB")
 		var dunkedOn = randi_range(1,4)

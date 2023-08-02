@@ -1,10 +1,13 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://bsxphgta50vjo"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://bsxphgta50vjo"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://f4ufiwl1higg" path="res://assests/BarB_Demo_Img.png" id="1_byej3"]
 [ext_resource type="Script" path="res://main menu.gd" id="1_i2nf6"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="2_6pn6y"]
 [ext_resource type="Texture2D" uid="uid://dcyqr5fy67wmn" path="res://assests/Background.png" id="2_rrvbv"]
-[ext_resource type="AudioStream" uid="uid://dqursbcu6ud7x" path="res://assests/Barb Voice Audio Files/Game menu voice line.mp3" id="5_meu85"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_usyhx"]
 device = -1
@@ -27,7 +30,6 @@ events = [SubResource("InputEventJoypadButton_pyjqi"), SubResource("InputEventKe
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f8cha"]
 streams_count = 1
 random_pitch = 1.05
-stream_0/stream = ExtResource("5_meu85")
 stream_0/weight = 1.0
 
 [node name="Node" type="Node"]

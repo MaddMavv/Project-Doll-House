@@ -243,6 +243,8 @@ shape = SubResource("RectangleShape2D_renqu")
 position = Vector2(28518, -552)
 scale = Vector2(2.83285, 2.83285)
 collision_layer = 2
+motion_mode = 1
+platform_on_leave = 2
 script = ExtResource("4_54ugp")
 
 [node name="Drone" type="CollisionShape2D" parent="GREEN DRONE"]
@@ -280,7 +282,7 @@ position = Vector2(61.333, -99.1932)
 shape = SubResource("RectangleShape2D_s1xew")
 
 [node name="spawn" type="Timer" parent="GREEN DRONE"]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
@@ -400,6 +402,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause Menu" type="Control" parent="UI"]
 process_mode = 3
@@ -548,6 +551,10 @@ offset_right = -139.0
 offset_bottom = -383.0
 theme_override_font_sizes/font_size = 81
 text = "Then use J/ X for a melee attack"
+
+[node name="Big_Drone_Spawn" type="Marker2D" parent="."]
+position = Vector2(27320, -1425)
+gizmo_extents = 300.0
 
 [connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
 [connection signal="body_exited" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_exited"]
