@@ -23,6 +23,8 @@ var hitPoints;
 
 var inPain = false
 
+@onready var dustTrail = $dust_trail
+
 func _ready():
 	hitPoints = Game.playerHP;
 
@@ -84,6 +86,7 @@ func _physics_process(delta):
 	veloOwY = move_toward(veloOwY, 0, 50)
 	
 	if direction:
+		$dustTrail.emitting = true
 		veloReal = direction * SPEED
 		if veloRealY == 0:
 			if meleeing == false:
@@ -93,6 +96,7 @@ func _physics_process(delta):
 				anim.play("Fall")
 	else:
 		veloReal = move_toward(veloReal, 0, SPEED)
+		$dustTrail.emitting = false
 		if veloRealY == 0:
 			if meleeing == false:
 				anim.play("Idle")
