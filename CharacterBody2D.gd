@@ -19,7 +19,10 @@ func _physics_process(delta):
 		position.x += 10;
 		if player.position.x <= (self.position.x-1300):
 			player.position.x+=10; 
-			print("goo")
+			
+	
+	velocity.y = 0
+	global_position.y = -552
 		
 	move_and_slide()
 
