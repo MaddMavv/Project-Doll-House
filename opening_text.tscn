@@ -25,6 +25,7 @@ layout_mode = 2
 [node name="Start" type="Label" parent="Container/HBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0200x")
 theme_override_font_sizes/font_size = 50
 text = "*"
 
@@ -42,5 +43,6 @@ visible_ratio = 0.0
 [node name="End" type="Label" parent="Container/HBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0200x")
 theme_override_font_sizes/font_size = 50
 text = "v"
