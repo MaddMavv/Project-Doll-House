@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
 [ext_resource type="Texture2D" uid="uid://be6856dmd2pvr" path="res://assests/Repeatable Background with boxes.png" id="3_kpg0o"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
-[ext_resource type="Texture2D" path="res://assests/background (1).png" id="3_wbxkw"]
+[ext_resource type="Texture2D" uid="uid://3ujw1j8mdsa0" path="res://assests/background (1).png" id="3_wbxkw"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
 [ext_resource type="Texture2D" uid="uid://0q6b1re8qmb7" path="res://assests/Green Drone F2.png" id="7_ftw72"]
