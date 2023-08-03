@@ -18,8 +18,8 @@ pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_kc4wg"]
 device = -1
-keycode = 75
-unicode = 107
+keycode = 32
+unicode = 32
 
 [sub_resource type="Shortcut" id="Shortcut_cewsu"]
 events = [SubResource("InputEventJoypadButton_pyjqi"), SubResource("InputEventKey_kc4wg")]
