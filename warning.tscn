@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxcj25w823gqj"]
+[gd_scene load_steps=5 format=3 uid="uid://cxcj25w823gqj"]
 
 [ext_resource type="Script" path="res://warning.gd" id="1_7hwv4"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="1_n68ba"]
 [ext_resource type="Texture2D" uid="uid://djdb8g7a3undv" path="res://assests/Untitled_Artwork-1.png" id="3_3pxld"]
+[ext_resource type="AudioStream" uid="uid://xoa5xbt2gt6k" path="res://assests/Train Audio Files/mixkit-toy-train-whistle-1631.wav" id="4_oc2pp"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(3, 3)
@@ -33,6 +34,9 @@ position = Vector2(0.333333, 1.33333)
 rotation = -1.5708
 scale = Vector2(0.287194, 0.343252)
 texture = ExtResource("3_3pxld")
+
+[node name="Train Whistle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_oc2pp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

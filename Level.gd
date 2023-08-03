@@ -14,14 +14,14 @@ var here = false;
 var mono = false;
 
 func _ready():
+	
 # This is a total hack. FIX THIS
 	Game.playerHP = 4
 	Game.dead = false
+	pain = false;
 	
 	player = get_node("../Level 2/BarB")
 	
-	player.inPain = false;
-	player.meleeing = false;
 	#Engine.max_fps = 60
 
 func attack():
