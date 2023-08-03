@@ -15,6 +15,7 @@ var mono = false;
 
 func _ready():
 	player = get_node("../Level 2/BarB")
+	#Engine.max_fps = 60
 
 func attack():
 		var knockTemp = knock.instantiate()
@@ -31,7 +32,7 @@ func _physics_process(delta):
 		player.anim.play("Death")
 		await player.anim.animation_finished
 		Game.dead = false;
-		get_tree().change_scene_to_file("res://main menu.tscn")
+		get_tree().change_scene_to_file("res://game_over.tscn")
 	
 	if Input.is_action_just_pressed("attack"):
 		if player.meleeing == false:
@@ -110,4 +111,4 @@ func _on_kill_box_body_entered(body):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "BarB":
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://thanks_for_playing.tscn")

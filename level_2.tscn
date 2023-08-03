@@ -146,7 +146,7 @@ shape = SubResource("RectangleShape2D_s2lqf")
 position = Vector2(-816.644, 3.75839)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DroneStop"]
-position = Vector2(8510.87, 186.846)
+position = Vector2(8470.07, 178.792)
 shape = SubResource("RectangleShape2D_y5ues")
 
 [node name="Radio Cop" type="Node2D" parent="Level"]
@@ -184,6 +184,7 @@ position = Vector2(9878, 2042)
 scale = Vector2(0.671861, 1.5625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop2/Area2D"]
+visible = false
 position = Vector2(-5849.3, 748.162)
 shape = SubResource("RectangleShape2D_8ga1s")
 
@@ -284,7 +285,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(-9836, 576)
+position = Vector2(-9843, 720)
 
 [node name="Baddies" type="Node2D" parent="."]
 
@@ -294,32 +295,46 @@ position = Vector2(-9836, 576)
 
 [node name="redDrone" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(5783, -1115)
+accNum = Vector2(0, 0.023)
 
 [node name="redDrone2" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
 position = Vector2(60226, -812)
+accNum = Vector2(0, 0.02)
 
 [node name="redDrone3" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(61424, -1221)
+position = Vector2(61426, -537)
+velo = Vector2(0, -5)
+accNum = Vector2(0, 0.02)
+moveSpeed = 7
 
 [node name="redDrone4" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(62626, -812)
+position = Vector2(62611, -382)
+accNum = Vector2(0, 0.02)
+moveSpeed = 7
 
 [node name="redDrone5" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(63824, -1221)
+position = Vector2(63709, -374)
+velo = Vector2(0, -5)
+accNum = Vector2(0, 0.023)
+moveSpeed = 8
 
 [node name="redDrone6" parent="Baddies/Drones/Red Drones" instance=ExtResource("10_lhnsx")]
-position = Vector2(65026, -812)
+position = Vector2(65026, -529)
+accNum = Vector2(0, 0.023)
 
 [node name="Blue Drones" type="Node2D" parent="Baddies/Drones"]
 
 [node name="blueDrone2" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(8399, 115)
+position = Vector2(8901, 116)
+accNum = Vector2(0.035, 0)
 
 [node name="blueDrone4" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(72231, 134)
+position = Vector2(73500, 89)
+accNum = Vector2(0.015, 0)
 
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
-position = Vector2(10290, 115)
+position = Vector2(10845, 122)
+accNum = Vector2(0.03, 0)
 
 [node name="DroneB" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(3406, -1488)
@@ -360,7 +375,7 @@ position = Vector2(2913, -317)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop12" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(-1675, -289)
+position = Vector2(-457, -282)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop2" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -368,7 +383,7 @@ position = Vector2(2962, 583)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop4" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(8411, -313)
+position = Vector2(8930, -285)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop11" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -376,7 +391,7 @@ position = Vector2(9178, -1140)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop8" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(72238, -296)
+position = Vector2(73514, -341)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop9" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
@@ -388,7 +403,7 @@ position = Vector2(77525, -309)
 scale = Vector2(2.5, 2.5)
 
 [node name="cop5" parent="Baddies/cops" instance=ExtResource("15_xdgsa")]
-position = Vector2(10302, -297)
+position = Vector2(10874, -274)
 scale = Vector2(2.5, 2.5)
 
 [node name="Warning" type="Timer" parent="."]

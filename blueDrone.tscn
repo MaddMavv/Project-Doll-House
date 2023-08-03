@@ -54,9 +54,8 @@ shape = SubResource("RectangleShape2D_rcvom")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0.5, 77.75)
+position = Vector2(0.5, 92)
 shape = SubResource("RectangleShape2D_3uoq6")
-metadata/_edit_lock_ = true
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, 15)

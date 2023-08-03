@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bghkn1ho3gshp"]
+
+[ext_resource type="Script" path="res://return_to_main_menu.gd" id="1_i8q6n"]
+[ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="1_tb1wu"]
+[ext_resource type="PackedScene" uid="uid://dhhw8jhfw27mm" path="res://thank_you_text.tscn" id="2_graod"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_kqjkc"]
+
+[sub_resource type="Shortcut" id="Shortcut_h3v28"]
+events = [SubResource("InputEventJoypadButton_kqjkc")]
+
+[node name="Thanks for Playing" type="Node"]
+script = ExtResource("1_i8q6n")
+
+[node name="BlackScreen" type="Sprite2D" parent="."]
+position = Vector2(1442.5, 811)
+scale = Vector2(1.77656, 1.76296)
+texture = ExtResource("1_tb1wu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BlackScreen"]
+
+[node name="Continue" type="Button" parent="BlackScreen/ParallaxBackground"]
+offset_left = 1234.0
+offset_top = 1080.0
+offset_right = 1649.0
+offset_bottom = 1270.0
+shortcut = SubResource("Shortcut_h3v28")
+text = "Return to Main Menu"
+
+[node name="ThankYou" parent="." instance=ExtResource("2_graod")]
+
+[connection signal="pressed" from="BlackScreen/ParallaxBackground/Continue" to="." method="_on_continue_pressed"]
