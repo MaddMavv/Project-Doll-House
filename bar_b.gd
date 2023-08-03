@@ -23,15 +23,12 @@ var hitPoints;
 
 var inPain = false
 
-@onready var dustTrail = $dust_trail
-
 func _ready():
 	hitPoints = Game.playerHP;
 
 func _physics_process(delta):
 	# Add the gravity.
 	if hitPoints != Game.playerHP:
-#		print("FUCK")
 		hitPoints = Game.playerHP;
 		$"Hurt sounds".play()
 		anim.play("Damaged")
@@ -40,7 +37,7 @@ func _physics_process(delta):
 		await anim.animation_finished
 		meleeing = false;
 		inPain = false;
-	
+		
 	if is_on_floor():
 		jumpCount = 0
 		veloRealY = 0
@@ -86,7 +83,6 @@ func _physics_process(delta):
 	veloOwY = move_toward(veloOwY, 0, 50)
 	
 	if direction:
-		$dustTrail.emitting = true
 		veloReal = direction * SPEED
 		if veloRealY == 0:
 			if meleeing == false:
@@ -96,7 +92,6 @@ func _physics_process(delta):
 				anim.play("Fall")
 	else:
 		veloReal = move_toward(veloReal, 0, SPEED)
-		$dustTrail.emitting = false
 		if veloRealY == 0:
 			if meleeing == false:
 				anim.play("Idle")
@@ -106,7 +101,6 @@ func _physics_process(delta):
 	if veloRealY > 0:
 			if meleeing == false:
 				pass
-				$dustTrail.emitting = false
 	if Input.is_action_just_pressed("melee"):
 		melee()
 		$"Melee grunts".play()

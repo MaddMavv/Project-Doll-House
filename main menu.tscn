@@ -6,19 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dcyqr5fy67wmn" path="res://assests/Background.png" id="2_rrvbv"]
 [ext_resource type="AudioStream" uid="uid://dqursbcu6ud7x" path="res://assests/Barb Voice Audio Files/Game menu voice line.mp3" id="5_meu85"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_u7546"]
+[sub_resource type="InputEventKey" id="InputEventKey_usyhx"]
+device = -1
 keycode = 4194305
 
 [sub_resource type="Shortcut" id="Shortcut_75t0j"]
-events = [SubResource("InputEventKey_u7546")]
+events = [SubResource("InputEventKey_usyhx")]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_pyjqi"]
 pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_kc4wg"]
-keycode = 32
-physical_keycode = 32
-key_label = 32
+device = -1
+keycode = 75
+unicode = 107
 
 [sub_resource type="Shortcut" id="Shortcut_cewsu"]
 events = [SubResource("InputEventJoypadButton_pyjqi"), SubResource("InputEventKey_kc4wg")]
