@@ -29,7 +29,7 @@ func _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if hitPoints != Game.playerHP:
-		print("FUCK")
+#		print("FUCK")
 		hitPoints = Game.playerHP;
 		$"Hurt sounds".play()
 		anim.play("Damaged")
@@ -112,32 +112,36 @@ func _physics_process(delta):
 		$"Stun lines".play()
 	
 	move_and_slide()
-	
+
+
 func melee():
 	if meleeing == false:
 		anim.play("Melee")
 		meleeing = true
 		await anim.animation_finished
-		meleeing = false;
-		
+		meleeing = false
+
+
 func shout():
 	if meleeing == false:
 		anim.play("Shout")
 		meleeing = true
 		await anim.animation_finished
-		meleeing = false;
-		
+		meleeing = false
+
+
 func TRAIN():
 	if inPain == false:
-		Game.playerHP -= 1;
-	veloOw = -3000;
-	veloOwY = -1500;
-	
+		Game.playerHP -= 1
+	veloOw = -3000
+	veloOwY = -1500
+
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Enemies"):
 		body.death();
-		
+
+
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Enemies"):
 		body.chase = true

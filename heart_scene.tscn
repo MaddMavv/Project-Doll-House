@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://br4xoxv2yv0ip"]
+[gd_scene load_steps=43 format=3 uid="uid://br4xoxv2yv0ip"]
 
 [ext_resource type="Script" path="res://heart_scene.gd" id="1_aaog3"]
 [ext_resource type="Texture2D" uid="uid://dp0cekvf74b3l" path="res://Deconstructed Heart/EmptyHeart.png" id="1_y2key"]
@@ -33,7 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://gvr6uf7qda73" path="res://Deconstructed Heart/MyRight29.png" id="31_43s3v"]
 [ext_resource type="Texture2D" uid="uid://bnnwq2sm65h0g" path="res://Deconstructed Heart/MyRight30.png" id="32_qd48m"]
 [ext_resource type="Texture2D" uid="uid://d03jvh5ktp8wm" path="res://Deconstructed Heart/MyRight31.png" id="33_kwted"]
-[ext_resource type="Script" path="res://framestuff.gd" id="34_dh2ch"]
+[ext_resource type="Texture2D" uid="uid://dpfshyr4x3hpx" path="res://Deconstructed Heart/Full Heart.png" id="34_k4brd"]
+[ext_resource type="Texture2D" uid="uid://cpaf7bcq2ee6l" path="res://Deconstructed Heart/Broken Heart.png" id="35_janm4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axi6u"]
 radius = 24.5153
@@ -49,11 +50,44 @@ radius = 24.5153
 [sub_resource type="CircleShape2D" id="CircleShape2D_ycmit"]
 radius = 5.54703
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pnrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_k4brd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_janm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k4brd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_janm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k4brd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k4brd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_janm4")
+}],
+"loop": true,
+"name": &"FtB",
+"speed": 5.0
+}]
+
 [node name="Heart Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 1231.0
+offset_right = 3.0
+offset_bottom = 1231.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aaog3")
@@ -514,7 +548,7 @@ position = Vector2(313, 66)
 scale = Vector2(1.68001, 1.68001)
 shape = SubResource("CircleShape2D_saaso")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2571, 40)
-animation = &""
-script = ExtResource("34_dh2ch")
+[node name="Full to Broken" type="AnimatedSprite2D" parent="."]
+position = Vector2(1356, -621)
+sprite_frames = SubResource("SpriteFrames_3pnrf")
+animation = &"FtB"

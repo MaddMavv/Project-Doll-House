@@ -85,8 +85,6 @@ func _on_warning_timeout():
 		whichTrain = 3
 		
 	$TrainMoment.start()
-		
-		
 
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
