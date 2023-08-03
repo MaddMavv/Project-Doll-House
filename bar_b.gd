@@ -106,6 +106,7 @@ func _physics_process(delta):
 	if veloRealY > 0:
 			if meleeing == false:
 				pass
+				$dustTrail.emitting = false
 	if Input.is_action_just_pressed("melee"):
 		melee()
 		$"Melee grunts".play()
