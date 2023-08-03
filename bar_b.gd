@@ -29,6 +29,14 @@ func _ready():
 	hitPoints = Game.playerHP;
 
 func _physics_process(delta):
+	if Input.is_key_pressed(KEY_1):
+		position = $"../Train spawn".global_position
+	if Input.is_key_pressed(KEY_2):
+		position = $"../Big Drone spawn".global_position
+	if Input.is_key_pressed(KEY_3):
+		position = $"../Big Drone end spawn".global_position
+	if Input.is_key_pressed(KEY_4):
+		position = $"../End Level spawn".global_position
 	# Add the gravity.
 	if hitPoints != Game.playerHP:
 #		print("FUCK")
@@ -40,6 +48,13 @@ func _physics_process(delta):
 		await anim.animation_finished
 		meleeing = false;
 		inPain = false;
+	if Game.dead == true:
+		if Game.playerHP == 1:
+			$"Death sounds".play()
+			anim.play("Death")
+			await anim.animation_finished
+			Game.dead = false;
+			get_tree().change_scene_to_file("res://game_over.tscn")
 	
 	if is_on_floor():
 		jumpCount = 0

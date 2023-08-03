@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=46 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
 [ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="23_vcu7d"]
 [ext_resource type="Texture2D" uid="uid://b0fm6hxuek3kq" path="res://assests/X.png" id="24_3xjqv"]
+[ext_resource type="AudioStream" uid="uid://44x57vqs5shh" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Death sounds/Death Line 1.mp3" id="26_uc45b"]
+[ext_resource type="AudioStream" uid="uid://ce6nitonkwchw" path="res://assests/Barb Voice Audio Files/Hurt Sounds/Death sounds/Death Line 2.mp3" id="27_0r20d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
 size = Vector2(13833, 825.369)
@@ -119,6 +121,14 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it2v0"]
 size = Vector2(941.281, 1400.1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5s2ld"]
+streams_count = 2
+random_pitch = 1.05
+stream_0/stream = ExtResource("26_uc45b")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("27_0r20d")
+stream_1/weight = 1.0
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
@@ -564,6 +574,21 @@ offset_right = -139.0
 offset_bottom = -383.0
 theme_override_font_sizes/font_size = 81
 text = "Then use J/ X for a melee attack"
+
+[node name="Train spawn" type="Marker2D" parent="."]
+position = Vector2(17407, -739)
+
+[node name="Big Drone spawn" type="Marker2D" parent="."]
+position = Vector2(26575, -1177)
+
+[node name="Big Drone end spawn" type="Marker2D" parent="."]
+position = Vector2(59675, -1194)
+
+[node name="End Level spawn" type="Marker2D" parent="."]
+position = Vector2(75660, -1380)
+
+[node name="Death sounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_5s2ld")
 
 [connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
 [connection signal="body_exited" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_exited"]
