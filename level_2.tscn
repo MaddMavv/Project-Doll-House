@@ -1,8 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=45 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
+[ext_resource type="Texture2D" uid="uid://be6856dmd2pvr" path="res://assests/Repeatable Background with boxes.png" id="3_kpg0o"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
+[ext_resource type="Texture2D" uid="uid://3ujw1j8mdsa0" path="res://assests/background (1).png" id="3_wbxkw"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
 [ext_resource type="Texture2D" uid="uid://0q6b1re8qmb7" path="res://assests/Green Drone F2.png" id="7_ftw72"]
@@ -128,9 +130,104 @@ position = Vector2(43044, 432)
 scale = Vector2(331.761, 62.8516)
 texture = ExtResource("3_mrvp6")
 
-[node name="BackgroundToReplaceGodotLogoLosless" type="Sprite2D" parent="."]
-position = Vector2(46051.2, -166)
-scale = Vector2(20.4723, 6.86555)
+[node name="Background(1)" type="Sprite2D" parent="."]
+position = Vector2(18065, -8188)
+scale = Vector2(1467.93, -1038.49)
+texture = ExtResource("3_wbxkw")
+
+[node name="RepeatableBackgroundWithBoxes" type="Sprite2D" parent="Background(1)"]
+position = Vector2(-16.9931, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes2" type="Sprite2D" parent="Background(1)"]
+position = Vector2(-13.5776, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes3" type="Sprite2D" parent="Background(1)"]
+position = Vector2(-10.1688, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes4" type="Sprite2D" parent="Background(1)"]
+position = Vector2(-6.76532, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes5" type="Sprite2D" parent="Background(1)"]
+position = Vector2(-3.36188, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes6" type="Sprite2D" parent="Background(1)"]
+position = Vector2(0.0524549, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes7" type="Sprite2D" parent="Background(1)"]
+position = Vector2(3.44772, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes8" type="Sprite2D" parent="Background(1)"]
+position = Vector2(6.84298, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes9" type="Sprite2D" parent="Background(1)"]
+position = Vector2(10.241, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes10" type="Sprite2D" parent="Background(1)"]
+position = Vector2(13.6471, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes11" type="Sprite2D" parent="Background(1)"]
+position = Vector2(17.0506, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes12" type="Sprite2D" parent="Background(1)"]
+position = Vector2(20.454, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes13" type="Sprite2D" parent="Background(1)"]
+position = Vector2(23.8609, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes14" type="Sprite2D" parent="Background(1)"]
+position = Vector2(27.2704, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes15" type="Sprite2D" parent="Background(1)"]
+position = Vector2(30.6623, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes16" type="Sprite2D" parent="Background(1)"]
+position = Vector2(34.0541, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes17" type="Sprite2D" parent="Background(1)"]
+position = Vector2(37.461, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="RepeatableBackgroundWithBoxes18" type="Sprite2D" parent="Background(1)"]
+position = Vector2(40.8733, -7.81256)
+scale = Vector2(0.00216906, -0.00306602)
+texture = ExtResource("3_kpg0o")
+
+[node name="BackgroundToReplaceGodotLogoLosless" type="Sprite2D" parent="Background(1)"]
+position = Vector2(19.0651, -7.7247)
+scale = Vector2(0.0139464, -0.00661111)
 
 [node name="Level" parent="." instance=ExtResource("23_gx0ag")]
 position = Vector2(2021, -791)
