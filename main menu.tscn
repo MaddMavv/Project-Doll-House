@@ -17,8 +17,6 @@ pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_kc4wg"]
 keycode = 32
-physical_keycode = 32
-key_label = 32
 
 [sub_resource type="Shortcut" id="Shortcut_cewsu"]
 events = [SubResource("InputEventJoypadButton_pyjqi"), SubResource("InputEventKey_kc4wg")]
