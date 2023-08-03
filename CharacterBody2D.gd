@@ -18,7 +18,8 @@ func _physics_process(delta):
 	if shmovin == true:
 		position.x += 10;
 		if player.position.x <= (self.position.x-1300):
-			player.position.x+=10;
+			player.position.x+=10; 
+			print("goo")
 		
 	move_and_slide()
 
