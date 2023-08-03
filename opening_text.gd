@@ -32,7 +32,7 @@ func _ready():
 	queue_text("The determined and pissed off doll severs her arm to escape confinement. She's spotted by a sentinel who alerts the store.")
 	queue_text("Barb knocks him out and takes his megaphone.")
 	queue_text("Time to go loud.")
-	queue_text("She jams the megaphone into her shoulder in place of her second arm.   One sound burst can launch her to greater heights and stun enemies.")
+	queue_text("She jams the megaphone into her shoulder in place of her second arm.           One sound burst can launch her to greater heights and stun enemies.")
 	queue_text("If they won’t listen to her, she’ll just have to make them.")
 	
 	

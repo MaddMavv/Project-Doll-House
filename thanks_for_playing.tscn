@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bghkn1ho3gshp"]
+[gd_scene load_steps=9 format=3 uid="uid://bghkn1ho3gshp"]
 
 [ext_resource type="Script" path="res://return_to_main_menu.gd" id="1_i8q6n"]
 [ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="1_tb1wu"]
 [ext_resource type="PackedScene" uid="uid://dhhw8jhfw27mm" path="res://thank_you_text.tscn" id="2_graod"]
+[ext_resource type="FontFile" uid="uid://brilqoyg6dm75" path="res://assests/comic-sans-ms/COMIC.TTF" id="3_mkil7"]
 [ext_resource type="Texture2D" uid="uid://d3cqxslaxd6k4" path="res://assests/A.png" id="3_rqxoa"]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_kqjkc"]
@@ -29,13 +30,14 @@ offset_left = 1085.0
 offset_top = 1080.0
 offset_right = 1767.0
 offset_bottom = 1270.0
+theme_override_fonts/font = ExtResource("3_mkil7")
 theme_override_font_sizes/font_size = 30
 button_mask = 0
 shortcut = SubResource("Shortcut_h3v28")
-text = "Press spacebar /            to return to Main Menu"
+text = "Press spacebar /          to return to Main Menu"
 
 [node name="A" type="Sprite2D" parent="BlackScreen/ParallaxBackground"]
-position = Vector2(1377, 1174)
+position = Vector2(1379, 1174)
 scale = Vector2(0.716072, 0.71059)
 texture = ExtResource("3_rqxoa")
 
@@ -44,6 +46,7 @@ offset_left = -40.0
 offset_top = -31.0
 offset_right = 40.0
 offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_mkil7")
 theme_override_font_sizes/font_size = 40
 text = "A"
 horizontal_alignment = 1

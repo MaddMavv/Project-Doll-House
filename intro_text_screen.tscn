@@ -87,7 +87,7 @@ button_mask = 0
 shortcut = SubResource("Shortcut_xbi04")
 
 [node name="B" type="Sprite2D" parent="BlackScreen/ParallaxBackground/Skip"]
-position = Vector2(298, 107)
+position = Vector2(306, 107)
 texture = ExtResource("5_g2ckt")
 
 [node name="B Button" type="Label" parent="BlackScreen/ParallaxBackground/Skip/B"]
