@@ -1,10 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=46 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
 [ext_resource type="Texture2D" uid="uid://be6856dmd2pvr" path="res://assests/Repeatable Background with boxes.png" id="3_kpg0o"]
 [ext_resource type="Texture2D" uid="uid://cvpdu8e05j4sn" path="res://icon.svg" id="3_mrvp6"]
-[ext_resource type="Texture2D" uid="uid://3ujw1j8mdsa0" path="res://assests/background (1).png" id="3_wbxkw"]
+[ext_resource type="Texture2D" path="res://assests/background (1).png" id="3_wbxkw"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="4_54ugp"]
 [ext_resource type="Texture2D" uid="uid://c50ivgweqqfor" path="res://assests/Green Drone F1.png" id="6_ithob"]
 [ext_resource type="Texture2D" uid="uid://0q6b1re8qmb7" path="res://assests/Green Drone F2.png" id="7_ftw72"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
 [ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="23_vcu7d"]
 [ext_resource type="Texture2D" uid="uid://b0fm6hxuek3kq" path="res://assests/X.png" id="24_3xjqv"]
+[ext_resource type="FontFile" uid="uid://brilqoyg6dm75" path="res://assests/comic-sans-ms/COMIC.TTF" id="28_q52bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
 size = Vector2(13833, 825.369)
@@ -619,48 +620,54 @@ offset_left = -9414.0
 offset_top = 381.0
 offset_right = -8277.0
 offset_bottom = 495.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
 text = "Use A and D/Joystick to move"
 
 [node name="Label2" type="Label" parent="Tutorial"]
-offset_left = -7307.0
-offset_top = 309.0
-offset_right = -6170.0
-offset_bottom = 423.0
+offset_left = -7315.0
+offset_top = 305.0
+offset_right = -6178.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
-text = "Press Space/ A to jump"
+text = "Press Space/ A  to jump"
 
 [node name="Label4" type="Label" parent="Tutorial"]
-offset_left = -4317.0
-offset_top = 300.0
-offset_right = -2753.0
-offset_bottom = 414.0
+offset_left = -4294.0
+offset_top = 296.0
+offset_right = -2730.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
-text = "Hold S/Down and press space/ A to drop"
+text = "Hold S/Down and press space/ A  to drop"
 
 [node name="Label3" type="Label" parent="Tutorial"]
-offset_left = -5817.0
-offset_top = -141.0
-offset_right = -4263.0
-offset_bottom = -27.0
+offset_left = -5829.0
+offset_top = -145.0
+offset_right = -4275.0
+offset_bottom = -28.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
-text = "Press Space/ A in the air to double jump"
+text = "Press Space/ A  in the air to double jump"
 
 [node name="Label5" type="Label" parent="Tutorial"]
-offset_left = -3040.0
-offset_top = -647.0
-offset_right = -1486.0
-offset_bottom = -533.0
+offset_left = -3043.0
+offset_top = -648.0
+offset_right = -1489.0
+offset_bottom = -531.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
-text = "Hold K/ B to charge a stun attack"
+text = "Hold K/ B  to charge a stun attack"
 
 [node name="Label6" type="Label" parent="Tutorial"]
-offset_left = -1693.0
-offset_top = -497.0
-offset_right = -139.0
-offset_bottom = -383.0
+offset_left = -1727.0
+offset_top = -502.0
+offset_right = -173.0
+offset_bottom = -385.0
+theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
-text = "Then use J/ X for a melee attack"
+text = "Then use J/ X  for a melee attack"
 
 [connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
 [connection signal="body_exited" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_exited"]
