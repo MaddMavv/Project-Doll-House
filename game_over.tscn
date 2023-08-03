@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct72qn8j1dfaf"]
+[gd_scene load_steps=9 format=3 uid="uid://cr88adgxdqi4g"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_5c0cf"]
 [ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="2_fe12j"]

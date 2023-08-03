@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://djobdn0kpo3iw"]
+[gd_scene load_steps=56 format=3 uid="uid://djobdn0kpo3iw"]
 
 [ext_resource type="Texture2D" uid="uid://fhr87rg7652t" path="res://assests/BarB.png" id="1_5uvhq"]
 [ext_resource type="Script" path="res://bar_b.gd" id="1_w7i21"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://d2msr02ae6jkc" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 2.mp3" id="20_jsvxe"]
 [ext_resource type="AudioStream" uid="uid://bgmxpl40s6h1i" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 3.mp3" id="21_55maw"]
 [ext_resource type="AudioStream" uid="uid://dxfmb3qxlwly3" path="res://assests/Barb Voice Audio Files/Attack Sounds/Attack Grunts/Attack Grunt 4.mp3" id="22_taodw"]
+[ext_resource type="Texture2D" uid="uid://qalk4iafbfhu" path="res://assests/Dust Trail.png" id="33_3p05e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5fqr"]
 radius = 57.0
@@ -848,6 +849,16 @@ stream_2/weight = 1.0
 stream_3/stream = ExtResource("22_taodw")
 stream_3/weight = 1.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wa0h3"]
+lifetime_randomness = 0.7
+particle_flag_disable_z = true
+spread = 53.58
+gravity = Vector3(1, 15, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.15
+
 [node name="BarB" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
 collision_mask = 11
@@ -914,6 +925,15 @@ stream = SubResource("AudioStreamRandomizer_51wcs")
 
 [node name="Melee grunts" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_75j5c")
+
+[node name="dustTrail" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(0, 130)
+scale = Vector2(0.2, 0.2)
+process_material = SubResource("ParticleProcessMaterial_wa0h3")
+texture = ExtResource("33_3p05e")
+lifetime = 0.35
+randomness = 0.2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
