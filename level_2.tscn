@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://ce3ywxvwpfwmf"]
+[gd_scene load_steps=47 format=3 uid="uid://ce3ywxvwpfwmf"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_h6txy"]
 [ext_resource type="PackedScene" uid="uid://djobdn0kpo3iw" path="res://bar_b.tscn" id="1_mv7hs"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dcgkp6rrej3ny" path="res://assests/full.png" id="17_bi7oo"]
 [ext_resource type="Texture2D" uid="uid://b7jqjio4ewe7h" path="res://assests/ow1.png" id="18_wvwyg"]
 [ext_resource type="Texture2D" uid="uid://cwendh3na5lco" path="res://assests/ow2.png" id="19_nlgot"]
-[ext_resource type="Texture2D" uid="uid://evgmcoeekpsa" path="res://assests/door.png" id="19_s7n3p"]
 [ext_resource type="PackedScene" uid="uid://cnqsuyouetc2o" path="res://droneB.tscn" id="20_256xk"]
 [ext_resource type="Texture2D" uid="uid://c0etm0pbcbkcv" path="res://assests/ow3.png" id="20_fe0k8"]
 [ext_resource type="Script" path="res://health.gd" id="21_wn0mh"]
@@ -27,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhrj8gok2sb0" path="res://Project Doll House.tscn" id="23_gx0ag"]
 [ext_resource type="Texture2D" uid="uid://be8x0jyv8bp7i" path="res://assests/B.png" id="23_vcu7d"]
 [ext_resource type="Texture2D" uid="uid://b0fm6hxuek3kq" path="res://assests/X.png" id="24_3xjqv"]
+[ext_resource type="Texture2D" uid="uid://cgsvrllf63jtq" path="res://art shit/box designs/ACB.png" id="28_mmakx"]
 [ext_resource type="FontFile" uid="uid://brilqoyg6dm75" path="res://assests/comic-sans-ms/COMIC.TTF" id="28_q52bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lqf"]
@@ -39,7 +39,7 @@ size = Vector2(42.3489, 179.396)
 size = Vector2(721.247, 3722.27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ga1s"]
-size = Vector2(17298.2, 2190.08)
+size = Vector2(21877.8, 2190.08)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k15u"]
 size = Vector2(5991.26, 78.2557)
@@ -120,8 +120,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1ipp4"]
+blend_mode = 4
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it2v0"]
-size = Vector2(941.281, 1400.1)
+size = Vector2(1397.73, 1400.1)
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_h6txy")
@@ -269,8 +272,8 @@ position = Vector2(9878, 2042)
 scale = Vector2(0.671861, 1.5625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Area2D"]
-visible = false
-position = Vector2(5749.45, 728.964)
+position = Vector2(3459.67, 728.964)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8ga1s")
 
 [node name="Radio Cop2" type="Node2D" parent="Level"]
@@ -576,18 +579,6 @@ sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
 
-[node name="Door" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(78368, 666)
-scale = Vector2(0.422826, 0.422826)
-texture = ExtResource("19_s7n3p")
-
-[node name="Area2D" type="Area2D" parent="Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
-position = Vector2(14.1875, 0)
-shape = SubResource("RectangleShape2D_it2v0")
-
 [node name="Tutorial" type="Node2D" parent="."]
 
 [node name="A" type="Sprite2D" parent="Tutorial"]
@@ -669,6 +660,25 @@ theme_override_fonts/font = ExtResource("28_q52bo")
 theme_override_font_sizes/font_size = 81
 text = "Then use J/ X  for a melee attack"
 
+[node name="Background(1)2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_1ipp4")
+position = Vector2(77393, 503)
+texture = ExtResource("3_wbxkw")
+
+[node name="Areacb" type="Sprite2D" parent="."]
+position = Vector2(78277, 673)
+scale = Vector2(18.25, 18.25)
+texture = ExtResource("28_mmakx")
+
+[node name="Area2D" type="Area2D" parent="Areacb"]
+position = Vector2(4.98633, -0.383533)
+scale = Vector2(0.0231685, 0.0231685)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areacb/Area2D"]
+position = Vector2(-214.063, 0)
+shape = SubResource("RectangleShape2D_it2v0")
+
 [connection signal="body_entered" from="Level/kill box" to="." method="_on_kill_box_body_entered"]
 [connection signal="body_exited" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_shape_entered" from="Level/Radio Cop/Area2D" to="." method="_on_area_2d_body_shape_entered"]
@@ -681,4 +691,4 @@ text = "Then use J/ X  for a melee attack"
 [connection signal="timeout" from="TrainMoment" to="." method="_on_train_moment_timeout"]
 [connection signal="pressed" from="UI/Pause Menu/ColorRect/Resume Game" to="UI/Pause Menu" method="_on_resume_game_pressed"]
 [connection signal="pressed" from="UI/Pause Menu/ColorRect/Quit" to="UI/Pause Menu" method="_on_quit_pressed"]
-[connection signal="body_entered" from="Door/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Areacb/Area2D" to="." method="_on_area_2d_body_entered"]
