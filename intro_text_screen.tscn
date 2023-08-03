@@ -13,7 +13,7 @@
 events = [SubResource("InputEventJoypadButton_4pkqj")]
 
 [sub_resource type="InputEventKey" id="InputEventKey_5u40q"]
-keycode = 74
+keycode = 75
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ce0q3"]
 button_index = 1
@@ -111,7 +111,7 @@ offset_right = 489.0
 offset_bottom = 157.0
 theme_override_fonts/font = ExtResource("4_m8ds1")
 theme_override_font_sizes/font_size = 40
-text = "Press J /          to skip"
+text = "Press K /          to skip"
 horizontal_alignment = 1
 vertical_alignment = 1
 

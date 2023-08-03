@@ -7,8 +7,8 @@ var heart_full  : bool = true
 
 
 func _process(delta):
-	if Input.is_action_just_released("take_damage"):
-		Game.playerHP -= 1
+	#if Input.is_action_just_released("take_damage"):
+		#Game.playerHP -= 1
 	
 	if  Game.playerHP == 3 and heart_full:
 		$"Full to Broken".visible = false

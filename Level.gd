@@ -21,7 +21,8 @@ func _ready():
 	pain = false;
 	
 	player = get_node("../Level 2/BarB")
-	
+	player.inPain = false
+	player.meleeing = false;
 	#Engine.max_fps = 60
 
 func attack():
