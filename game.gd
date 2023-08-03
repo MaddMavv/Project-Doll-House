@@ -1,9 +1,9 @@
 extends Node
 
-var boss = false;
-var dead = false;
+var boss = false
+var dead = false
 
-var playerHP = 4;
+var playerHP = 4
 
 
 
@@ -11,4 +11,5 @@ var playerHP = 4;
 func _process(delta):
 	if Game.playerHP <= 0:
 		dead = true
-		playerHP = 4;
+#		await get_tree().create_timer(1.0).timeout
+#		playerHP = 4

@@ -285,7 +285,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="BarB" parent="." instance=ExtResource("1_mv7hs")]
-position = Vector2(-9843, 720)
+position = Vector2(-9072, 753)
 
 [node name="Baddies" type="Node2D" parent="."]
 
@@ -470,15 +470,16 @@ text = "hehe"
 script = ExtResource("16_y8jng")
 
 [node name="Heart Scene" parent="UI" instance=ExtResource("16_lvqfb")]
-visible = false
 
 [node name="health" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(1357, -635)
+visible = false
+position = Vector2(1359, 610)
 sprite_frames = SubResource("SpriteFrames_mhqwo")
 animation = &"full"
 script = ExtResource("21_wn0mh")
 
 [node name="Door" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(78368, 666)
 scale = Vector2(0.422826, 0.422826)
 texture = ExtResource("19_s7n3p")

@@ -14,6 +14,10 @@ var here = false;
 var mono = false;
 
 func _ready():
+# This is a total hack. FIX THIS
+	Game.playerHP = 4
+	Game.dead = false
+	
 	player = get_node("../Level 2/BarB")
 	#Engine.max_fps = 60
 
@@ -31,12 +35,12 @@ func _physics_process(delta):
 	if Game.dead == true:
 		player.anim.play("Death")
 		await player.anim.animation_finished
-		Game.dead = false;
+#		Game.dead = false
 		get_tree().change_scene_to_file("res://game_over.tscn")
 	
 	if Input.is_action_just_pressed("attack"):
 		if player.meleeing == false:
-			pain = true;
+			pain = true
 	if pain == true:
 		howLong +=1
 		print(howLong)
@@ -85,8 +89,6 @@ func _on_warning_timeout():
 		whichTrain = 3
 		
 	$TrainMoment.start()
-		
-		
 
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
