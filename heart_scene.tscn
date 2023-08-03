@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://heart_scene.gd" id="1_aaog3"]
 [ext_resource type="Texture2D" uid="uid://dp0cekvf74b3l" path="res://Deconstructed Heart/EmptyHeart.png" id="1_y2key"]
-[ext_resource type="Texture2D" uid="uid://dpfshyr4x3hpx" path="res://Deconstructed Heart/Full Heart.png" id="3_4ea67"]
 [ext_resource type="Texture2D" uid="uid://brmqloqq1ebdp" path="res://Deconstructed Heart/Bottom1.png" id="5_t0ev1"]
 [ext_resource type="Texture2D" uid="uid://dkhpkf8k8ynb3" path="res://Deconstructed Heart/Bottom3.png" id="6_c331y"]
 [ext_resource type="Texture2D" uid="uid://dnjebrx04oquf" path="res://Deconstructed Heart/Bottom4.png" id="7_oxa5b"]
@@ -34,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://gvr6uf7qda73" path="res://Deconstructed Heart/MyRight29.png" id="31_43s3v"]
 [ext_resource type="Texture2D" uid="uid://bnnwq2sm65h0g" path="res://Deconstructed Heart/MyRight30.png" id="32_qd48m"]
 [ext_resource type="Texture2D" uid="uid://d03jvh5ktp8wm" path="res://Deconstructed Heart/MyRight31.png" id="33_kwted"]
+[ext_resource type="Script" path="res://framestuff.gd" id="34_dh2ch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axi6u"]
 radius = 24.5153
@@ -514,9 +514,7 @@ position = Vector2(313, 66)
 scale = Vector2(1.68001, 1.68001)
 shape = SubResource("CircleShape2D_saaso")
 
-[node name="FullHeart" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(208, 201)
-texture = ExtResource("3_4ea67")
-region_enabled = true
-region_rect = Rect2(35.0713, 1679.07, 363.487, 340.305)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2571, 40)
+animation = &""
+script = ExtResource("34_dh2ch")
