@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cr88adgxdqi4g"]
+[gd_scene load_steps=12 format=3 uid="uid://cr88adgxdqi4g"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_5c0cf"]
 [ext_resource type="Texture2D" uid="uid://crppi2k6i5wdu" path="res://assests/black_screen.png" id="2_fe12j"]
@@ -8,14 +8,24 @@
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_omffc"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_lvwh7"]
+device = -1
+keycode = 32
+unicode = 32
+
 [sub_resource type="Shortcut" id="Shortcut_amjxv"]
-events = [SubResource("InputEventJoypadButton_omffc")]
+events = [SubResource("InputEventJoypadButton_omffc"), SubResource("InputEventKey_lvwh7")]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_8t12p"]
 button_index = 1
 
+[sub_resource type="InputEventKey" id="InputEventKey_tycjn"]
+device = -1
+keycode = 75
+unicode = 107
+
 [sub_resource type="Shortcut" id="Shortcut_aendd"]
-events = [SubResource("InputEventJoypadButton_8t12p")]
+events = [SubResource("InputEventJoypadButton_8t12p"), SubResource("InputEventKey_tycjn")]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_5c0cf")

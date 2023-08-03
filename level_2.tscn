@@ -344,7 +344,6 @@ shape = SubResource("RectangleShape2D_renqu")
 [node name="GREEN DRONE" type="CharacterBody2D" parent="."]
 position = Vector2(28518, -552)
 scale = Vector2(2.83285, 2.83285)
-collision_layer = 2
 script = ExtResource("4_54ugp")
 
 [node name="Drone" type="CollisionShape2D" parent="GREEN DRONE"]
