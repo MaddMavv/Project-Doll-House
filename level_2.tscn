@@ -273,7 +273,6 @@ scale = Vector2(0.671861, 1.5625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Radio Cop/Area2D"]
 position = Vector2(3459.67, 728.964)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8ga1s")
 
 [node name="Radio Cop2" type="Node2D" parent="Level"]
@@ -435,12 +434,6 @@ accNum = Vector2(0.015, 0)
 [node name="blueDrone3" parent="Baddies/Drones/Blue Drones" instance=ExtResource("14_r1v73")]
 position = Vector2(10845, 122)
 accNum = Vector2(0.03, 0)
-
-[node name="DroneB" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(3406, -1488)
-
-[node name="DroneB7" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
-position = Vector2(4872, -1488)
 
 [node name="DroneB2" parent="Baddies/Drones" instance=ExtResource("20_256xk")]
 position = Vector2(11318, -917)

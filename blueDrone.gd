@@ -42,7 +42,7 @@ func _ready():
 	
 func _process(delta):
 	move(delta)
-	shoot_at_player()
+	#shoot_at_player()
 	
 	
 func move(delta):
@@ -101,7 +101,8 @@ func shoot():
 
 
 func _on_timer_timeout():
-		shoot() 
+		#shoot() 
+		pass
 	
 	
 func stunned():
